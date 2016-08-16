@@ -1,0 +1,18 @@
+ 
+<H2>{{main.industryText}}</H2>
+
+<br/> 
+<br/> 
+<div class="pull-right">
+    <button id="primaryTextButton" class="k-primary">Permissions</button>
+    <button id="primaryTextButton" class="k-primary" ng-click="main.removeUser();" >Remove</button>
+    <button id="primaryTextButton" class="k-primary" ng-click="main.changeUserActiveStatus();" > {{main.enabledButtonText }} </button>
+    <button id="primaryTextButton" class="k-primary" ng-click="main.changeUserLockStatus();" > {{main.lockButtonText }}</button>
+    <button id="primaryTextButton" class="k-primary" >Invite User</button>
+</div>
+ 
+<br/>
+<br/>
+<div>
+<kendo-grid options="mainGridOptions_2" /> 
+</div>
