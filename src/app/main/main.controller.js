@@ -21,6 +21,9 @@
     vm.changeUserLockStatus =  changeUserLockStatus;
     vm.removeUser = removeUser;
       
+    vm.onchange = onchange;
+    
+      
     console.log($stateParams.selectedRow);
       
    var permitNo = $stateParams.permitNo; 
@@ -41,6 +44,8 @@
       
     function onChange(arg)
     {
+        vm.grid = arg.sender; 
+        
         var selected = $.map(this.select(), function(item) {
         
             return $(item).text();
@@ -70,31 +75,7 @@
        console.log("Selected: " + selected.length + " item(s), [" + selected.join(", ") + "]");
     }
       
-    var data =  {
-            "items" :[
-              {
-                "firstName": "Eric",
-                "lastName": "Snell",
-                "phone":"(772)-496-4160",
-                  "email":"eric@linkoweb.com",
-                  "registeredDate":"8/1/2016/ 13:50 AM",
-                  "status":"Active",
-                  "locked":"No"
-              },
-              {
-                "firstName": "Chris",
-                "lastName": "Weinandt",
-                "phone":"(770)-496-4160",
-                  "email":"Weinandt@linkcotechnology.com",
-                  "registeredDate":"8/1/2016/ 13:50 AM",
-                  "status":"Active",
-                  "locked":"No"
-              }
-            ]
-          };
-      
-      
-    var data2 =  [
+    var data =  [
               {
                 firstName: "Eric",
                 lastName: "Snell",
@@ -133,16 +114,13 @@
               }
           
       ]
+    
+    $scope.users = new kendo.data.DataSource({ data:data });
       
-    vm.data = data2;  
+    vm.data = data;  
     $scope.mainGridOptions_2 = {
         dataSource :{ 
             data:vm.data 
-            
-     //        data:  data,
-     //      schema: {
-     //       data: "items"
-     //      }
         },
         
         change: onChange,
@@ -179,7 +157,7 @@
           }
         ] 
     }
-
+    
      
     activate();
 
@@ -282,6 +260,7 @@
     }
       
     function removeUser(){
+        
            swal(
             {   
                 title: "Are you sure?",   
@@ -295,17 +274,9 @@
                 closeOnCancel: false }, 
             function(isConfirm)
             {   
-                if (isConfirm) {  
-                    // change data 
-                    
-                    delete vm.selectedRow;
-                    delete vm.data[0];
-                    
-                     delete $scope.mainGridOptions_2.dataSource.data;
-                    
-                    $scope.$digest();
-                    
+                if (isConfirm) {   
                     swal("Changed!", "User lock status has been changed.", "success");  
+                    vm.grid.dataSource.remove(vm.selectedRow);   
                 } else {
                     swal("Cancelled", "User lock status is not changed.", "error");   
                 } 

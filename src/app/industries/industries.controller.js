@@ -13,11 +13,12 @@
       
     vm.industryUsers = getIndustyUsers;
     vm.changeIndustryStatus = changeIndustryStatus;
+    vm.searchChanged = searchChanged;
     
     vm.selectedOne = false;
       
     function onChange(arg)
-    {
+    { 
         var selected = $.map(this.select(), function(item) {
         
             return $(item).text();
@@ -74,6 +75,8 @@
           
       ]
       
+    vm.data = data; 
+      
     $scope.mainGridOptions_2 = {
         dataSource :{ 
             data:data 
@@ -81,6 +84,7 @@
         
         change: onChange,
         selectable: "row",
+
         sortable: true,
         columns: [
           {
@@ -157,6 +161,30 @@
       
     function getIndustyUsers(){ 
         $state.go('users', {permitNo:vm.selectedRow.permitNo});
-    }      
+    }
+      
+    function searchChanged(){
+        console.log('input =' +  vm.searchKey);
+        
+        var data = vm.data;   
+        var filterData = industryFilter(data, vm.searchKey);  
+        
+        vm.industryGrid.setDataSource(new kendo.data.DataSource({ data:filterData })); 
+        vm.industryGrid.refresh();
+    }
+      
+    function industryFilter(dataSet, inputKey){
+        
+        var output=[];
+        
+        angular.forEach(dataSet,function(item){
+            if(item.permitNo.indexOf(inputKey) > -1 ||  item.industry.toLowerCase().indexOf(inputKey.toLowerCase()) > -1 || item.address.toLowerCase().indexOf(inputKey.toLowerCase()) > -1) 
+                output.push(item);
+            
+            console.log('==== item=', item);
+        })
+        
+        return output; 
+    }
   }
 })();
