@@ -14,6 +14,8 @@
     vm.industryUsers = getIndustyUsers;
     vm.changeIndustryStatus = changeIndustryStatus;
     vm.searchChanged = searchChanged;
+    vm.advancedSearch = advancedSearch;
+    vm.searchButtonText = 'Advanced Search'; 
     
     vm.selectedOne = false;
       
@@ -81,16 +83,22 @@
         dataSource :{ 
             data:data 
         },
+        filterable:true,
+        
+//        filterable: {
+//            mode: "row"
+//        },
         
         change: onChange,
         selectable: "row",
-
+       
         sortable: true,
         columns: [
           {
             field: "permitNo",
             title: "Permit No."
           },
+    
           {   
               field: "industry",
               title: "Industry",
@@ -104,6 +112,9 @@
               field: "enabled",
                width:150,
               title: "Enabled?",
+              filterable:{
+                  ui:enabledFilter
+              }
           },
           {   
               field: "hasSignatory",
@@ -126,6 +137,10 @@
      
     activate();
 
+    function enabledFilter(){
+       
+    }
+      
     function activate() { 
         console.log('vm.selectedOne=' + vm.selectedOne);
     } 
@@ -157,6 +172,30 @@
                 } 
             }
         );  
+    }
+      
+    function advancedSearch(){  
+        console.log('in advance search window ');   
+         
+        if(vm.searchButtonText == 'Advanced Search'){ 
+           vm.searchButtonText = 'Simple Search';
+           vm.industryGrid.setOptions(
+            {
+                filterable:{
+                    mode:"row"
+                }
+            }
+         ) 
+        } else {
+            vm.searchButtonText = 'Advanced Search';
+            vm.industryGrid.setOptions(
+                {
+                    filterable: null
+                } 
+            )
+        } 
+        
+       vm.industryGrid.refresh(); 
     }
       
     function getIndustyUsers(){ 

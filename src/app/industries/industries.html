@@ -4,21 +4,26 @@
         Industries
         <small>Industries information</small>
       </h1>
-      <ol class="breadcrumb">
+      <ol class="breadcrumb-left">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home </a></li>
         <li class="active">Industries</li>
       </ol>  
-</section>
-
-<br/>
- 
-<label> 
     
+      <div class="action-panel"> 
+         <button ng-disabled="industries.selectedOne === false" id="primaryTextButton" class="k-primary" > Common Action1 </button>
+          <button ng-disabled="industries.selectedOne === false" id="primaryTextButton" class="k-primary"   >Common Action2</button>
+      </div>
+</section>
+ 
+ <br/><br/>
+<div class="seperator" > </div>
+<label>  
 <div class="input-group input-group-sm">
       <input type="text" class="form-control" placeholder="enter search text..." ng-model="industries.searchKey" ng-change="industries.searchChanged()">
       <span class="input-group-btn">
-          <button type="button" class="btn btn-info btn-flat">Go!</button>
+         <button type="button" class="btn btn-info btn-flat" ng-click='industries.advancedSearch();'>{{industries.searchButtonText}}!</button>  
       </span>
+
     
   <div class="pull-right"  >  
     <button ng-disabled="industries.selectedOne === false"  id="primaryTextButton" class="k-primary" ng-click="industries.changeIndustryStatus();"  > {{industries.enabledButtonText }} </button>
@@ -28,5 +33,5 @@
 </div>
 </label>
 
-<div kendo-grid='industries.industryGrid' options="mainGridOptions_2" > 
+<div kendo-grid='industries.industryGrid'  k-options="mainGridOptions_2" > 
 </div>

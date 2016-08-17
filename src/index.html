@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.2.714/styles/kendo.common-material.min.css" />
     <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.2.714/styles/kendo.material.min.css" />
     <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.2.714/styles/kendo.default.mobile.min.css" />
-      
+    <link rel="stylesheet" href="customerize_top_bar.css" />
       
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -45,8 +45,14 @@
     <!-- endbuild -->
   </head>
   <body class="hold-transition skin-blue sidebar-mini"> 
-      <div class="wrapper">
-          
+    
+
+       <ul class="center-nav"> 
+            <li><a href="/contact/">Grand Rapids Environmental Services Department</a></li>
+       </ul> 
+            
+    <div class="wrapper">
+
     <!-- Main Header -->
     <header class="main-header">
 
@@ -55,17 +61,26 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>L</b>E</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Linkco</b>Exchange</span>
-    </a>
-
+      <span class="logo-lg"><b>Linko</b>Exchange</span>
+    </a> 
+    
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
-      <!-- Sidebar toggle button-->
+        
+    <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+        <span class="sr-only-1"> Authority Portal </span>
+      </a>  
+        
+      <!-- Sidebar toggle button--> 
+<!--
+       <ul class="center-nav"> 
+            <li><a href="/contact/">Grand Rapids Environmental Services Department</a></li>
+       </ul> 
+-->
+        
       <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
+      <div class="navbar-custom-menu">  
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
@@ -212,8 +227,11 @@
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
           </li>
         </ul>
-      </div>
+      </div> 
+        
     </nav>
+
+        
   </header>
           
 <!-- Left side column. contains the logo and sidebar -->
@@ -257,7 +275,20 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a> 
-        </li> 
+        </li>  
+          
+        <li class="treeview">
+          <a href="#"><i class="fa fa-user-plus"></i> <span>Authority Portal</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/authority">Pending Registation</a></li>
+            <li><a href="/authority/accounts">Authority Accounts</a></li>
+          </ul>
+        </li>  
+        
           
         <li class="treeview">
           <a href="#">
@@ -302,6 +333,7 @@
 		
           
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
@@ -318,7 +350,6 @@
     </section>
     <!-- /.sidebar -->
   </aside>
-
 
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>

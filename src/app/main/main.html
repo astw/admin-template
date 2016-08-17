@@ -1,8 +1,24 @@
- 
-<H2>{{main.industryText}}</H2>
 
-<br/> 
-<br/> 
+ 
+<section class="content-header">
+      <h1>
+       {{main.industryText}}
+      </h1>
+      <ol class="breadcrumb-left">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home </a></li>
+        <li class="active">Industries</li>
+      </ol>  
+    
+      <div class="action-panel"> 
+         <button ng-disabled="industries.selectedOne === false" id="primaryTextButton" class="k-primary" > Common Action1 </button>
+          <button ng-disabled="industries.selectedOne === false" id="primaryTextButton" class="k-primary"   >Common Action2</button>
+      </div>
+</section> 
+ 
+<br/> <br/> 
+
+<div class="seperator" > </div>
+
 <div class="pull-right">
     <button id="primaryTextButton" class="k-primary">Permissions</button>
     <button id="primaryTextButton" class="k-primary" ng-click="main.removeUser();" >Remove</button>

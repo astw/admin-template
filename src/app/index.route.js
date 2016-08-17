@@ -20,6 +20,18 @@
         controller: 'IndustriesController',
         controllerAs: 'industries'
     })
+    .state('authority', {
+        url: '/authority',
+        templateUrl: 'app/authority/authority.html',
+        controller: 'AuthorityController',
+        controllerAs: 'authority'
+    })
+    .state('authorityAccount', {
+        url: '/authority/accounts',
+        templateUrl: 'app/authority/authority-account.html',
+        controller: 'AuthorityController',
+        controllerAs: 'authority'
+    })
     ;
 
     $urlRouterProvider.otherwise('/');

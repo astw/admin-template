@@ -1,0 +1,62 @@
+.center-nav{
+    border:1px solid #ffffff;
+    border-width:1px 0,0,1,0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+    height:49px;
+    background-color: #3c8dbc
+    
+}
+.center-nav li{
+    display:inline;
+    color:white; 
+}
+.center-nav a{
+    display:inline-block;
+    padding:10px; color:white; 
+}
+
+
+
+.breadcrumb-left {
+    float: left;
+    background: transparent;
+    margin-top: 10;
+    margin-bottom: 0;
+    font-size: 12px;
+    padding: 7px 5px;
+    position: relative;
+    top: 5px;
+    left:-10px;
+    border-radius: 2px;
+    list-style: none;
+}
+
+
+.breadcrumb-left > li {
+    display: inline-block;
+    padding: 0 5px; 
+}
+
+
+.breadcrumb-left > li + li:before {
+   content: "/\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+   padding: 0 5px;
+   color: #ccc; 
+}
+
+
+.action-panel {
+    float:right;
+    margin-right: -15px;
+}
+
+.seperator {
+    width:100%;
+    height:1px;
+    border:1px solid #ffffff;
+    border-width:1px 0,0,1,0;
+    margin-bottom: 10px;
+}
