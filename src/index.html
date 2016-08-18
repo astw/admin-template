@@ -239,11 +239,14 @@
         
   </header>
      
-      
- <div ng-if="showMenu" class="visible-xs extra-menu-panel visible-xs andel">
-        <div side-bar></div>
- </div>
-
+ 
+  <aside  ng-show="showMenu === true" class="visible-xs extra-menu-panel visible-xs">  
+   <section class="sidebar ">
+      <div side-bar ></div> 
+    </section>
+  </aside>
+        
+        
 <!-- Left side column. contains the logo and sidebar -->
    <aside class="main-sidebar visible-lg visible-md visible-sm">
     <!-- sidebar: style can be found in sidebar.less -->

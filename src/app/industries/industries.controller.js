@@ -94,25 +94,29 @@
         columns: [
              
           {
+            width:'10%',
             field: "permitNo",
             title: "Permit No.",
             minScreenWidth: 960,
           },
     
           {   
+              width:'30%',
               field: "industry",
               title: "Industry",
               minScreenWidth: 960,
           },
           {   
+              width:'40%',
               field: "address",
-              width:450,
+              //width:450,
               title: "Address",
               minScreenWidth: 960,
           },
           {   
+              width:'10%',
               field: "enabled",
-               width:150,
+              //  width:150,
               title: "Enabled?",
               minScreenWidth: 960,
               filterable:{
@@ -120,25 +124,28 @@
               }
           },
           {   
+              width:'10%',
               field: "hasSignatory",
-               width:150,
+//               width:150,
               title: "Has Signatory?",
               minScreenWidth: 1000,
           },
           {   
+              width:'30%',
               field: "assignTo",
-               width:150,
+//               width:150,
               title: "Assign To",
               minScreenWidth: 1000,
           },           
           {   
+              width:'30%',
               field: "lastSubmission",
-               width:150,
+//              width:150,
               title: "Last Submission",
               minScreenWidth: 1200,
           },
             
-          {   
+          {  
             headerAttributes : {
                 "class" : "hidden-md hidden-lg visible-sm visible-xs"
             },

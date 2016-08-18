@@ -20,6 +20,14 @@
         }
         
     }
+      
+    	
+	      
+    $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
+        $rootScope.showMenu = false; 
+     })
+    
+      
   }
 
 })();

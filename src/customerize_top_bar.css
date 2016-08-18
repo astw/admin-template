@@ -128,13 +128,38 @@
 
 .extra-menu-pandel {
     position: absolute;
+    display: block; 
     top: 50px;
-    z-index: 10000;
-    background-color: black;
-/*    background-color: #222d32;*/
+    z-index: 1000; 
+    background-color: #222d32;
     overflow:auto;
 }
 
 .extra-menu-panel a {
     color:#b8c7ce;
+}
+
+
+.fadein,
+.fadeout {
+    transition: .3s linear all; 
+    overflow: hidden;
+/*
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940)0.3s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940)0.3s;
+*/
+}
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+  display: block !important;
+}
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+  display: block !important;
 }
