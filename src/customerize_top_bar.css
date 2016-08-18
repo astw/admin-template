@@ -60,3 +60,27 @@
     border-width:1px 0,0,1,0;
     margin-bottom: 10px;
 }
+
+
+@media (min-width: 768px) {
+   .control-label{
+      text-align: left; 
+  }
+}
+
+@media (min-width: 768px) {
+    .control-label {
+      text-align: left !important;
+      margin-bottom: 0;
+      padding-top: (@padding-base-vertical + 1); // Default padding plus a border
+    }
+  }
+
+@media (min-width: 970px) {
+    .control-label {
+      text-align: left !important;
+      margin-bottom: 0;
+      padding-top: (@padding-base-vertical + 1); // Default padding plus a border
+    }
+  }
+
