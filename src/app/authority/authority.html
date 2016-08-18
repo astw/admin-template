@@ -5,7 +5,7 @@
             Authority - At A Glance
             <small> Registration Pending Approval </small>
           </h1>
-          <ol class="breadcrumb-left">
+          <ol class="breadcrumb-left  visible-lg visible-md">
             <li><a href="#"><i class="fa fa-dashboard"></i> Authority </a></li>
             <li class="active"> Pending Approval</li>
           </ol>  
@@ -19,14 +19,19 @@
               <button type="button" class="btn btn-info btn-flat">Go!</button>
           </span>
 
-      <div class="pull-right"  >  
+      <div class="pull-right visible-lg visible-md"  >  
         <button  id="primaryTextButton" class="k-primary" ng-click="authority.viewProfile()"  > View Profile </button>
         <button  id="primaryTextButton" class="k-primary" ng-click="authority.denyRegistration()"  > Deny </button>
           <button  id="primaryTextButton" class="k-primary" ng-click="authority.approvalRegistration()"  > Approve </button>
       </div>
 
-    </div>
-    </label>
+    </div> 
+    
+    <div class="visible-xs visible-sm"  >  
+        <button  id="primaryTextButton" class="k-primary" ng-click="authority.viewProfile()"  > View Profile </button>
+        <button  id="primaryTextButton" class="k-primary" ng-click="authority.denyRegistration()"  > Deny </button>
+          <button  id="primaryTextButton" class="k-primary" ng-click="authority.approvalRegistration()"  > Approve </button>
+     </div>
 
     <div kendo-grid='authority.grid' options="mainGridOptions_2" > 
     </div>

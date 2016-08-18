@@ -16,6 +16,7 @@
     vm.searchChanged = searchChanged;
     vm.advancedSearch = advancedSearch;
     vm.searchButtonText = 'Advanced Search'; 
+    vm.searchButtonText2 = 'AS'; 
     
     vm.selectedOne = false;
       
@@ -84,34 +85,36 @@
             data:data 
         },
         filterable:true,
-        
-//        filterable: {
-//            mode: "row"
-//        },
-        
+         
         change: onChange,
         selectable: "row",
        
-        sortable: true,
+        sortable: true, 
+        
         columns: [
+             
           {
             field: "permitNo",
-            title: "Permit No."
+            title: "Permit No.",
+            minScreenWidth: 960,
           },
     
           {   
               field: "industry",
               title: "Industry",
+              minScreenWidth: 960,
           },
           {   
               field: "address",
-              width:550,
+              width:450,
               title: "Address",
+              minScreenWidth: 960,
           },
           {   
               field: "enabled",
                width:150,
               title: "Enabled?",
+              minScreenWidth: 960,
               filterable:{
                   ui:enabledFilter
               }
@@ -120,16 +123,42 @@
               field: "hasSignatory",
                width:150,
               title: "Has Signatory?",
+              minScreenWidth: 1000,
           },
           {   
               field: "assignTo",
                width:150,
               title: "Assign To",
+              minScreenWidth: 1000,
           },           
           {   
               field: "lastSubmission",
                width:150,
               title: "Last Submission",
+              minScreenWidth: 1200,
+          },
+            
+          {   
+            headerAttributes : {
+                "class" : "hidden-md hidden-lg visible-sm visible-xs"
+            },
+            title: "Industry Information",
+            //headerTemplate:'<label class="visible-sm"> Industry Information </label>',
+            template:  
+                    "<div class=' visible-sm visible-xs'>" +
+                                   "<dt>Permit No. </dt>" + 
+                                   "<dd>#:permitNo #</dd>" +
+                                    "<dt>Industry: </dt>" +
+                                    "<dd>#:industry#</dd>" +
+                                    "<dt>Enabled: </dt>" +
+                                    "<dd>#:enabled#</dd>" +
+                                    "<dt>Has Signatory: </dt>" +
+                                    "<dd>#:hasSignatory#</dd>" +
+                                    "<dt>Assigned To: </dt>" +
+                                    "<dd>#:assignTo#</dd>" +              
+                                    "<dt>Last Submission </dt>"  +
+                       "</div>" 
+              
           }
         ] 
     }
@@ -179,6 +208,7 @@
          
         if(vm.searchButtonText == 'Advanced Search'){ 
            vm.searchButtonText = 'Simple Search';
+           vm.searchButtonText2 = 'SS'; 
            vm.industryGrid.setOptions(
             {
                 filterable:{
@@ -188,6 +218,7 @@
          ) 
         } else {
             vm.searchButtonText = 'Advanced Search';
+            vm.searchButtonText2 = 'AS'; 
             vm.industryGrid.setOptions(
                 {
                     filterable: null

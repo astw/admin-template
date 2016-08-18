@@ -108,34 +108,67 @@
         columns: [
           {
             field: "firstName",
-            title: "First Name"
+            title: "First Name",
+            minScreenWidth: 750
           },
           {   
               field: "lastName",
               title: "Last Name",
+              minScreenWidth: 750
           },
           {   
               field: "phone",
               title: "Phone",
+              minScreenWidth: 970
           },
           {   
               field: "email",
               title: "Email",
+              minScreenWidth: 970
           }
           ,
           {   
               field: "industry",
               title: "Industry",
+               minScreenWidth: 1170
           }, 
             
           {   
               field: "registeredDate",
               title: "Data Registered",
+              minScreenWidth: 1170
           },          
           {   
               field: "isReRegistration",
               title: "Is Re-registration ?",
-          }
+               minScreenWidth: 1170
+          },
+            
+           {   
+              headerAttributes : {
+                "class" : "hidden-md hidden-lg visible-xs"
+            },
+            title: "Registration Information",
+            //headerTemplate:'<label class="visible-sm"> Industry Information </label>',
+            template:  
+                    "<div class='visible-xs'>" +
+                                    "<dt>First Name </dt>" +
+                                    "<dd>#:firstName #</dd>" +
+                                    "<dt>Last Name </tdtd>" +
+                                    "<dd>#:lastName #</dd>" +
+              
+                                    "<dt>Phone</dt>" +
+                                    "<dd>#:phone #</dd>" +
+              
+                                    "<dt>email: </dt>" +
+                                    "<dd>#:email#</dd>" +
+                                    "<dt>Industry: </dt>" +
+                                    "<dd>#:industry#</dd>" +
+                                    "<dt>Data Registered: </dt>" +
+                                    "<dd>#:registeredDate#</dd>" +
+                       "</div>" 
+              
+          }  
         ] 
     }
 

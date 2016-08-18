@@ -48,20 +48,18 @@
     
       <link rel="stylesheet" href="customerize_top_bar.css" />
   </head>
-  <body class="hold-transition skin-blue sidebar-mini"> 
-    
-
-       <ul class="center-nav"> 
+  <body class="hold-transition skin-blue sidebar-mini">  
+       <ul class="center-nav  visible-lg visible-md"> 
             <li><a href="/contact/">Grand Rapids Environmental Services Department</a></li>
        </ul> 
             
     <div class="wrapper">
 
     <!-- Main Header -->
-    <header class="main-header">
+    <header class="main-header ">
 
     <!-- Logo -->
-    <a href="/templates/index2.html" class="logo">
+    <a href="/templates/index2.html" class="logo visible-lg visible-md visible-sm">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>L</b>E</span>
       <!-- logo for regular state and mobile devices -->
@@ -72,22 +70,25 @@
     <nav class="navbar navbar-static-top" role="navigation">
         
     <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <a href="#" class="sidebar-toggle visible-lg visible-md visible-sm"   data-toggle="offcanvas"   role="button">
+        <span class="sr-only-1"> Authority Portal </span>
+      </a> 
+
+        
+      <a href="#" class="sidebar-toggle visible-xs" ng-click="showHideExtraSmallMenu()" role="button">
         <span class="sr-only-1"> Authority Portal </span>
       </a>  
         
       <!-- Sidebar toggle button--> 
-<!--
-       <ul class="center-nav"> 
+       <ul class="center-nav visible-lg"> 
             <li><a href="/contact/">Grand Rapids Environmental Services Department</a></li>
        </ul> 
--->
         
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">  
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
+          <li class="dropdown messages-menu  visible-lg visible-md">
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
@@ -123,7 +124,7 @@
           <!-- /.messages-menu -->
 
           <!-- Notifications Menu -->
-          <li class="dropdown notifications-menu">
+          <li class="dropdown notifications-menu visible-lg visible-md ">
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
@@ -146,7 +147,7 @@
             </ul>
           </li>
           <!-- Tasks Menu -->
-          <li class="dropdown tasks-menu">
+          <li class="dropdown tasks-menu  visible-lg visible-md">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
@@ -237,120 +238,17 @@
 
         
   </header>
-          
-<!-- Left side column. contains the logo and sidebar -->
-   <aside class="main-sidebar">
+     
+      
+ <div ng-if="showMenu" class="visible-xs extra-menu-panel visible-xs andel">
+        <div side-bar></div>
+ </div>
 
+<!-- Left side column. contains the logo and sidebar -->
+   <aside class="main-sidebar visible-lg visible-md visible-sm">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="/templates/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-        </div>
-      </div>
-
-      <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
-      <!-- /.search form -->
-
-      <!-- Sidebar Menu -->
-      <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li class="active treeview">
-          <a href="/industries">
-            <i class="fa fa-dashboard"></i> <span>Industries</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a> 
-        </li>  
-          
-        <li class="treeview">
-          <a href="#"><i class="fa fa-user-plus"></i> <span>Authority Portal</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="/authority">Pending Registation</a></li>
-            <li><a href="/authority/accounts">Authority Accounts</a></li>
-          </ul>
-        </li>  
-        
-          
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>Templates</span>
-            <span class="pull-right-container">
-              <span class="label label-primary pull-right">2</span>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o text-red"></i>Data Entry Form</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o text-yellow"></i> Report Package</a></li> 
-          </ul>
-        </li>  
-          
-        <li class="treeview">
-    		<a href="#">
-            <i class="fa fa-edit"></i> <span> Permission Settings </span>
-            <span class="pull-right-container"> 
-            </span>
-          </a> 
-        </li>
-          
-        <li class="treeview">
-    		<a href="#">
-            <i class="fa fa-pie-chart"></i> <span> Admin Portal </span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a> 
-        </li>
-          
-        		
-		<li class="treeview">
-          <a href="#">
-            <i class="fa  fa-table"></i> <span>Audit Logs </span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a> 
-        </li>
-		
-          
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-        
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
-          </ul>
-        </li>
-      </ul>
-      <!-- /.sidebar-menu -->
+      <div side-bar ></div> 
     </section>
     <!-- /.sidebar -->
   </aside>
