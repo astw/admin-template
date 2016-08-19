@@ -1,0 +1,207 @@
+ 
+<div ng-if='authority.showProfile == false'>
+    <section class="content-header">
+          <h1>
+            Authority - At A Glance
+            <small> Registration Pending Approval </small>
+          </h1>
+          <ol class="breadcrumb-left  visible-lg visible-md">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Authority </a></li>
+            <li class="active"> Pending Approval</li>
+          </ol>  
+    </section>
+
+    <br/>   <br/>  
+    <div class="seperator" > </div>
+    <div class="input-group input-group-sm">
+          <input type="text" class="form-control" placeholder="enter search text..." ng-model="authority.searchKey" ng-change="authority.searchChanged()">
+          <span class="input-group-btn">
+              <button type="button" class="btn btn-info btn-flat">Go!</button>
+          </span>
+
+      <div class="pull-right visible-lg visible-md"  >  
+        <button  id="primaryTextButton" class="k-primary" ng-click="authority.viewProfile()"  > View Profile </button>
+        <button  id="primaryTextButton" class="k-primary" ng-click="authority.denyRegistration()"  > Deny </button>
+          <button  id="primaryTextButton" class="k-primary" ng-click="authority.approvalRegistration()"  > Approve </button>
+      </div>
+
+    </div> 
+    
+    <div class="visible-xs visible-sm"  >  
+        <button  id="primaryTextButton" class="k-primary" ng-click="authority.viewProfile()"  > View Profile </button>
+        <button  id="primaryTextButton" class="k-primary" ng-click="authority.denyRegistration()"  > Deny </button>
+          <button  id="primaryTextButton" class="k-primary" ng-click="authority.approvalRegistration()"  > Approve </button>
+     </div>
+
+    <div kendo-grid='authority.grid' options="mainGridOptions_2" > 
+    </div>
+
+</div>
+
+<div ng-if='authority.showProfile == true'>
+       <section class="content-header">
+              <h1>
+                Authority - View user profile
+                <small> View user profile </small>
+              </h1>
+  
+        </section>
+              <ol class="breadcrumb-left">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Authority </a></li>
+                <li class="active">View User Profile</li>
+              </ol>
+        <br/> <br/>
+        
+       <div class="seperator" > </div>
+        <label> 
+
+        <div class="input-group input-group-sm">  
+          <div class="pull-right"  >  
+            <button  id="primaryTextButton" class="k-primary" ng-click="authority.registrationPendingApproval()"  > Go Back to Registration Pending Approval </button> 
+          </div> 
+        </div>
+        </label>
+
+        <div>  
+            <form class="form-horizontal"> 
+                <div class="form-group">
+                  <label for="salutation" class="col-md-1 control-label">Salutation</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="salutation" placeholder="Mr." autocomplete="off"  >  {{authority.selectedRow.salutation}}
+                  </div>
+                </div>  
+                    
+                 <div class="form-group">
+                  <label for="firstName" class="col-md-1 control-label">First Name</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="firstName" placeholder="Chris" autocomplete="off"  >  {{authority.selectedRow.firstName}}
+                  </div>
+                </div> 
+                     
+                 <div class="form-group">
+                  <label for="middleName" class="col-md-1 control-label">Middle Name</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="middleName" placeholder="" autocomplete="off"  >  {{authority.selectedRow.middleName}}
+                  </div>
+                </div> 
+                    
+                <div class="form-group">
+                  <label for="lastname" class="col-md-1 control-label">Last Name</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="lastname" placeholder="" autocomplete="off"  >  {{authority.selectedRow.lastname}}
+                  </div>
+                </div>
+                    
+               <div class="form-group">
+                  <label for="facilityName" class="col-md-1 control-label">Facility/Business Name</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="lastname" placeholder="" autocomplete="off"  > {{authority.selectedRow.industry}}
+                  </div>
+                </div>
+                   
+                <div class="form-group">
+                  <label for="mailingAddress" class="col-md-1 control-label">Mailing Address</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="mailingAddress" placeholder="" autocomplete="off"  >  {{authority.selectedRow.mailingAddress}}
+                  </div>
+                </div>
+                    
+                <div class="form-group">
+                  <label for="Suite" class="col-md-1 control-label">Suite</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="Suite" placeholder="" autocomplete="off"  >   {{authority.selectedRow.suite}}
+                  </div>
+                </div>    
+                    
+                                    
+                <div class="form-group">
+                  <label for="city" class="col-md-1 control-label">City</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="City" placeholder="" autocomplete="off"  >  {{authority.selectedRow.city}}
+                  </div>
+                </div>    
+                          
+                <div class="form-group">
+                  <label for="State" class="col-md-1 control-label">State</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="State" placeholder="" autocomplete="off"  >   {{authority.selectedRow.state}}
+                  </div>
+                </div>                  
+                                                  
+                <div class="form-group">
+                  <label for="postCode" class="col-md-1 control-label">Zip Code</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="postCode" placeholder="" autocomplete="off"  >   {{authority.selectedRow.postCode}}
+                  </div>
+                </div>         
+          
+                <div class="form-group">
+                  <label for="phone" class="col-md-1 control-label">Phone</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="phone" placeholder="" autocomplete="off"  >   {{authority.selectedRow.phone}}
+                  </div>
+                </div>                        
+                          
+                <div class="form-group">
+                  <label for="extension" class="col-md-1 control-label">Extension</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="extension" placeholder="" autocomplete="off"  >    {{authority.selectedRow.extension}}
+                  </div>
+                </div>  
+                
+                <div class="form-group">
+                  <label for="fax" class="col-md-1 control-label">Fax</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="fax" placeholder="" autocomplete="off"  >   {{authority.selectedRow.fax}}
+                  </div>
+                </div>   
+                    
+                 <div class="form-group">
+                  <label for="cell" class="col-md-1 control-label">Cell</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="cell" placeholder="" autocomplete="off"  >    {{authority.selectedRow.cell}}
+                  </div>
+                </div>   
+                                                       
+                    
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-md-1 control-label">Email</label>
+
+                  <div class="col-sm-8">
+                    <textbox  type="email" class="form-control" id="inputEmail3" placeholder="Email" autocomplete="off"  >    {{authority.selectedRow.email}}
+                  </div>
+                </div>
+              
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-md-1 control-label">Request User Name</label>
+
+                  <div class="col-sm-8">
+                    <textbox  class="form-control" id="requestUserName" placeholder="cweinandt" autocomplete="off"  >    {{authority.selectedRow.requestUserName}}
+                  </div>   
+                </div> 
+                
+              <!-- /.box-body -->
+<!--
+              <div class="box-footer">
+                <button type="submit" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-info pull-right">Sign in</button>
+              </div>
+-->
+              <!-- /.box-footer -->
+            </form>
+        </div>
+</div>

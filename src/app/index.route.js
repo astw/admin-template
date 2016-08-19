@@ -42,33 +42,50 @@
 //          controllerAs:"login"
 //       })
     
+    
       .state('authority', {
+          url:'/authority',
           templateUrl:"app/layout/authority-layout.html",
           abstract:true,
           resolve: { authenticate: authenticate }
-       })
-      .state('authority.users', {
+       }) 
+    
+       .state('authority.index', {
+            url: '/index',
+            templateUrl: '/app/layout/authority-index.html',
+            controller: 'MainController',
+            controllerAs: 'main'
+       })     
+    
+      .state('authority.portal', { 
+          templateUrl:"app/layout/authority-portal-layout.html",
+          abstract:true
+       })   
+    
+      .state('authority.portal.industries', {
+        url: '/industries',
+        templateUrl: 'app/authority-portal/industries/industries.html',
+        controller: 'IndustriesController',
+        controllerAs: 'industries'
+      })
+    
+    .state('authority.portal.indusry-users', {
         url: '/industires/:permitNo/users',
         templateUrl: 'app/main/main.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
-     .state('authority.industries', {
-        url: '/industries',
-        templateUrl: 'app/industries/industries.html',
-        controller: 'IndustriesController',
-        controllerAs: 'industries'
-    })
-    .state('authority.authority', {
-        url: '/authority',
-        templateUrl: 'app/authority/authority.html',
-        controller: 'AuthorityController',
+        
+    .state('authority.portal.registration-requests', {
+        url: '/registration-requests',
+        templateUrl: 'app/authority-portal/registration/registration-requests.html',
+        controller: 'RegistrationrequestsController',
         controllerAs: 'authority'
     })
-    .state('authority.authorityAccount', {
-        url: '/authority/accounts',
-        templateUrl: 'app/authority/authority-account.html',
-        controller: 'AuthorityController',
+    .state('authority.portal.authorityAccount', {
+        url: '/accounts',
+        templateUrl: 'app/authority-portal/registration/registration-account.html',
+        controller: 'RegistrationrequestsController',
         controllerAs: 'authority'
     })
     ;
@@ -89,7 +106,7 @@
     } 
     
 
-    $urlRouterProvider.otherwise('/base/index');
+//    $urlRouterProvider.otherwise('/base/index');
     
     $locationProvider.html5Mode(true);
   }

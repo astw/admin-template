@@ -237,7 +237,7 @@
     }
       
     function getIndustyUsers(){ 
-        $state.go('users', {permitNo:vm.selectedRow.permitNo});
+        $state.go('authority.portal.indusry-users', {permitNo:vm.selectedRow.permitNo});
     }
       
     function searchChanged(){

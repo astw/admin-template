@@ -121,6 +121,12 @@
 }
 
 
+.dash-board-title :{ 
+  width:250px;
+  height: 200px;  
+}
+
+
 .fadein,
 .fadeout {
     transition: .3s linear all; 

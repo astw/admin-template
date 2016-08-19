@@ -48,7 +48,7 @@
         }
         
         if($rootScope.user !== null){
-            $state.go('authority.industries');
+            $state.go('authority.index');
         }
     }
       
