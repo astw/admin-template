@@ -128,32 +128,96 @@
         sortable: true,
         columns: [
           {
+             headerAttributes : {
+                "class" : "visible-lg visible-sm visible-md"
+              },
+            width:"15%",
             field: "firstName",
-            title: "First Name"
+            title: "First Name",
+            minScreenWidth: 960,
           },
           {   
+               headerAttributes : {
+                "class" : "visible-lg visible-sm visible-md"
+              },
+              width:"15%",
               field: "lastName",
               title: "Last Name",
+               minScreenWidth: 960,
           },
           {   
+               headerAttributes : {
+                "class" : "visible-lg visible-sm visible-md"
+              },
+              width:"20%",
               field: "phone",
               title: "Phone",
+              minScreenWidth: 960,
           },
           {   
+               headerAttributes : {
+                "class" : "visible-lg visible-sm visible-md"
+              },
+              width:"20%",
               field: "email",
               title: "Email",
+              minScreenWidth: 960,
           },
           {   
+               headerAttributes : {
+                "class" : "visible-lg visible-sm visible-md"
+              },
+              width:"10%",
               field: "registeredDate",
               title: "Data Registered",
+              minScreenWidth: 1200,
           },
           {   
+               headerAttributes : {
+                "class" : "visible-lg visible-sm visible-md"
+              },
+              width:"10%",
               field: "status",
               title: "Status",
+              minScreenWidth: 1200,
           },           
           {   
+              headerAttributes : {
+                "class" : "visible-lg visible-sm visible-md"
+              },
+              width:"10%",
               field: "locked",
               title: "AccountLocked?",
+               minScreenWidth: 1200
+          },
+            
+          {  
+            
+            headerAttributes : {
+                "class" : "hidden-md hidden-lg visible-sm visible-xs"
+            },
+            title: "User Information", 
+//             headerTemplate:'<label class="visible-sm visible-xs"> User Information </label>',
+            template:  
+                    "<div class=' visible-sm visible-xs'>" +
+                                   "<dt>First Name. </dt>" + 
+                                   "<dd>#:firstName #</dd>" +
+                                    "<dt>Last Name: </dt>" +
+                                    "<dd>#:lastName#</dd>" +
+                                    "<dt>Phone </dt>" +
+                                    "<dd>#:phone #</dd>" +
+                                
+                                    "<dt>Email </dt>" +
+                                    "<dd>#:email #</dd>" +
+                                    "<dt>Registered Date: </dt>" +
+                                    "<dd>#:registeredDate #</dd>" +     
+                                    "<dt>Status </dt>"  +
+                                    "<dd>#:status# </dd>" +
+                                    "<dt>Locked </dt>"  +
+                                    "<dd>#:locked# </dd>" + 
+              
+                       "</div>" 
+              
           }
         ] 
     }
