@@ -149,7 +149,7 @@
                headerAttributes : {
                 "class" : "visible-lg visible-sm visible-md"
               },
-              width:"20%",
+              width:"15%",
               field: "phone",
               title: "Phone",
               minScreenWidth: 960,
@@ -167,7 +167,7 @@
                headerAttributes : {
                 "class" : "visible-lg visible-sm visible-md"
               },
-              width:"10%",
+              width:"15%",
               field: "registeredDate",
               title: "Data Registered",
               minScreenWidth: 1200,
