@@ -7,15 +7,15 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" lpformnum="1">
+            
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="userEmail" ng-model="userEmail" placeholder="Enter email" autocomplete="off" >
+                  <input type="email" class="form-control" id="login.userEmail" ng-model="login.userEmail" placeholder="Enter email" autocomplete="off" >
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="userPassword" ng-model="userPassword"  placeholder="Password" autocomplete="off" >
+                  <input type="password" class="form-control" id="login.userPassword" ng-model="login.userPassword"  placeholder="Password" autocomplete="off" >
                 </div>
                  
                 <div class="checkbox">
@@ -27,11 +27,11 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button> 
+                <button type="submit" class="btn btn-primary" ng-click="login.login();" >Submit</button> 
                 
                 <a  class="pull-right" ui-sref="plain.forget-password">Forget password</a>
                   
               </div>
-            </form>
+          
           </div> 
 <div class="col-lg-4"></div>

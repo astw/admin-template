@@ -6,12 +6,20 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log, $rootScope) {
+  function runBlock($log, $rootScope, $state, $cookies) {
 
     $log.debug('runBlock end');
     $rootScope.showMenu = false;
-    
-      $rootScope.showHideExtraSmallMenu = function(){
+    $rootScope.logout = logout;
+      
+    function logout(){ 
+       console.log('in indux.run.js  logout');
+       $cookies.remove("user");
+       delete $rootScope.user; 
+      $state.go("plain.login"); 
+    }
+      
+    $rootScope.showHideExtraSmallMenu = function(){
      
         if($rootScope.showMenu == false ){
             $rootScope.showMenu = true;
@@ -20,11 +28,13 @@
         }
         
     }
-      
-    	
-	      
+          
     $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
         $rootScope.showMenu = false; 
+        
+//         if(!$rootScope.user){
+//              $state.go("plain.login");
+//         }
      })
     
       

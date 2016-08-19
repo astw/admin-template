@@ -36,7 +36,8 @@
     
       .state('authority', {
           templateUrl:"app/layout/authority-layout.html",
-          abstract:true 
+          abstract:true,
+          resolve: { authenticate: authenticate }
        })
       .state('authority.users', {
         url: '/industires/:permitNo/users',
@@ -63,10 +64,28 @@
         controllerAs: 'authority'
     })
     ;
+      
+       /** @ngInject */
+     function authenticate($q, $rootScope, $state, $timeout) {
+      if ( $rootScope.user ) {
+        // Resolve the promise successfully
+        return $q.when()
+      } else { 
+
+        $timeout(function() { 
+          $state.go('plain.login')
+        })
+ 
+        return $q.reject()
+      }
+    } 
+    
 
     $urlRouterProvider.otherwise('/login');
     
     $locationProvider.html5Mode(true);
   }
+    
+    
 
 })();
