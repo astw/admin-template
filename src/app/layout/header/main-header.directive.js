@@ -9,7 +9,7 @@
     /*ngAnnotation */
     function mainHeader(){
         return {
-            templateUrl :'/app/header/main-header.html'
+            templateUrl :'/app/layout/header/main-header.html'
         }
     }
     

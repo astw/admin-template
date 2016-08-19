@@ -53,60 +53,11 @@
             <li><a href="/contact/">Grand Rapids Environmental Services Department</a></li>
        </ul> 
             
-    <div class="wrapper">
+  <div class="wrapper">
 
-    <!-- Main Header -->
-    <header class="main-header ">
+       <div ui-view></div> 
 
-      <div main-header ></div>
 
-        
-  </header>
-     
- 
-  <aside  ng-show="showMenu === true" class="visible-xs extra-menu-panel visible-xs">  
-   <section class="sidebar ">
-      <div side-bar ></div> 
-    </section>
-  </aside>
-        
-        
-<!-- Left side column. contains the logo and sidebar -->
-   <aside class="main-sidebar visible-lg visible-md visible-sm">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <div side-bar ></div> 
-    </section>
-    <!-- /.sidebar -->
-  </aside>
-
-    <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-            <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-<!--
-    <section class="content-header">
-      <h1>
-        Page Header
-        <small>Optional description</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>  
-    </section>
--->
-
-    <!-- Main content -->
-    <section class="content">
-      <!-- Your Page Content Here --> 
-       <div ui-view></div>
-    </section>
-    <!-- /.content -->
-  </div>
   <!-- /.content-wrapper -->
 
     <!-- build:js(src) scripts/vendor.js -->
@@ -125,7 +76,7 @@
     <!-- endinject -->
     <!-- endbuild -->
 
-      </div>
+ </div>
 <!--<script src="/templates/plugins/jQuery/jquery-2.2.3.min.js"></script>-->
 <!-- Bootstrap 3.3.6 -->
 <script src="/templates/bootstrap/js/bootstrap.min.js"></script>

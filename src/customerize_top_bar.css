@@ -121,9 +121,16 @@
     } 
 }*/
  
+ 
 
 .content-wrapper {
    min-height: 980px !important;  
+}
+
+.plain-panel {
+    min-height: 980px !important;   
+    
+   background-color: white  !important;  
 }
 
 .extra-menu-pandel {

@@ -2,12 +2,12 @@
   'use strict';
   angular
     .module('testProject')
-    .directive('sideBar', sideBar);
+    .directive('industrySideBar', sideBar);
 
   /* @ngInject */
   function sideBar() {
     return {
-      templateUrl: '/app/side-bar/side-bar-template.html'
+      templateUrl: '/app/layout/side-bar/industry-side-bar-content.html'
     }
   }
 })();
