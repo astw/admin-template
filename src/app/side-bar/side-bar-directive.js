@@ -7,7 +7,7 @@
   /* @ngInject */
   function sideBar() {
     return {
-      templateUrl: '/app/side-bar-template.html'
+      templateUrl: '/app/side-bar/side-bar-template.html'
     }
   }
 })();
