@@ -280,9 +280,7 @@
                 closeOnCancel: false }, 
             function(isConfirm)
             {   
-                if (isConfirm) {  
-                    // change data 
-                    
+                if (isConfirm) {    
                     vm.selectedRow.status = vm.selectedRow.status =='Active' ?  'InActive' : 'Active';
                     $scope.$digest();
                     

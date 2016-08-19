@@ -40,8 +40,7 @@
 //          templateUrl :"app/login/login.html" ,
 //          controller:"LoginController",
 //          controllerAs:"login"
-//       })
-    
+//       }) 
     
       .state('authority', {
           url:'/authority',
@@ -62,6 +61,13 @@
           abstract:true
        })   
     
+      .state('authority.portal.inviteiu', {
+        url: '/inviteiu',
+        templateUrl: 'app/authority-portal/invite-iu/invite-iu.html',
+        controller: 'InviteiuController',
+        controllerAs: 'inviteiu'
+      })
+
       .state('authority.portal.industries', {
         url: '/industries',
         templateUrl: 'app/authority-portal/industries/industries.html',
@@ -91,8 +97,8 @@
     ;
       
        /** @ngInject */
-     function authenticate($q, $rootScope, $state, $timeout) {
-      if ( $rootScope.user ) {
+     function authenticate($q, $rootScope, $state, $timeout,$cookies) {
+      if ( $cookies.get('user') ) {
         // Resolve the promise successfully
         return $q.when()
       } else { 
@@ -106,7 +112,7 @@
     } 
     
 
-//    $urlRouterProvider.otherwise('/base/index');
+    $urlRouterProvider.otherwise('/base/index');
     
     $locationProvider.html5Mode(true);
   }

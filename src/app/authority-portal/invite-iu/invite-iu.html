@@ -1,0 +1,83 @@
+ 
+
+ 
+<section class="content-header">
+      <h1>
+        Invite User to City of Grand Rapids Authority
+        <small></small>
+      </h1>
+      <ol class="breadcrumb-left visible-lg visible-md">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home </a></li>
+          <li><a href="/authority" >authority </a></li>
+          <li  class="active"><a href="/authority" >initeiu</a> </li>  
+      </ol>  
+    
+      <div class="action-panel  visible-lg visible-md"> 
+         <button ng-disabled="industries.selectedOne === false" id="primaryTextButton" class="k-primary" > Common Action1 </button>
+          <button ng-disabled="industries.selectedOne === false" id="primaryTextButton" class="k-primary"   >Common Action2</button>
+      </div>
+</section>
+ 
+ <br/><br/>
+<div class="seperator" > </div>  
+ 
+<br/>
+
+<div ng-if="step==1">
+
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+
+    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+    <label for="exampleInputEmail1">Email address </label>
+    <div class="input-group col-lg-4 ">  
+
+          <input  type="text" class="form-control" placeholder="input you email here " ng-model="inviteiu.userEmail" ng-change="inviteiu.searchChanged()">
+          <span class="input-group-btn ">
+             <button type="button" class="btn btn-info btn-flat visible-lg visible-md" ng-click='inviteiu.inviteUser();'> 
+                Search
+              </button>    
+          </span> 
+    </div> 
+    </div>
+</div>
+<div ng-if="noSuchUser == true">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+
+    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+    
+       <label for="exampleInputEmail1">The user does not exist. Do you want to create a new user ? </label>
+       <br/>
+        
+       <button type="submit" class="btn btn-primary" ng-click="inviteiu.backStep();" >back </button>  
+       
+       <button type="submit" class="btn btn-primary" ng-click=" " >Yes </button>  
+       <button type="submit" class="btn btn-cancel" ng-click=" " >No </button>  
+        
+    </div>
+</div>
+
+<div ng-if="step ==2"> 
+    
+   <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+          
+    <div class="col-lg-4 ">
+          <div class="form-group">
+                  <label for="exampleInputEmail1">First Name</label>
+                  <input type="email" class="form-control" id="login.userEmail" ng-model="inviteiu.userFirstName" placeholder="First Name" autocomplete="off" >
+          </div> 
+                
+         <div class="form-group">
+                  <label for="exampleInputEmail1">Last Name </label>
+                  <input type="email" class="form-control" id="login.userEmail" ng-model="inviteiu.userLastName" placeholder="Last Name" autocomplete="off" >
+          </div> 
+        
+          <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="login.userEmail" ng-model="inviteiu.userEmail" placeholder="Enter email" autocomplete="off" >
+          </div> 
+          <button type="submit" class="btn btn-primary" ng-click="login.login();" >Send Email</button>  
+        </div>  
+    </div>
+</div>
+
