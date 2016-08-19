@@ -13,6 +13,14 @@
           templateUrl :"app/layout/plain-layout.html", 
           abstract:true
        })
+    
+      .state("plain.index", { 
+          url:"/index",
+          templateUrl :"app/layout/plain-index.html" ,
+//          controller:"LoginController",
+//          controllerAs:"login"
+       })
+    
       .state("plain.login", { 
           url:"/login",
           templateUrl :"app/auth/login/login.html" ,
@@ -81,7 +89,7 @@
     } 
     
 
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/base/index');
     
     $locationProvider.html5Mode(true);
   }
