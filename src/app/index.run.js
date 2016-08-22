@@ -6,17 +6,18 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log, $rootScope, $state, $cookies) {
+  function runBlock($log, $rootScope, $state, $localStorage) {
 
     $log.debug('runBlock end');
     $rootScope.showMenu = false;
     $rootScope.logout = logout;
+    $rootScope.user = $localStorage["user"];
       
     function logout(){ 
        console.log('in indux.run.js  logout');
-       $cookies.remove("user");
+       delete $localStorage.user;
        delete $rootScope.user; 
-      $state.go("plain.login"); 
+       $state.go("plain.login"); 
     }
       
     $rootScope.showHideExtraSmallMenu = function(){

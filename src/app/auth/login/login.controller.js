@@ -6,7 +6,7 @@
     .controller('LoginController', LoginController);
 
   /** @ngInject */
-  function LoginController($timeout, $rootScope, $cookies, $scope,$stateParams, $state) { 
+  function LoginController($timeout, $rootScope, $localStorage, $scope,$stateParams, $state) { 
       
     var vm = this; 
     activate();
@@ -33,7 +33,7 @@
                 userPermission : ""
             };
             $rootScope.user = user;
-            $cookies.put("user", user); 
+            $localStorage["user"] = user;
         }
         
         else if(vm.userEmail == 'bb@linko.com'  && vm.userPassword == "bb1234"){
@@ -44,7 +44,7 @@
                 userPermission : ""
             };
             $rootScope.user = user;
-            $cookies.put("user", user); 
+            $localStorage["user"] = user;
         }
         
         if($rootScope.user !== null){

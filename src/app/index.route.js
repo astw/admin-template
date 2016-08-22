@@ -97,8 +97,11 @@
     ;
       
        /** @ngInject */
-     function authenticate($q, $rootScope, $state, $timeout,$cookies) {
-      if ( $cookies.get('user') ) {
+     function authenticate($q, $rootScope, $state, $timeout,$localStorage) {
+      var user = $localStorage['user']; 
+          
+      if (user) {
+        $rootScope.user = user;  
         // Resolve the promise successfully
         return $q.when()
       } else { 
