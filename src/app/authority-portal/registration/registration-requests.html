@@ -6,8 +6,9 @@
             <small> Registration Pending Approval </small>
           </h1>
           <ol class="breadcrumb-left  visible-lg visible-md">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Authority </a></li>
-            <li class="active"> Pending Approval</li>
+            <li><a href="/authority/index"><i class="fa fa-dashboard"></i> Authority </a></li>  
+            <li><a href="/authority/registration-requests"> Pending Approval </a></li>  
+             <li class="active"> <a href="#"> User Profile </a></li>
           </ol>  
     </section>
 
@@ -33,6 +34,7 @@
           <button  id="primaryTextButton" class="k-primary" ng-click="authority.approvalRegistration()"  > Approve </button>
      </div>
 
+    <br/>
     <div kendo-grid='authority.grid' options="mainGridOptions_2" > 
     </div>
 
@@ -47,8 +49,9 @@
   
         </section>
               <ol class="breadcrumb-left">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Authority </a></li>
-                <li class="active">View User Profile</li>
+               <li><a href="/authority/index"><i class="fa fa-dashboard"></i> Authority </a></li>  
+               <li><a ng-click="authority.registrationPendingApproval()" > Pending Approval </a></li>  
+               <li class="active"> <a href="#"> User Profile </a></li>
               </ol>
         <br/> <br/>
         
