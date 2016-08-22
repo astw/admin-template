@@ -129,7 +129,7 @@
 
 .fadein,
 .fadeout {
-    transition: .3s linear all; 
+    transition: .1s linear all; 
     overflow: hidden;
 /*
   -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
