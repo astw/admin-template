@@ -3,13 +3,19 @@
 
   angular
     .module('testProject')
-    .controller('IndustriesController', IndustriesController);
+    .controller('IndustrydetailsController', IndustrydetailsController);
 
   /** @ngInject */
-  function IndustriesController($timeout,$rootScope, $scope, $state) {
+  function IndustrydetailsController($timeout,$rootScope, $scope, $state) {
     var vm = this;
 
     vm.enabledButtonText = 'Disable';
+    if($rootScope.selectedIndustry.enabled == "Yes"){
+      vm.enabledButtonText = 'Disable';
+    }  else {
+      vm.enabledButtonText = 'enabled';
+    }
+
 
     vm.industryUsers = getIndustyUsers;
     vm.changeIndustryStatus = changeIndustryStatus;
@@ -17,6 +23,8 @@
     vm.advancedSearch = advancedSearch;
     vm.searchButtonText = 'Advanced Search';
     vm.searchButtonText2 = 'AS';
+
+    vm.selectedOne = false;
 
 
     function onChange(arg)
@@ -27,12 +35,10 @@
 
         });
 
-
         vm.selectedRow = this.dataItem(this.select());
         vm.selectedOne = true;
 
-      $rootScope.selectedIndustry = vm.selectedRow;
-      var disabled = this.dataItem(this.select()).enabled;
+        var disabled = this.dataItem(this.select()).enabled;
 
         if(disabled == 'Yes'){
             vm.enabledButtonText = 'Disable';
@@ -42,6 +48,9 @@
 
         $scope.$digest();
 
+//     $state.go("authority.portal.industries.details");
+
+       $rootScope.selectedIndustry = vm.selectedRow;
        $state.go('authority.portal.industry-details');
 
        console.log("Selected: " + selected.length + " item(s), [" + selected.join(", ") + "]");
@@ -327,12 +336,10 @@
     }
 
     function getIndustyUsers(){
-        $state.go('authority.portal.indusry-users', {permitNo:vm.selectedRow.permitNo});
+        $state.go('authority.portal.industryUsers',{permitNo:$rootScope.selectedIndustry.permitNo});
     }
 
     function searchChanged(){
-        console.log('input =' +  vm.searchKey);
-
         var data = vm.data;
         var filterData = industryFilter(data, vm.searchKey);
 

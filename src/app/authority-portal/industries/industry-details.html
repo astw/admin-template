@@ -1,0 +1,119 @@
+ <style>
+  right-label
+     {
+         display: inline-block;
+         width: 140px; text-align: right;
+    }
+</style>
+<section class="content-header">
+      <h1>
+        Industry Details
+      </h1>
+      <ol class="breadcrumb-left visible-lg visible-md">
+          <li><a href="/authority/index"><i class="fa fa-home"></i> Home </a></li>
+          <li class=""><a href="/authority/industries"> Industries </a></li>
+          <li class="active">Details</li>
+
+      </ol>
+
+</section>
+
+ <br/><br/>
+<div class="seperator" > </div>
+
+
+<div class="row ">
+
+
+    <div class="col-lg-9 col-md-11 col-sm-12 col-xs-12 input-group">
+          <div class=" pull-right" >
+            <div class="pull-right  visible-lg visible-md"  >
+              <button  id="enableDisableButton" class="k-primary" ng-click="industrydetails.changeIndustryStatus();"  > {{industrydetails.enabledButtonText}} </button>
+
+              <button ng-disabled="industries.selectedOne === false" id="indusryUser" class="k-primary" ng-click="industrydetails.industryUsers();"  >Industry User</button>
+           </div>
+        </div>
+
+<div class="">
+
+
+<div class=" visible-xs visible-sm"  >
+    <button  id="smallenableDisableButton" class="k-primary" ng-click="industrydetails.changeIndustryStatus();"  > {{industrydetails.enabledButtonText}} </button>
+    <button ng-disabled="industries.selectedOne === false" id="primaryTextButton" class="k-primary" ng-click="industries.industryUsers();"  >Industry User</button>
+</div>
+
+  </div>
+ </div>
+ <form class=" ">
+      <div class="col-md-11 col-sm-11 ">
+             <div class="row">
+               <br />
+             </div>
+
+                <div class="row">
+
+                    <div class=" ">
+                        <label for="phone" class="col-lg-2 col-md-4 col-sm-12 col-xs-12 control-label">Industry Number</label>
+
+                      <div class="col-lg-3 col-md-6 col-sm-12">
+                          <label type="text" readonly class="form-control" id="phone" >{{selectedIndustry.permitNo}}  </label>
+                      </div>
+
+                      <label for="assignto" class="col-lg-2 col-md-4 col-sm-12 col-xs-12  control-label">Assign To</label>
+                      <div class="col-lg-3 col-md-6 col-sm-12">
+                           <label type="text" readonly class="form-control" id="phone" >{{selectedIndustry.assignTo}}  </label>
+                      </div>
+                    </div>
+                </div>
+
+               <div class="row">
+                    <div class="form-group">
+                        <label for="Address" class="col-lg-2 col-md-4  col-sm-12 col-xs-12 control-label">Industry Name</label>
+
+                      <div class="col-lg-3 col-md-6  col-sm-12 col-xs-12">
+                        <textarea  rows="2" class="form-control" id="Address" readonly autocomplete="off"  >{{selectedIndustry.address}}
+                          </textarea>
+                      </div>
+
+                      <label for="mailingAddress" class="col-lg-2 col-md-4  col-sm-12 col-xs-12 control-label">Address </label>
+                      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                         <textarea  rows="2" class="form-control" id="Address" readonly autocomplete="off"  >{{selectedIndustry.address}}
+                          </textarea>
+                      </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="lastsubmission" class="col-lg-2 col-md-4  col-sm-12 col-xs-12  control-label">Last Submission</label>
+
+                      <div class="col-lg-3 col-md-6  col-sm-12 col-xs-12 ">
+                           <label type="text" readonly class="form-control" id="phone" >{{selectedIndustry.lastsubmission}}  </label>
+                      </div>
+
+                      <label for="hasSignatory" class="col-lg-2 col-md-4  col-sm-12 col-xs-12 control-label">Has Signatory?</label>
+                      <div class="col-lg-3 col-md-6  col-sm-12 col-xs-12">
+                          <label type="text"  readonly class="form-control" id="phone" >{{selectedIndustry.hasSignatory}}  </label>
+                      </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="activeDataEntryForTemplates" class="col-lg-2 col-md-4  col-sm-12 col-xs-12 control-label">Active Data Entry Form Templates</label>
+
+                      <div class="col-lg-3 col-md-6  col-sm-12 col-xs-12">
+                        <textarea  rows="2" class="form-control" id="activeDataEntryForTemplates" readonly autocomplete="off"  >{{selectedIndustry.activeDataEntryForTemplates}}
+                          </textarea>
+                      </div>
+
+                       <label for="enabled" class="col-lg-2 col-md-4  col-sm-12 col-xs-12 control-label">Has Enabled?</label>
+                      <div class="col-lg-3 col-md-6  col-sm-12 col-xs-12">
+                          <label type="text" readonly class="form-control" id="phone" >{{selectedIndustry.enabled}}  </label>
+                      </div>
+                    </div>
+                </div>
+          </form>
+       </div>
