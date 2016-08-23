@@ -83,7 +83,7 @@
     .state('authority.portal.industryUsers', {
         url: '/industries/:permitNo/users',
         templateUrl: 'app/main/main.html',
-        controller: 'MainController',
+        controller: 'IndustryusersController',
         controllerAs: 'main'
       })
     .state('authority.portal.industry-user-details', {

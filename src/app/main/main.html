@@ -1,21 +1,17 @@
 
- 
+
 <section class="content-header">
-      <h1>
-       {{main.industryText}}
+      <h1>Users of {{selectedIndustry.industry}}
       </h1>
       <ol class="breadcrumb-left  visible-lg visible-md">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home </a></li>
-        <li class="active">Industries</li>
-      </ol>  
-    
-      <div class="action-panel"> 
-         <button ng-disabled="industries.selectedOne === false" id="primaryTextButton" class="k-primary" > Common Action1 </button>
-          <button ng-disabled="industries.selectedOne === false" id="primaryTextButton" class="k-primary"   >Common Action2</button>
-      </div>
-</section> 
- 
-<br/> <br/> 
+        <li class="active"> <a href="/authority/industries"> Industries </a>  </li>
+        <li class="active"> <a href="#"> Users </a>  </li>
+      </ol>
+
+</section>
+
+<br/> <br/>
 
 <div class="seperator" > </div>
 
@@ -26,49 +22,49 @@
     <button id="primaryTextButton" class="k-primary" ng-click="main.changeUserLockStatus();" > {{main.lockButtonText }}</button>
     <button id="primaryTextButton" class="k-primary" >Invite User</button>
 </div>
- 
+
 <br/>
 <br/>
 <div>
-<kendo-grid options="mainGridOptions_2" />  
+<kendo-grid options="mainGridOptions_2" />
 
-<div kendo-grid='grid' id="users-grid"  k-data-source="users"  
+<div kendo-grid='grid' id="users-grid"  k-data-source="users"
     k-pageable='{ "refresh": true, "pageSizes": true }'
     k-selectable ='row'
-    k-sortable='true' 
+    k-sortable='true'
     k-on-change ='main.onchange(kendoEvent)'
     k-columns = '[
           {
             "field": "firstName",
             "title": "First Name"
           },
-          {   
+          {
               "field": "lastName",
               "title": "Last Name",
           },
-          {   
+          {
               "field": "phone",
               "title": "Phone",
           },
-          {   
+          {
               "field": "email",
               "title": "Email",
           },
-          {   
+          {
               "field": "registeredDate",
               "title": "Data Registered",
           },
-          {   
+          {
               "field": "status",
               "title": "Status",
-          },           
-          {   
+          },
+          {
               "field": "locked",
               "title": "AccountLocked?",
           }
         ]'
-    
-     
+
+
      k-sortable="true", k-groupable="true", k-filterable="true"
-  >   
- </div> 
+  >
+ </div>

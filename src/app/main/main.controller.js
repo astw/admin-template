@@ -3,78 +3,74 @@
 
   angular
     .module('testProject')
-    .controller('MainController', MainController);
+    .controller('IndustryusersController', IndustryusersController);
 
   /** @ngInject */
-  function MainController($timeout, $scope,$stateParams, webDevTec, toastr) {
+  function IndustryusersController($timeout, $scope,$stateParams, webDevTec, toastr) {
     var vm = this;
 
-    vm.awesomeThings = [];
-    vm.classAnimation = '';
-    vm.creationDate = 1471276328751; 
-    vm.testMessage = "this is a test message";
-  
+
     vm.lockButtonText = 'Unlock';
     vm.enabledButtonText = 'Disable';
-    
+
     vm.changeUserActiveStatus =  changeUserActiveStatus;
     vm.changeUserLockStatus =  changeUserLockStatus;
     vm.removeUser = removeUser;
-      
+
     vm.onchange = onchange;
-    
-      
+
+
     console.log($stateParams.selectedRow);
-      
-   var permitNo = $stateParams.permitNo; 
+
+   var permitNo = $stateParams.permitNo;
 
 
   if(permitNo == '0040')
    {
-       vm.industryText = "Valley City Plating"; 
-   } 
-   else if (permitNo == '0050')  
+       vm.industryText = "Valley City Plating";
+   }
+   else if (permitNo == '0050')
    {
         vm.industryText = "WaterTrax plant";
-   } 
-   else if (permitNo == '0060') 
+   }
+   else if (permitNo == '0060')
    {
       vm.industryText = "Linkco Plating";
-   } 
-      
+   }
+
     function onChange(arg)
     {
-        vm.grid = arg.sender; 
-        
-        var selected = $.map(this.select(), function(item) {
-        
-            return $(item).text();
-             
-        }); 
+        vm.grid = arg.sender;
 
-        vm.selectedRow = this.dataItem(this.select()); 
-        
-        var disabled = vm.selectedRow.status; 
-        var locked =  vm.selectedRow.locked; 
-        
+        var selected = $.map(this.select(), function(item) {
+
+            return $(item).text();
+
+        });
+
+        vm.selectedRow = this.dataItem(this.select());
+
+        var disabled = vm.selectedRow.status;
+        var locked =  vm.selectedRow.locked;
+
         if(disabled == 'Active'){
             vm.enabledButtonText = 'Disable';
         } else {
             vm.enabledButtonText = 'Enable'
         }
-        
+
         if(locked == 'Locked'){
             vm.lockButtonText = 'Unlock';
         } else {
             vm.lockButtonText = 'Lock'
-        } 
-         
-        
+        }
+
+
         $scope.$digest();
-        
+
        console.log("Selected: " + selected.length + " item(s), [" + selected.join(", ") + "]");
     }
-      
+
     var data =  [
               {
                 firstName: "Eric",
@@ -112,17 +108,17 @@
                 status:"Active",
                 locked:"No"
               }
-          
+
       ]
-    
+
     $scope.users = new kendo.data.DataSource({ data:data });
-      
-    vm.data = data;  
+
+    vm.data = data;
     $scope.mainGridOptions_2 = {
-        dataSource :{ 
-            data:vm.data 
+        dataSource :{
+            data:vm.data
         },
-        
+
         change: onChange,
         selectable: "row",
         sortable: true,
@@ -131,21 +127,21 @@
              headerAttributes : {
                 "class" : "visible-lg visible-sm visible-md"
               },
-            width:"15%",
+            width:"12.5%",
             field: "firstName",
             title: "First Name",
             minScreenWidth: 960,
           },
-          {   
+          {
                headerAttributes : {
                 "class" : "visible-lg visible-sm visible-md"
               },
-              width:"15%",
+              width:"12.5%",
               field: "lastName",
               title: "Last Name",
                minScreenWidth: 960,
           },
-          {   
+          {
                headerAttributes : {
                 "class" : "visible-lg visible-sm visible-md"
               },
@@ -154,7 +150,7 @@
               title: "Phone",
               minScreenWidth: 960,
           },
-          {   
+          {
                headerAttributes : {
                 "class" : "visible-lg visible-sm visible-md"
               },
@@ -163,7 +159,7 @@
               title: "Email",
               minScreenWidth: 960,
           },
-          {   
+          {
                headerAttributes : {
                 "class" : "visible-lg visible-sm visible-md"
               },
@@ -172,7 +168,7 @@
               title: "Data Registered",
               minScreenWidth: 1200,
           },
-          {   
+          {
                headerAttributes : {
                 "class" : "visible-lg visible-sm visible-md"
               },
@@ -180,8 +176,8 @@
               field: "status",
               title: "Status",
               minScreenWidth: 1200,
-          },           
-          {   
+          },
+          {
               headerAttributes : {
                 "class" : "visible-lg visible-sm visible-md"
               },
@@ -190,43 +186,48 @@
               title: "AccountLocked?",
                minScreenWidth: 1200
           },
-            
-          {  
-            
+          {
+              width:'5%',
+              template:
+                    "<div class='fa fa-edit fa-lg'>" +  "</div>"
+
+          },
+          {
+
             headerAttributes : {
                 "class" : "hidden-md hidden-lg visible-sm visible-xs"
             },
-            title: "User Information", 
+            title: "User Information",
 //             headerTemplate:'<label class="visible-sm visible-xs"> User Information </label>',
-            template:  
+            template:
                     "<div class=' visible-sm visible-xs'>" +
-                                   "<dt>First Name. </dt>" + 
+                                   "<dt>First Name. </dt>" +
                                    "<dd>#:firstName #</dd>" +
                                     "<dt>Last Name: </dt>" +
                                     "<dd>#:lastName#</dd>" +
                                     "<dt>Phone </dt>" +
                                     "<dd>#:phone #</dd>" +
-                                
+
                                     "<dt>Email </dt>" +
                                     "<dd>#:email #</dd>" +
                                     "<dt>Registered Date: </dt>" +
-                                    "<dd>#:registeredDate #</dd>" +     
+                                    "<dd>#:registeredDate #</dd>" +
                                     "<dt>Status </dt>"  +
                                     "<dd>#:status# </dd>" +
                                     "<dt>Locked </dt>"  +
-                                    "<dd>#:locked# </dd>" + 
-              
-                       "</div>" 
-              
+                                    "<dd>#:locked# </dd>" +
+
+                       "</div>"
+
           }
-        ] 
+        ]
     }
-    
-     
+
+
     activate();
 
-    function activate() { 
-         
+    function activate() {
+
         $scope.mainGridOptions = {
                 dataSource: {
                     type: "odata",
@@ -263,88 +264,88 @@
                 }]
             };
     }
-      
-      
-    function changeUserActiveStatus(){ 
-        
+
+
+    function changeUserActiveStatus(){
+
         swal(
-            {   
-                title: "Are you sure?",   
-                text: "You will change user active status!",   
-                type: "warning",   
-                showCancelButton: true,   
-                confirmButtonColor: "#DD6B55",   
-                confirmButtonText: "Yes, change it!",   
-                cancelButtonText: "No, cancel!",   
-                closeOnConfirm: false,   
-                closeOnCancel: false }, 
+            {
+                title: "Are you sure?",
+                text: "You will change user active status!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, change it!",
+                cancelButtonText: "No, cancel!",
+                closeOnConfirm: false,
+                closeOnCancel: false },
             function(isConfirm)
-            {   
-                if (isConfirm) {    
+            {
+                if (isConfirm) {
                     vm.selectedRow.status = vm.selectedRow.status =='Active' ?  'InActive' : 'Active';
                     $scope.$digest();
-                    
-                    swal("Changed!", "User active status has been changed.", "success");  
+
+                    swal("Changed!", "User active status has been changed.", "success");
                 } else {
-                    swal("Cancelled", "User active status is not changed.", "error");   
-                } 
+                    swal("Cancelled", "User active status is not changed.", "error");
+                }
             }
-        );  
+        );
     }
-      
+
     function changeUserLockStatus(){
-         
+
         swal(
-            {   
-                title: "Are you sure?",   
-                text: "You will change user lock status!",   
-                type: "warning",   
-                showCancelButton: true,   
-                confirmButtonColor: "#DD6B55",   
-                confirmButtonText: "Yes, change it!",   
-                cancelButtonText: "No, cancel!",   
-                closeOnConfirm: false,   
-                closeOnCancel: false }, 
+            {
+                title: "Are you sure?",
+                text: "You will change user lock status!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, change it!",
+                cancelButtonText: "No, cancel!",
+                closeOnConfirm: false,
+                closeOnCancel: false },
             function(isConfirm)
-            {   
-                if (isConfirm) {  
-                    // change data 
-                    
+            {
+                if (isConfirm) {
+                    // change data
+
                     vm.selectedRow.status = vm.selectedRow.locked =='Locked' ?  'No' : 'Locked';
                     $scope.$digest();
-                    
-                    swal("Changed!", "User lock status has been changed.", "success");  
+
+                    swal("Changed!", "User lock status has been changed.", "success");
                 } else {
-                    swal("Cancelled", "User lock status is not changed.", "error");   
-                } 
+                    swal("Cancelled", "User lock status is not changed.", "error");
+                }
             }
-        );  
+        );
     }
-      
+
     function removeUser(){
-        
+
            swal(
-            {   
-                title: "Are you sure?",   
-                text: "You will remove the user from the industry!",   
-                type: "warning",   
-                showCancelButton: true,   
-                confirmButtonColor: "#DD6B55",   
-                confirmButtonText: "Yes, remove it!",   
-                cancelButtonText: "No, cancel!",   
-                closeOnConfirm: false,   
-                closeOnCancel: false }, 
+            {
+                title: "Are you sure?",
+                text: "You will remove the user from the industry!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, remove it!",
+                cancelButtonText: "No, cancel!",
+                closeOnConfirm: false,
+                closeOnCancel: false },
             function(isConfirm)
-            {   
-                if (isConfirm) {   
-                    swal("Changed!", "User lock status has been changed.", "success");  
-                    vm.grid.dataSource.remove(vm.selectedRow);   
+            {
+                if (isConfirm) {
+                    swal("Changed!", "User lock status has been changed.", "success");
+                    vm.grid.dataSource.remove(vm.selectedRow);
                 } else {
-                    swal("Cancelled", "User lock status is not changed.", "error");   
-                } 
+                    swal("Cancelled", "User lock status is not changed.", "error");
+                }
             }
-        );   
+        );
     }
-      
+
   }
 })();
