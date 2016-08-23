@@ -40,7 +40,7 @@
 
 
 .breadcrumb-left > li + li:before {
-   content: "/\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+   content: "| \00a0"; // Unicode space added since inline-block means non-collapsing white-space
    padding: 0 5px;
    color: #ccc; 
 }
@@ -161,3 +161,9 @@
     position: absolute;
     top: 50%;
 }
+
+.program-font {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    
+}
+
