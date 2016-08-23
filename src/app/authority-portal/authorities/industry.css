@@ -1,4 +1,14 @@
+
+
+.k-grid  .k-grid-header  .k-header  .k-link {
+    height: auto;
+}
+  
+.k-grid  .k-grid-header  .k-header {
+    white-space: normal;
+}
+
 .k-grid table tbody tr:{
-    cursor: pointer !important;
+    cursor: pointer;
 }
  

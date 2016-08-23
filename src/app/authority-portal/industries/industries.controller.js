@@ -50,32 +50,104 @@
               {
                 permitNo: "0040",
                 industry: "Valley City Plating",
-                address:"100 E 26E Street Grand Rapids Mi 49508",
+                address:"100 E. 26th Street Grand Rapids MI 49508",
                 enabled:"Yes",
                 hasSignatory:"No",
-                assignTo:"",
-                lastSubmission:""
+                assignTo:"KA",
+                lastSubmission:"",
+                activeDataEntryForTemplates:2
               },
         {
-                permitNo: "0050",
-                industry: "WaterTrax plant",
-                address:"1050 West Pender Vancouver ",
-                enabled:"No",
-                hasSignatory:"No",
-                assignTo:"",
-                lastSubmission:""
+                permitNo: "8296",
+                industry: "Kerry Sweet Ingredients",
+                address:"4444 52nd St. SE. Kentwood MI 49512",
+                enabled:"Yes",
+                hasSignatory:"Yes",
+                assignTo:"BF",
+                lastSubmission:"",
+                activeDataEntryForTemplates:0
               },
         
         {
-                permitNo: "0060",
-                industry: "Linkco Plating",
-                address:"100 E 26E Street Grand Rapids Mi 49508",
+                permitNo: "0032",
+                industry: "Lacks Enterprises (Plastic Plate)",
+                address:"1648 Monroe Ave., N.W.Grand Rapids, MI 49505",
                 enabled:"Yes",
                 hasSignatory:"No",
-                assignTo:"",
-                lastSubmission:""
-              } 
-          
+                assignTo:"KA",
+                lastSubmission:"",
+                activeDataEntryForTemplates:0
+              },
+         {
+                permitNo: "0469",
+                industry: "Lacks Enterprises (Plastic Plate)",
+                address:"4375 52nd St. SE Kentwood, MI 49512",
+                enabled:"Yes",
+                hasSignatory:"No",
+                assignTo:"KA",
+                lastSubmission:"",
+                activeDataEntryForTemplates:0
+              },
+         {
+                permitNo: "0062",
+                industry: "Access Business Group L.L.C.",
+                address:"7575 Fulton, E. Ada, MI 49355",
+                enabled:"Yes",
+                hasSignatory:"No",
+                assignTo:"BF",
+                lastSubmission:"",
+                activeDataEntryForTemplates:0
+          },
+          {
+                permitNo: "0711",
+                industry: "Lacks Industries, Inc.  (0711)",
+                address:"4090 Barden S.E. Kentwood, MI 49512",
+                enabled:"Yes",
+                hasSignatory:"No",
+                assignTo:"KA",
+                lastSubmission:"",
+                activeDataEntryForTemplates:0
+          },   
+           {
+                permitNo: "8296",
+                industry: "Kerry Sweet Ingredients",
+                address:"4444 52nd St. SE Kentwood, MI 49512",
+                enabled:"Yes",
+                hasSignatory:"No",
+                assignTo:"BF",
+                lastSubmission:"",
+                activeDataEntryForTemplates:0
+          },  
+         {
+                permitNo: "0718",
+                industry: "Advance Plating and Finishing",
+                address:"840 Cottage Grove St. SE Grand Rapids MI 49507",
+                enabled:"Yes",
+                hasSignatory:"No",
+                assignTo:"KA",
+                lastSubmission:"",
+                activeDataEntryForTemplates:0
+          }, 
+         {
+                permitNo: "0762",
+                industry: "Coatings Plus, Inc.",
+                address:"675 Chestnut St. SW Grand Rapids MI 49503",
+                enabled:"Yes",
+                hasSignatory:"Yes",
+                assignTo:"BF",
+                lastSubmission:"",
+                activeDataEntryForTemplates:0
+          },  
+        {
+                permitNo: "0764",
+                industry: "Lacks Enterprises (Paint West)",
+                address:"4245 52nd St. Kentwood, MI 49512",
+                enabled:"Yes",
+                hasSignatory:"Yes",
+                assignTo:"KA",
+                lastSubmission:"",
+                activeDataEntryForTemplates:0
+          }, 
       ]
       
     vm.data = data; 
@@ -94,7 +166,7 @@
         columns: [
              
           {
-            width:'10%',
+            width:'11%',
             field: "permitNo",
             title: "Permit No.",
             minScreenWidth: 960,
@@ -114,7 +186,7 @@
               minScreenWidth: 960,
           },
           {   
-              width:'10%',
+              width:'11%',
               field: "enabled",
               //  width:150,
               title: "Enabled?",
@@ -124,26 +196,41 @@
               }
           },
           {   
-              width:'10%',
-              field: "hasSignatory",
-//               width:150,
+              width:'13%',
+              field: "hasSignatory", 
               title: "Has Signatory?",
               minScreenWidth: 1000,
           },
           {   
-              width:'30%',
-              field: "assignTo",
-//               width:150,
+              width:'11%',
+              field: "assignTo", 
               title: "Assign To",
               minScreenWidth: 1000,
           },           
           {   
-              width:'30%',
-              field: "lastSubmission",
-//              width:150,
+              width:'15%',
+              field: "lastSubmission", 
               title: "Last Submission",
               minScreenWidth: 1200,
           },
+        
+         {   
+              width:'15%',
+              field: "activeDataEntryForTemplates", 
+              title: "Active Data Entry Form Templates",
+//              headerAttributes : {
+//                "class" : "visible-lg visible-md"
+//              },
+//              headerTemplate:'<label class="visible-lg visible-md"> Active Data Entry Form Templates </label>',
+              minScreenWidth: 1200,
+          },
+         {   
+              width:'5%', 
+             
+              template:  
+                    "<div class='fa fa-edit fa-lg'>" +  "</div>"  
+         
+          }, 
             
           {  
             headerAttributes : {
