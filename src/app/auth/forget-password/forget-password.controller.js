@@ -3,7 +3,7 @@
 
   angular
     .module('testProject')
-    .controller('ForgetPasswordController', ForgetPasswordController);
+    .controller('ForgetController', ForgetPasswordController);
 
   /** @ngInject */
   function ForgetPasswordController($timeout, $scope,$stateParams, webDevTec, toastr) { 

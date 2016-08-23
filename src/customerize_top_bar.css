@@ -63,6 +63,7 @@
 @media (min-width: 768px) {
    .control-label{
       text-align: left; 
+       margin-left: 10px;
   }
 }
 
@@ -149,4 +150,14 @@
 .fadein.ng-hide-remove.ng-hide-remove-active {
   opacity: 1;
   display: block !important;
+}
+
+
+ .fixed-wrapper {
+    text-align: center;
+}
+
+.fixed-button {
+    position: absolute;
+    top: 50%;
 }
