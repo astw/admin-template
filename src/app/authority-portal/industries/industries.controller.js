@@ -169,27 +169,27 @@
         columns: [
 
           {
-            width:'11%',
+            width:'10%',
             field: "permitNo",
             title: "Permit No.",
             minScreenWidth: 960,
           },
 
           {
-              width:'30%',
+              width:'20%',
               field: "industry",
               title: "Industry",
               minScreenWidth: 960,
           },
           {
-              width:'40%',
+              width:'25%',
               field: "address",
               //width:450,
               title: "Address",
               minScreenWidth: 960,
           },
           {
-              width:'11%',
+              width:'13%',
               field: "enabled",
               //  width:150,
               title: "Enabled?",
@@ -205,33 +205,17 @@
               minScreenWidth: 1000,
           },
           {
-              width:'11%',
+              width:'13%',
               field: "assignTo",
-              title: "Assign To",
+              title: "Assigned To",
               minScreenWidth: 1000,
           },
-          {
-              width:'15%',
-              field: "lastSubmission",
-              title: "Last Submission",
-              minScreenWidth: 1200,
-          },
 
-         {
-              width:'15%',
-              field: "activeDataEntryForTemplates",
-              title: "Active Data Entry Form Templates",
-//              headerAttributes : {
-//                "class" : "visible-lg visible-md"
-//              },
-//              headerTemplate:'<label class="visible-lg visible-md"> Active Data Entry Form Templates </label>',
-              minScreenWidth: 1200,
-          },
+
          {
               width:'5%',
-
               template:
-                    "<div class='fa fa-edit fa-lg'>" +  "</div>"
+                    "<div class='fa  fa-chevron-circle-right fa-2x'>" +  "</div>"
 
           },
 

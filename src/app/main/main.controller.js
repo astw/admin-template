@@ -6,7 +6,7 @@
     .controller('IndustryusersController', IndustryusersController);
 
   /** @ngInject */
-  function IndustryusersController($timeout, $scope,$stateParams, webDevTec, toastr) {
+  function IndustryusersController($timeout, $rootScope, $state, $scope,$stateParams, webDevTec, toastr) {
     var vm = this;
 
 
@@ -25,19 +25,6 @@
    var permitNo = $stateParams.permitNo;
 
 
-  if(permitNo == '0040')
-   {
-       vm.industryText = "Valley City Plating";
-   }
-   else if (permitNo == '0050')
-   {
-        vm.industryText = "WaterTrax plant";
-   }
-   else if (permitNo == '0060')
-   {
-      vm.industryText = "Linkco Plating";
-   }
-
     function onChange(arg)
     {
         vm.grid = arg.sender;
@@ -49,6 +36,7 @@
         });
 
         vm.selectedRow = this.dataItem(this.select());
+        $rootScope.selectedUser = vm.selectedRow;
 
         var disabled = vm.selectedRow.status;
         var locked =  vm.selectedRow.locked;
@@ -65,6 +53,7 @@
             vm.lockButtonText = 'Lock'
         }
 
+       $state.go("authority.portal.industry-user-details",{userId:$rootScope.selectedUser.userId});
 
         $scope.$digest();
 
@@ -73,6 +62,7 @@
 
     var data =  [
               {
+                userId:1,
                 firstName: "Eric",
                 lastName: "Snell",
                 phone:"(772)-496-4160",
@@ -82,6 +72,7 @@
                 locked:"Locked"
               },
               {
+              userId:2,
                 firstName: "Chris",
                 lastName: "Weinandt",
                 phone:"(770)-496-4160",
@@ -90,7 +81,7 @@
                 status:"Active",
                 locked:"Locked"
               },
-              {
+              {   userId:3,
                 firstName: "Eric",
                 lastName: "Snell",
                 phone:"(772)-496-4160",
@@ -99,7 +90,7 @@
                 status:"InActive",
                 locked:"No"
               },
-              {
+              {   userId:4,
                 firstName: "Chris",
                 lastName: "Weinandt",
                 phone:"(770)-496-4160",

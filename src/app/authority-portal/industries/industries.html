@@ -1,5 +1,5 @@
- 
-     
+
+
 </style>
 <section class="content-header">
       <h1>
@@ -9,38 +9,38 @@
       <ol class="breadcrumb-left visible-lg visible-md">
         <li><a href="/authority/index"><i class="fa fa-dashboard"></i> Home </a></li>
         <li class="active">Industries</li>
-      </ol>  
- 
+      </ol>
+
 </section>
- 
+
  <br/><br/>
-<div class="seperator" > </div>  
- 
+<div class="seperator" > </div>
+
 
 <div class="row">
   <div class="col-lg-4">
    <input  type="text" class="form-control" placeholder="Search for Permit No., Industry, Address" ng-model="industries.searchKey" ng-change="industries.searchChanged()">
-  </div>    
-  
+  </div>
+
   <div class="col-lg-8"></div>
 </div>
 
 <!--
-  <div class="pull-right  visible-lg visible-md"  >  
+  <div class="pull-right  visible-lg visible-md"  >
     <button ng-disabled="industries.selectedOne === false"  id="primaryTextButton" class="k-primary" ng-click="industries.changeIndustryStatus();"  > {{industries.enabledButtonText }} </button>
     <button ng-disabled="industries.selectedOne === false" id="primaryTextButton" class="k-primary" ng-click="industries.industryUsers();"  >Industry User</button>
-  </div> 
+  </div>
 -->
 <br/>
 <div class="row">
-<div class="col-lg-1">
-         
-         <button type="button" class="btn btn-block btn-primary btn-xs visible-lg visible-md" ng-click='industries.advancedSearch();'> 
-                     {{industries.searchButtonText}}! 
-         </button>  
-         <button type="button" class="btn btn-block btn-primary btn-xs visible-sm visible-xs" ng-click='industries.advancedSearch();'> 
-                     {{industries.searchButtonText2}}! 
-         </button>  
+<div class="col-lg-2">
+
+         <button type="button" class="btn btn-block btn-primary btn-sm visible-lg visible-md" ng-click='industries.advancedSearch();'>
+                     {{industries.searchButtonText}}!
+         </button>
+         <button type="button" class="btn btn-block btn-primary btn-sm visible-sm visible-xs" ng-click='industries.advancedSearch();'>
+                     {{industries.searchButtonText2}}!
+         </button>
 
 </div>
 <div class="col-lg-11">
@@ -48,11 +48,11 @@
 </div>
 </div>
 
-        
-<div class=" visible-xs visible-sm"  >  
+
+<div class=" visible-xs visible-sm"  >
     <button ng-disabled="industries.selectedOne === false"  id="primaryTextButton" class="k-primary" ng-click="industries.changeIndustryStatus();"  > {{industries.enabledButtonText }} </button>
     <button ng-disabled="industries.selectedOne === false" id="primaryTextButton" class="k-primary" ng-click="industries.industryUsers();"  >Industry User</button>
-</div> 
+</div>
 
-<div kendo-grid='industries.industryGrid'  k-options="mainGridOptions_2" > 
+<div kendo-grid='industries.industryGrid'  k-options="mainGridOptions_2" >
 </div>
