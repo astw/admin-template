@@ -19,13 +19,15 @@
 
     vm.onchange = onchange;
 
-    console.log($stateParams.selectedRow);
-
-   var permitNo = $stateParams.permitNo;
-
+    var permitNo = $stateParams.permitNo; 
 
     function inviteUser(){
        $state.go("authority.portal.inviteiu");
+    }
+
+
+    function onInvitedUserChange(arg){
+
     }
 
     function onChange(arg)
@@ -67,7 +69,8 @@
      $scope.users = new kendo.data.DataSource({ data:data });
      vm.data = data;
 
-    $scope.mainGridOptions_2 = {
+//industryUsers  industryInvitedUsers  mainGridOptions_2
+    $scope.industryUsers = {
         dataSource :{
             data:vm.data
         },
@@ -75,7 +78,7 @@
         change: onChange,
         selectable: "row",
         sortable: true,
-        height:400,
+        height:300,
         noRecords: true,
         messages: {
             noRecords: "There is no data on current page"
@@ -181,6 +184,94 @@
         ]
     }
 
+ var invitedUsers = industryService.getInvitedUserList(permitNo);
+
+ $scope.industryInvitedUsers = {
+         dataSource :{
+             data:invitedUsers
+         },
+
+         change: onInvitedUserChange,
+         selectable: "row",
+         sortable: true,
+         height:200,
+         noRecords: true,
+         messages: {
+             noRecords: "There is no data on current page"
+         },
+         columns: [
+           {
+              headerAttributes : {
+                 "class" : "visible-lg visible-sm visible-md"
+               },
+             width:"12.5%",
+             field: "firstName",
+             title: "First Name",
+             minScreenWidth: 960,
+           },
+           {
+                headerAttributes : {
+                 "class" : "visible-lg visible-sm visible-md"
+               },
+               width:"12.5%",
+               field: "lastName",
+               title: "Last Name",
+                minScreenWidth: 960,
+           },
+
+           {
+                headerAttributes : {
+                 "class" : "visible-lg visible-sm visible-md"
+               },
+               width:"20%",
+               field: "email",
+               title: "Email",
+               minScreenWidth: 960,
+           },
+           {
+                         headerAttributes : {
+                          "class" : "visible-lg visible-sm visible-md"
+                        },
+                        width:"15%",
+                        field: "invitedDate",
+                        title: "Data Invited",
+                        minScreenWidth: 1200,
+                    },
+
+                    {
+                        headerAttributes : {
+                          "class" : "visible-lg visible-sm visible-md"
+                        },
+                        width:"10%",
+                        field: "inviteExpires",
+                        title: "Invite Expires?",
+                         minScreenWidth: 1200
+                    },
+                    {
+
+                      headerAttributes : {
+                          "class" : "hidden-md hidden-lg visible-sm visible-xs"
+                      },
+                      title: "Invited Users",
+          //          headerTemplate:'<label class="visible-sm visible-xs"> Invited Users </label>',
+                      template:
+                              "<div class=' visible-sm visible-xs'>" +
+                                             "<dt>First Name. </dt>" +
+                                             "<dd>#:firstName #</dd>" +
+                                              "<dt>Last Name: </dt>" +
+                                              "<dd>#:lastName#</dd>" +
+
+                                              "<dt>Email </dt>" +
+                                              "<dd>#:email #</dd>" +
+                                              "<dt>Date Invited:</dt>" +
+                                              "<dd>#:invitedDate #</dd>" +
+                                              "<dt>Invite Expires </dt>"  +
+                                              "<dd>#:inviteExpires# </dd>" +
+                                 "</div>"
+
+                    }
+         ]
+     }
 
     activate();
 

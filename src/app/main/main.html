@@ -17,51 +17,27 @@
 <div class="seperator" > </div>
 
 <div class="pull-right">
-     <button id="primaryTextButton" class="k-primary" ng-click="main.inviteUser();" >Invite User</button>
+     <button id="inviteUserBtn" class="k-primary" ng-click="main.inviteUser();" >Invite User</button>
 </div>
 
 <br/>
 <br/>
 <div>
-<kendo-grid options="mainGridOptions_2" />
-
-<div kendo-grid='grid' id="users-grid"  k-data-source="users"
-    k-pageable='{ "refresh": true, "pageSizes": true }'
-    k-selectable ='row'
-    k-sortable='true'
-    k-on-change ='main.onchange(kendoEvent)'
-    k-columns = '[
-          {
-            "field": "firstName",
-            "title": "First Name"
-          },
-          {
-              "field": "lastName",
-              "title": "Last Name",
-          },
-          {
-              "field": "phone",
-              "title": "Phone",
-          },
-          {
-              "field": "email",
-              "title": "Email",
-          },
-          {
-              "field": "registeredDate",
-              "title": "Data Registered",
-          },
-          {
-              "field": "status",
-              "title": "Status",
-          },
-          {
-              "field": "locked",
-              "title": "AccountLocked?",
-          }
-        ]'
-
-
-     k-sortable="true", k-groupable="true", k-filterable="true"
-  >
+<kendo-grid options="industryUsers"></kendo-grid>
  </div>
+
+
+<br/>
+<div class="box-header with-border">
+  <h3 class="box-title"><b>Pending Invitations</b></h3>
+  <div class="pull-right">
+    <button id="inviteAdminBtn" class="k-primary" ng-click="main.inviteUser();" >Invirte Administrator</button>
+    <button id="deleteInvite" class="k-primary" ng-click="main.deleteInvitedUser();" >Delete</button>
+  </div>
+
+</div>
+
+
+
+<kendo-grid options="industryInvitedUsers" ></kendo-grid>
+

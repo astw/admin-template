@@ -26,7 +26,7 @@
     ////////////////
 
     function getInvitedUserList(){
-
+       return invitedUserList;
     }
 
     function createIndustryUsers(){
@@ -90,19 +90,17 @@
 
 
     function getInitalInvitedUserList(){
-      var user =
+      var users =[
        {
-        userId:4,
         firstName: "Chris",
         lastName: "Weinandt",
-        phone:"(770)-496-4160",
         email:"Weinandt@linkcotechnology.com",
-        registeredDate:"8/1/2016/ 13:50 AM",
-        status:"Active",
-        locked:"No"
-      };
+        invitedDate:"8/1/2016/ 13:50 AM",
+        inviteExpires:"Yes"
+       }
+      ];
 
-      return user;
+      return users;
     }
   }
 
