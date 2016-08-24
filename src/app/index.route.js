@@ -49,8 +49,8 @@
         resolve: { authenticate: authenticate }
       })
 
-      .state('industry.registration', {
-        url:'/registration',
+      .state('plain.registration', {
+        url:'/industry/registration',
         templateUrl:"app/industry-portal/registration-iu.html",
         controller: 'RegistrationiuController',
         controllerAs: 'iuregistration'
