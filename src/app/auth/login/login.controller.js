@@ -6,53 +6,55 @@
     .controller('LoginController', LoginController);
 
   /** @ngInject */
-  function LoginController($timeout, $rootScope, $localStorage, $scope,$stateParams, $state) { 
-      
-    var vm = this; 
+  function LoginController($timeout, $rootScope, $localStorage, $scope,$stateParams, $state) {
+
+    var vm = this;
     activate();
-    
+
     vm.login = login;
     //vm.logout = logout;
-    $scope.step = 1; 
+    $scope.step = 1;
     vm.nextStep = nextStep;
-      
- 
-      
-    function activate() {  
-    } 
-    
-   
-      
-    function login(){  
-        
-        if(vm.userEmail == 'aa@linko.com'  && vm.userPassword == "aa1234"){
-            
+
+
+
+    function activate() {
+    }
+
+
+
+    function login(){
+
+        if(vm.userEmail == 'aa@linkoweb.com'  && vm.userPassword == "aa1234"){
+
             var user = {
                 userName : "Chris Weinandt",
-                userType : "Authority User",
+                userType : "AuthorityUser",
                 userPermission : ""
             };
             $rootScope.user = user;
             $localStorage["user"] = user;
+
+            $state.go('authority.portal.industries');
         }
-        
-        else if(vm.userEmail == 'bb@linko.com'  && vm.userPassword == "bb1234"){
-            
+
+        else if(vm.userEmail == 'bb@linkoweb.com'  && vm.userPassword == "bb1234"){
+
             var user = {
                 userName : "Shuhao Wang",
-                userType : "Industry User",
+                userType : "IndustryUser",
                 userPermission : ""
             };
             $rootScope.user = user;
             $localStorage["user"] = user;
+
+            //todo:got to industry portal
+            $state.go('authority.portal.industries');
         }
-        
-        if($rootScope.user !== null){
-            $state.go('authority.index');
-        }
+
     }
-      
-      
+
+
     function nextStep (){
         if($scope.step == 1) {
                 recoverPasswordStep1();
@@ -60,34 +62,34 @@
         else if($scope.step ==2){
             verifyQuestion();
         }
-        
+
     }
-      
-      
-    function recoverPasswordStep1(){ 
+
+
+    function recoverPasswordStep1(){
         console.log("in recoverPasswordStep1  ");
-        
+
 //        if(vm.userEmail !== 'aa@linko.com' &&  vm.userEmail !== 'bb@linko.com') {
 //            $scope.errorMessage = 'Wrong email address';
-//            
+//
 //            return;
 //        }
-        
-        $scope.step = 2; 
+
+        $scope.step = 2;
         $scope.questionText = "What's your pet's name ?"
-        $scope.questionAnswer = "Mark" 
+        $scope.questionAnswer = "Mark"
     }
-      
+
     function verifyQuestion(){
-        
+
         console.log("in verifyQuestion  ");
-        
-        
+
+
         if(vm.userQuestionAnswer == "mark" ||
            vm.userQuestionAnswer == "Mark"
           )
-        $scope.step = 3; 
+        $scope.step = 3;
     }
-      
+
   }
 })();
