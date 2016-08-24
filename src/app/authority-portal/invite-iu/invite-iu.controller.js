@@ -11,9 +11,15 @@
 
       $scope.step =1 ;
       vm.inviteUser = inviteUser;
+      vm.sendInvitation = sendInvitation;
       vm.createUser = createUser;
       vm.cancel = cancel;
       vm.backStep = backStep;
+
+
+      function sendInvitation(){
+        $scope.step = 3;
+      }
 
       function backStep(){
 
@@ -26,7 +32,8 @@
       }
 
       function cancel(){
-         $state.go("authority.portal.industryUsers");
+         //$state.go("authority.portal.industryUsers");
+         $scope.step = 2
       }
 
       function inviteUser(){
@@ -36,6 +43,7 @@
               return;
           }
 
+           
           $scope.step = 2;
       }
 
