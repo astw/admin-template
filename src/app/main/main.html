@@ -6,7 +6,8 @@
       <ol class="breadcrumb-left  visible-lg visible-md">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home </a></li>
         <li class="active"> <a href="/authority/industries"> Industries </a>  </li>
-        <li class="active"> <a href="#"> Users </a>  </li>
+        <li class="active"> <a href="authority/industries/{{selectedIndustry.permitNo}}/details"> Industry Details </a>  </li>
+        <li class="">  Users </li>
       </ol>
 
 </section>
@@ -16,10 +17,10 @@
 <div class="seperator" > </div>
 
 <div class="pull-right">
-    <button id="primaryTextButton" class="k-primary">Permissions</button>
-    <button id="primaryTextButton" class="k-primary" ng-click="main.removeUser();" >Remove</button>
-    <button id="primaryTextButton" class="k-primary" ng-click="main.changeUserActiveStatus();" > {{main.enabledButtonText }} </button>
-    <button id="primaryTextButton" class="k-primary" ng-click="main.changeUserLockStatus();" > {{main.lockButtonText }}</button>
+    <!--<button id="primaryTextButton" class="k-primary">Permissions</button>-->
+    <!--<button id="primaryTextButton" class="k-primary" ng-click="main.removeUser();" >Remove</button>-->
+    <!--<button id="primaryTextButton" class="k-primary" ng-click="main.changeUserActiveStatus();" > {{main.enabledButtonText }} </button>-->
+    <!--<button id="primaryTextButton" class="k-primary" ng-click="main.changeUserLockStatus();" > {{main.lockButtonText }}</button>-->
     <button id="primaryTextButton" class="k-primary" >Invite User</button>
 </div>
 

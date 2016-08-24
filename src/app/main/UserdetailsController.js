@@ -8,7 +8,7 @@
   /** @ngInject */
   function UserdetailsController($timeout, $rootScope, $scope, $stateParams, webDevTec, toastr) {
     var vm = this;
-
+    console.log('selected industry=',$rootScope.selectedIndustry)
     vm.awesomeThings = [];
     vm.classAnimation = '';
     vm.creationDate = 1471276328751;

@@ -75,7 +75,7 @@
         controllerAs: 'industries'
       })
      .state('authority.portal.industry-details', {
-        url: '/industry/details',
+        url: '/industries/:industryNo/details',
         templateUrl: 'app/authority-portal/industries/industry-details.html',
         controller: 'IndustrydetailsController',
         controllerAs: 'industrydetails'

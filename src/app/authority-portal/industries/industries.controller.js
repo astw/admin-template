@@ -23,11 +23,10 @@
     function onChange(arg)
     {
         var selected = $.map(this.select(), function(item) {
-
             return $(item).text();
-
         });
 
+       if(selected == null) return;
 
         vm.selectedRow = this.dataItem(this.select());
         vm.selectedOne = true;
@@ -43,7 +42,7 @@
 
         $scope.$digest();
 
-       $state.go('authority.portal.industry-details');
+       $state.go('authority.portal.industry-details',{industryNo:$rootScope.selectedIndustry.permitNo});
 
        console.log("Selected: " + selected.length + " item(s), [" + selected.join(", ") + "]");
        console.log('vm.disableButton=' + vm.selectedOne);
@@ -285,7 +284,7 @@
         );
     }
 
-    function toggleSearchMode(){ 
+    function toggleSearchMode(){
 
         if(vm.searchButtonText == 'Advanced Search'){
            console.log('change to simple search');

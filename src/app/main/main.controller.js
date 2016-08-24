@@ -19,7 +19,6 @@
 
     vm.onchange = onchange;
 
-
     console.log($stateParams.selectedRow);
 
    var permitNo = $stateParams.permitNo;
