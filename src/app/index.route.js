@@ -42,6 +42,20 @@
 //          controllerAs:"login"
 //       })
 
+      .state('industry', {
+        url:'/industry',
+        templateUrl:"app/layout/industry-layout.html",
+        abstract:true,
+        resolve: { authenticate: authenticate }
+      })
+
+      .state('industry.registration', {
+        url:'/registration',
+        templateUrl:"app/industry-portal/registration-iu.html",
+        controller: 'RegistrationiuController',
+        controllerAs: 'iuregistration'
+      })
+
       .state('authority', {
           url:'/authority',
           templateUrl:"app/layout/authority-layout.html",
