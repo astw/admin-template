@@ -9,12 +9,13 @@
   function IndustriesController($timeout,$rootScope, $scope, $state) {
     var vm = this;
 
+    vm.searchButtonText="Simple Search";
     vm.enabledButtonText = 'Disable';
-
+    vm.simpleSearch = true;
     vm.industryUsers = getIndustyUsers;
     vm.changeIndustryStatus = changeIndustryStatus;
     vm.searchChanged = searchChanged;
-    vm.advancedSearch = advancedSearch;
+    vm.toggleSearchMode = toggleSearchMode;
     vm.searchButtonText = 'Advanced Search';
     vm.searchButtonText2 = 'AS';
 
@@ -284,10 +285,11 @@
         );
     }
 
-    function advancedSearch(){
-        console.log('in advance search window ');
+    function toggleSearchMode(){ 
 
         if(vm.searchButtonText == 'Advanced Search'){
+           console.log('change to simple search');
+           vm.simpleSearch = false;
            vm.searchButtonText = 'Simple Search';
            vm.searchButtonText2 = 'SS';
            vm.industryGrid.setOptions(
@@ -298,6 +300,7 @@
             }
          )
         } else {
+            vm.simpleSearch = true;
             vm.searchButtonText = 'Advanced Search';
             vm.searchButtonText2 = 'AS';
             vm.industryGrid.setOptions(

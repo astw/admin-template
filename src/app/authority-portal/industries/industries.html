@@ -1,11 +1,8 @@
 
-
-</style>
 <section class="content-header">
       <h1>
         Industries
-<!--        <small>Industries information</small>-->
-      </h1>
+       </h1>
       <ol class="breadcrumb-left visible-lg visible-md">
         <li><a href="/authority/index"><i class="fa fa-dashboard"></i> Home </a></li>
         <li class="active">Industries</li>
@@ -17,7 +14,7 @@
 <div class="seperator" > </div>
 
 
-<div class="row">
+<div class="row" ng-if="industries.simpleSearch === true">
   <div class="col-lg-4">
    <input  type="text" class="form-control" placeholder="Search for Permit No., Industry, Address" ng-model="industries.searchKey" ng-change="industries.searchChanged()">
   </div>
@@ -35,10 +32,10 @@
 <div class="row">
 <div class="col-lg-2">
 
-         <button type="button" class="btn btn-block btn-primary btn-sm visible-lg visible-md" ng-click='industries.advancedSearch();'>
+         <button type="button" class="btn btn-block btn-primary btn-sm visible-lg visible-md" ng-click='industries.toggleSearchMode();'>
                      {{industries.searchButtonText}}!
          </button>
-         <button type="button" class="btn btn-block btn-primary btn-sm visible-sm visible-xs" ng-click='industries.advancedSearch();'>
+         <button type="button" class="btn btn-block btn-primary btn-sm visible-sm visible-xs" ng-click='industries.toggleSearchMode();'>
                      {{industries.searchButtonText2}}!
          </button>
 
