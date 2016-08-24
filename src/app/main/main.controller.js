@@ -6,7 +6,7 @@
     .controller('IndustryusersController', IndustryusersController);
 
   /** @ngInject */
-  function IndustryusersController($timeout, $rootScope, $state, $scope,$stateParams, webDevTec, toastr) {
+  function IndustryusersController($timeout, $rootScope, $state, $scope,$stateParams, industryService) {
     var vm = this;
 
     vm.lockButtonText = 'Unlock';
@@ -63,51 +63,10 @@
        console.log("Selected: " + selected.length + " item(s), [" + selected.join(", ") + "]");
     }
 
-    var data =  [
-              {
-                userId:1,
-                firstName: "Eric",
-                lastName: "Snell",
-                phone:"(772)-496-4160",
-                email:"eric@linkoweb.com",
-                registeredDate:"8/1/2016/ 13:50 AM",
-                status:"InActive",
-                locked:"Locked"
-              },
-              {
-              userId:2,
-                firstName: "Chris",
-                lastName: "Weinandt",
-                phone:"(770)-496-4160",
-                email:"Weinandt@linkcotechnology.com",
-                registeredDate:"8/1/2016/ 13:50 AM",
-                status:"Active",
-                locked:"Locked"
-              },
-              {   userId:3,
-                firstName: "Eric",
-                lastName: "Snell",
-                phone:"(772)-496-4160",
-                email:"eric@linkoweb.com",
-                registeredDate:"8/1/2016/ 13:50 AM",
-                status:"InActive",
-                locked:"No"
-              },
-              {   userId:4,
-                firstName: "Chris",
-                lastName: "Weinandt",
-                phone:"(770)-496-4160",
-                email:"Weinandt@linkcotechnology.com",
-                registeredDate:"8/1/2016/ 13:50 AM",
-                status:"Active",
-                locked:"No"
-              }
+     var data = industryService.getIndustryUsers(permitNo);
+     $scope.users = new kendo.data.DataSource({ data:data });
+     vm.data = data;
 
-      ]
-
-    $scope.users = new kendo.data.DataSource({ data:data });
-
-    vm.data = data;
     $scope.mainGridOptions_2 = {
         dataSource :{
             data:vm.data
@@ -116,6 +75,11 @@
         change: onChange,
         selectable: "row",
         sortable: true,
+        height:400,
+        noRecords: true,
+        messages: {
+            noRecords: "There is no data on current page"
+        },
         columns: [
           {
              headerAttributes : {

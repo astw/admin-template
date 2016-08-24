@@ -43,7 +43,7 @@
               return;
           }
 
-           
+
           $scope.step = 2;
       }
 
