@@ -9,13 +9,13 @@
   function IndustryusersController($timeout, $rootScope, $state, $scope,$stateParams, webDevTec, toastr) {
     var vm = this;
 
-
     vm.lockButtonText = 'Unlock';
     vm.enabledButtonText = 'Disable';
 
     vm.changeUserActiveStatus =  changeUserActiveStatus;
     vm.changeUserLockStatus =  changeUserLockStatus;
     vm.removeUser = removeUser;
+    vm.inviteUser = inviteUser;
 
     vm.onchange = onchange;
 
@@ -23,6 +23,10 @@
 
    var permitNo = $stateParams.permitNo;
 
+
+    function inviteUser(){
+       $state.go("authority.portal.inviteiu");
+    }
 
     function onChange(arg)
     {

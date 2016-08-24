@@ -68,6 +68,13 @@
         controllerAs: 'inviteiu'
       })
 
+      .state('authority.portal.create-iu', {
+        url: '/create-user',
+        templateUrl: 'app/authority-portal/create-iu/create-iu.html',
+        controller: 'CreateiuController',
+        controllerAs: 'createiu'
+      })
+
       .state('authority.portal.industries', {
         url: '/industries',
         templateUrl: 'app/authority-portal/industries/industries.html',

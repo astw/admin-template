@@ -7,28 +7,37 @@
 
   /** @ngInject */
   function InviteiuController($timeout, $scope, $state) {
-    var vm = this; 
-    
+    var vm = this;
+
       $scope.step =1 ;
-      vm.inviteUser = inviteUser; 
-      
+      vm.inviteUser = inviteUser;
+      vm.createUser = createUser;
+      vm.cancel = cancel;
       vm.backStep = backStep;
-      
-      function backStep(){ 
-  
+
+      function backStep(){
+
           $scope.step = 1 ;
           $scope.noSuchUser = false;
       }
-      
+
+      function createUser(){
+         $state.go("authority.portal.create-iu");
+      }
+
+      function cancel(){
+         $state.go("authority.portal.industryUsers");
+      }
+
       function inviteUser(){
           if(vm.userEmail !== 'aa@linko.com'  && vm.userEmail !== 'bb@linko.com'){
               $scope.noSuchUser = true;
               $scope.step = -1;
               return;
           }
-          
+
           $scope.step = 2;
       }
-    
+
   }
 })();
