@@ -6,7 +6,7 @@
     .controller('InviteiuController', InviteiuController);
 
   /** @ngInject */
-  function InviteiuController($timeout, $scope, $state) {
+  function InviteiuController($timeout, $scope, $state, userService) {
     var vm = this;
 
       $scope.step =1 ;
@@ -16,6 +16,7 @@
       vm.cancel = cancel;
       vm.backStep = backStep;
 
+      var userList = userService.getUserList();
 
       function sendInvitation(){
         $scope.step = 3;
@@ -37,12 +38,19 @@
       }
 
       function inviteUser(){
-          if(vm.userEmail !== 'aa@linko.com'  && vm.userEmail !== 'bb@linko.com'){
+          var findUser = userList.find(function(item){
+              return vm.userEmail == item.email;
+          });
+
+
+          if(findUser == null){
               $scope.noSuchUser = true;
               $scope.step = -1;
               return;
           }
 
+          vm.userLastName = findUser.lastName;
+          vm.userFirstName = findUser.firstName;
 
           $scope.step = 2;
       }

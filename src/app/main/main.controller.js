@@ -19,7 +19,7 @@
 
     vm.onchange = onchange;
 
-    var permitNo = $stateParams.permitNo; 
+    var permitNo = $stateParams.permitNo;
 
     function inviteUser(){
        $state.go("authority.portal.inviteiu");
