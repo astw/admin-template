@@ -6,7 +6,7 @@
     .controller('InviteiuController', InviteiuController);
 
   /** @ngInject */
-  function InviteiuController($timeout, $scope, $state, userService,industryService) {
+  function InviteiuController($timeout, $rootScope, $scope, $state, userService,industryService) {
     var vm = this;
 
       $scope.step =1 ;
@@ -172,11 +172,13 @@
 
         user.dateInvited = date1;
         user.inviteExpires = date2;
+        user.industry = $rootScope.selectedIndustry.industry;
+
+        console.log($scope.selectedIndustry);
 
         vm.selectedUser = user;
         industryService.addInvitedUser(vm.selectedUser);
         $scope.step = 6;
-
     }
 
     function prePareUserToInvite(user){
