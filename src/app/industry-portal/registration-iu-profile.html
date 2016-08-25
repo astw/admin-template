@@ -23,30 +23,30 @@
         <label for="salutation" class="col-sm-2 control-label">Salutation </label>
 
         <div class="col-sm-6">
-          <input type="textbox"  class="form-control" id="salutation"  value="{{iuregistration.userProfile.salutation}}" autocomplete="off">
+          <input type="textbox"  class="form-control" id="salutation"  ng-model="iuregistration.userProfile.salutation" autocomplete="off">
         </div>
       </div>
 
       <div class="form-group">
-        <label for="firstName" class="col-sm-2 control-label">First Name </label>
+        <label for="firstName" class="col-sm-2 control-label">First Name* </label>
 
         <div class="col-sm-6">
-          <input type="textbox"  class="form-control" id="firstName"  value="{{iuregistration.userProfile.firstName}}" autocomplete="off">
+          <input type="textbox"  class="form-control" id="firstName"  ng-model="iuregistration.userProfile.firstName" autocomplete="off">
         </div>
       </div>
 
       <div class="form-group">
         <label for="middleName" class="col-sm-2 control-label">Middle Name </label>
         <div class="col-sm-6">
-          <input type="textbox"  class="form-control" id="middleName"  value="{{iuregistration.userProfile.middleName}}" autocomplete="off">
+          <input type="textbox"  class="form-control" id="middleName"  ng-model="iuregistration.userProfile.middleName" autocomplete="off">
         </div>
       </div>
 
       <div class="form-group">
-        <label for="lastName" class="col-sm-2 control-label">Last Name </label>
+        <label for="lastName" class="col-sm-2 control-label">Last Name* </label>
 
         <div class="col-sm-6">
-          <input type="textbox"  value="{{iuregistration.userProfile.lastName}}"  class="form-control" id="lastName"  autocomplete="off">
+          <input type="textbox"  ng-model="iuregistration.userProfile.lastName"  class="form-control" id="lastName"  autocomplete="off">
         </div>
       </div>
 
@@ -54,7 +54,7 @@
         <label for="facilityName" class="col-sm-2 control-label">Facility/Bussiness Name*</label>
 
         <div class="col-sm-6">
-          <input type="facilityName"  value="{{iuregistration.userProfile.facilityName}}"  class="form-control" id="facilityName"  autocomplete="off">
+          <input type="facilityName"  ng-model="iuregistration.userProfile.facilityName"  class="form-control" id="facilityName"  autocomplete="off">
         </div>
       </div>
 
@@ -62,7 +62,7 @@
         <label for="mailAddress" class="col-sm-2 control-label">Mailing Address*</label>
 
         <div class="col-sm-6">
-          <input type="textbox"  value="{{iuregistration.userProfile.mailAddress}}"  class="form-control" id="mailAddress"  autocomplete="off">
+          <input type="textbox"  ng-model="iuregistration.userProfile.mailAddress"  class="form-control" id="mailAddress"  autocomplete="off">
         </div>
       </div>
 
@@ -70,7 +70,7 @@
         <label for="suit" class="col-sm-2 control-label">Suit </label>
 
         <div class="col-sm-6">
-          <input type="textbox"  value="{{iuregistration.userProfile.suit}}"  class="form-control" id="suit"  autocomplete="off">
+          <input type="textbox"  ng-model="iuregistration.userProfile.suit"  class="form-control" id="suit"  autocomplete="off">
         </div>
       </div>
 
@@ -78,15 +78,15 @@
         <label for="city" class="col-sm-2 control-label">City </label>
 
         <div class="col-sm-6">
-          <input type="textbox"  value="{{iuregistration.userProfile.city}}"  class="form-control" id="city"  autocomplete="off">
+          <input type="textbox"  ng-model="iuregistration.userProfile.city"  class="form-control" id="city"  autocomplete="off">
         </div>
       </div>
 
       <div class="form-group">
-        <label for="state" class="col-sm-2 control-label">State </label>
+        <label for="state" class="col-sm-2 control-label">State* </label>
 
         <div class="col-sm-6">
-          <input type="textbox"  value="{{iuregistration.userProfile.state}}"  class="form-control" id="state"  autocomplete="off">
+          <input type="textbox"  ng-model="iuregistration.userProfile.state"  class="form-control" id="state"  autocomplete="off">
         </div>
       </div>
 
@@ -94,7 +94,7 @@
         <label for="zipCode" class="col-sm-2 control-label">Zip Code* </label>
 
         <div class="col-sm-6">
-          <input type="textbox"  value="{{iuregistration.userProfile.zipCode}}"  class="form-control" id="zipCode"  autocomplete="off">
+          <input type="textbox"  ng-model="iuregistration.userProfile.zipCode"  class="form-control" id="zipCode"  autocomplete="off">
         </div>
       </div>
 
@@ -102,7 +102,7 @@
         <label for="phone" class="col-sm-2 control-label">Phone* </label>
 
         <div class="col-sm-6">
-          <input type="textbox"  value="{{iuregistration.userProfile.phone}}"  class="form-control" id="phone"  autocomplete="off">
+          <input type="textbox"  ng-model="iuregistration.userProfile.phone"  class="form-control" id="phone"  autocomplete="off">
         </div>
       </div>
 
@@ -110,7 +110,7 @@
         <label for="extension" class="col-sm-2 control-label">Extension </label>
 
         <div class="col-sm-6">
-          <input type="textbox"  value="{{iuregistration.userProfile.extension}}"  class="form-control" id="extension"  autocomplete="off">
+          <input type="textbox"  ng-model="iuregistration.userProfile.extension"  class="form-control" id="extension"  autocomplete="off">
         </div>
       </div>
 
@@ -118,7 +118,7 @@
         <label for="fax" class="col-sm-2 control-label">Fax </label>
 
         <div class="col-sm-6">
-          <input type="textbox"  value="{{iuregistration.userProfile.fax}}"  class="form-control" id="fax"  autocomplete="off">
+          <input type="textbox"  ng-model="iuregistration.userProfile.fax"  class="form-control" id="fax"  autocomplete="off">
         </div>
       </div>
 
@@ -126,7 +126,7 @@
         <label for="cell" class="col-sm-2 control-label">Cell </label>
 
         <div class="col-sm-6">
-          <input type="textbox"  value="{{iuregistration.userProfile.cell}}"  class="form-control" id="cell"  autocomplete="off">
+          <input type="textbox"  ng-model="iuregistration.userProfile.cell"  class="form-control" id="cell"  autocomplete="off">
         </div>
 
       </div>
@@ -135,7 +135,7 @@
         <label for="email" class="col-sm-2 control-label">Email* </label>
 
         <div class="col-sm-6">
-          <input type="email"  value="{{iuregistration.userProfile.email}}" class="form-control" id="email"  autocomplete="off">
+          <input type="email"  ng-model="iuregistration.userProfile.email" class="form-control" id="email"  autocomplete="off">
         </div>
 
 
@@ -145,7 +145,7 @@
         <label for="requestedUserName" class="col-sm-2 control-label">Requested User Name </label>
 
         <div class="col-sm-6">
-          <input type="textbox"  value="{{iuregistration.userProfile.requestedUserName}}"  class="form-control" id="requestedUserName"  autocomplete="off">
+          <input type="textbox"  ng-model="iuregistration.userProfile.requestedUserName"  class="form-control" id="requestedUserName"  autocomplete="off">
         </div>
 
       </div>
@@ -155,7 +155,7 @@
         <label for="password" class="col-sm-2 control-label">Password* </label>
 
         <div class="col-sm-6">
-          <input type="password"  value="{{iuregistration.userProfile.password}}" class="form-control" id="password"  autocomplete="off">
+          <input type="password"  ng-model="iuregistration.userProfile.password" class="form-control" id="password"  autocomplete="off">
         </div>
       </div>
 
@@ -164,7 +164,7 @@
         <label for="confirmPassword" class="col-sm-2 control-label">Confirm Password* </label>
 
         <div class="col-sm-6">
-          <input type="password"  value="{{iuregistration.userProfile.confirmPassword}}" class="form-control" id="confirmPassword"  autocomplete="off">
+          <input type="password"  ng-model="iuregistration.userProfile.confirmPassword" class="form-control" id="confirmPassword"  autocomplete="off">
         </div>
 
       </div>
@@ -172,7 +172,7 @@
     </div>
 
 
-    <div class="col-lg-11">
+    <div class="col-lg-12">
       <div class="box-header with-border">
         <div class="">
           <h3>Knowledge Based Questions</h3>
@@ -189,7 +189,15 @@
             <label for="question1" class="col-sm-2 control-label">Question 1 </label>
 
             <div class="col-sm-6">
-              <input type="textbox"  class="form-control" id="question1"  value="{{iuregistration.userProfile.question1}}" autocomplete="off">
+              <input type="textbox"  class="form-control" id="question1"  value="{{iuregistration.userProfile.kbqQuestion1}}" autocomplete="off">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="question1Answer" class="col-sm-2 control-label">Answer</label>
+
+            <div class="col-sm-6">
+              <input type="textbox"  class="form-control" id="question1Answer"  value="{{iuregistration.userProfile.kbqQuestion1Answer}}" autocomplete="off">
             </div>
           </div>
 
@@ -197,28 +205,64 @@
             <label for="question2" class="col-sm-2 control-label">Question 2 </label>
 
             <div class="col-sm-6">
-              <input type="textbox"  class="form-control" id="question2"  value="{{iuregistration.userProfile.question2}}" autocomplete="off">
+              <input type="textbox"  class="form-control" id="question2"  value="{{iuregistration.userProfile.kbqQuestion2}}" autocomplete="off">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="question2Answer" class="col-sm-2 control-label">Answer</label>
+
+            <div class="col-sm-6">
+              <input type="textbox"  class="form-control" id="question2Answer"  value="{{iuregistration.userProfile.kbqQuestion2Answer}}" autocomplete="off">
             </div>
           </div>
 
           <div class="form-group">
             <label for="question3" class="col-sm-2 control-label">Question 3 </label>
             <div class="col-sm-6">
-              <input type="textbox"  class="form-control" id="question3"  value="{{iuregistration.userProfile.question3}}" autocomplete="off">
+              <input type="textbox"  class="form-control" id="question3"  value="{{iuregistration.userProfile.kbqQuestion3}}" autocomplete="off">
             </div>
           </div>
+
+
+          <div class="form-group">
+            <label for="question3Answer" class="col-sm-2 control-label">Answer</label>
+
+            <div class="col-sm-6">
+              <input type="textbox"  class="form-control" id="question3Answer"  value="{{iuregistration.userProfile.kbqQuestion3Answer}}" autocomplete="off">
+            </div>
+          </div>
+
 
           <div class="form-group">
             <label for="question4" class="col-sm-2 control-label">Question 4 </label>
             <div class="col-sm-6">
-              <input type="textbox"  class="form-control" id="question4"  value="{{iuregistration.userProfile.question4}}" autocomplete="off">
+              <input type="textbox"  class="form-control" id="question4"  value="{{iuregistration.userProfile.kbqQuestion4}}" autocomplete="off">
             </div>
           </div>
 
           <div class="form-group">
+            <label for="question4Answer" class="col-sm-2 control-label">Answer</label>
+
+            <div class="col-sm-6">
+              <input type="textbox"  class="form-control" id="question4Answer"  value="{{iuregistration.userProfile.kbqQuestion4Answer}}" autocomplete="off">
+            </div>
+          </div>
+
+
+          <div class="form-group">
             <label for="question5" class="col-sm-2 control-label">Question 5 </label>
             <div class="col-sm-6">
-              <input type="textbox"  class="form-control" id="question5"  value="{{iuregistration.userProfile.question5}}" autocomplete="off">
+              <input type="textbox"  class="form-control" id="question5"  value="{{iuregistration.userProfile.kbqQuestion5}}" autocomplete="off">
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="question5Answer" class="col-sm-2 control-label">Answer</label>
+
+            <div class="col-sm-6">
+              <input type="textbox"  class="form-control" id="question5Answer"  value="{{iuregistration.userProfile.kbqQuestion4Answer}}" autocomplete="off">
             </div>
           </div>
         </div>
@@ -236,12 +280,11 @@
 
       <form class="form-horizontal" _lpchecked="1">
         <div class="box-body">
-
           <div class="form-group">
             <label for="secureQuestion1" class="col-sm-2 control-label">Question 1 </label>
 
             <div class="col-sm-6">
-              <input type="textbox"  class="form-control" id="secureQuestion1"  value="{{iuregistration.userProfile.secure_question1}}" autocomplete="off">
+              <input type="textbox"  class="form-control" id="secureQuestion1"  value="{{iuregistration.userProfile.secureQuestion1}}" autocomplete="off">
             </div>
           </div>
 
@@ -249,7 +292,7 @@
             <label for="secureQuestionAnswer1" class="col-sm-2 control-label">Answer</label>
 
             <div class="col-sm-6">
-              <input type="textbox"  class="form-control" id="secureQuestionAnswer1"  value="{{iuregistration.userProfile.secure_question1_answer}}" autocomplete="off">
+              <input type="textbox"  class="form-control" id="secureQuestionAnswer1"  value="{{iuregistration.userProfile.secureQuestion1Answer}}" autocomplete="off">
             </div>
           </div>
 
@@ -257,7 +300,7 @@
             <label for="secureQuestion2" class="col-sm-2 control-label">Question 2 </label>
 
             <div class="col-sm-6">
-              <input type="textbox"  class="form-control" id="secureQuestion2"  value="{{iuregistration.userProfile.secure_question2}}" autocomplete="off">
+              <input type="textbox"  class="form-control" id="secureQuestion2"  value="{{iuregistration.userProfile.secureQuestion2}}" autocomplete="off">
             </div>
           </div>
 
@@ -265,7 +308,7 @@
             <label for="secureQuestionAnswer2" class="col-sm-2 control-label">Answer</label>
 
             <div class="col-sm-6">
-              <input type="textbox"  class="form-control" id="secureQuestionAnswer2"  value="{{iuregistration.userProfile.secure_question2_answer}}" autocomplete="off">
+              <input type="textbox"  class="form-control" id="secureQuestionAnswer2"  value="{{iuregistration.userProfile.secureQuestion2Answer}}" autocomplete="off">
             </div>
           </div>
 
@@ -274,21 +317,12 @@
         <div class="form-group">
           <label for="prevBtn" class="col-sm-2 control-label">  </label>
           <div class="col-sm-6">
-            <button  id="prevBtn" class="btn k-primary pull-right" ng-click="iuregistration.nextStep();">Prev</button>
-            <button  id="nextBtn" class="btn k-primary pull-right" ng-click="iuregistration.nextStep();">Next</button>
+            <button  id="prevBtn" class="btn k-primary" ng-click="iuregistration.goToSecurity();">Previous</button>
+            <button  id="nextBtn" class="btn k-primary pull-right" ng-click="iuregistration.saveRegistrationInfo();">Save</button>
           </div>
         </div>
       </form>
     </div>
 
-
-    <div class="form-group">
-      <label for="button" class="col-sm-2 control-label">  </label>
-
-      <div class="col-sm-6">
-        <button  id="button" class="btn btn-primary pull-right" ng-click="iuregistration.nextStep();">Next</button>
-      </div>
-
-    </div>
   </form>
 </div>
