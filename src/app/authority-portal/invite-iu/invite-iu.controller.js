@@ -151,10 +151,17 @@
 
         var now = new Date();
         var date1 = now.toISOString().slice(0,10).replace(/-/g,"-");
+
+        var t = date1.split('-');
+        t[1] = parseInt(t[1]) +1;
+        t[1] = '0' + t[1];
+
+        var date2 = t.join('-');
+
        // var expiresDate =now.setDate(now.getMonth() + 1);
        // var date2 = expiresDate.toISOString().slice(0,10).replace(/-/g,"-");
 
-       var date2= date1;
+       //var date2= date1;
        var users = [];
        user.dateInvited = date1;
        user.inviteExpires = date2;
