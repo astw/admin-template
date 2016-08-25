@@ -27,7 +27,7 @@
       </div>
 
       <div class="form-group">
-        <label for="firstName" class="col-sm-2 control-label">First Name </label>
+        <label for="firstName" class="col-sm-2 control-label">First Name* </label>
 
         <div class="col-sm-6">
           <input type="textbox"  class="form-control" id="firstName"  ng-model="iuregistration.userProfile.firstName" autocomplete="off">
@@ -42,7 +42,7 @@
       </div>
 
       <div class="form-group">
-        <label for="lastName" class="col-sm-2 control-label">Last Name </label>
+        <label for="lastName" class="col-sm-2 control-label">Last Name* </label>
 
         <div class="col-sm-6">
           <input type="textbox"  ng-model="iuregistration.userProfile.lastName"  class="form-control" id="lastName"  autocomplete="off">
@@ -50,7 +50,7 @@
       </div>
 
       <div class="form-group">
-        <label for="facilityName" class="col-sm-2 control-label">Facility/Bussiness Name*</label>
+        <label for="facilityName" class="col-sm-2 control-label">Facility/Business Name*</label>
 
         <div class="col-sm-6">
           <input type="facilityName"  ng-model="iuregistration.userProfile.facilityName"  class="form-control" id="facilityName"  autocomplete="off">
@@ -66,7 +66,7 @@
       </div>
 
       <div class="form-group">
-        <label for="suit" class="col-sm-2 control-label">Suit </label>
+        <label for="suit" class="col-sm-2 control-label">Suite </label>
 
         <div class="col-sm-6">
           <input type="textbox"  ng-model="iuregistration.userProfile.suit"  class="form-control" id="suit"  autocomplete="off">
@@ -74,7 +74,7 @@
       </div>
 
       <div class="form-group">
-        <label for="city" class="col-sm-2 control-label">City </label>
+        <label for="city" class="col-sm-2 control-label">City* </label>
 
         <div class="col-sm-6">
           <input type="textbox"  ng-model="iuregistration.userProfile.city"  class="form-control" id="city"  autocomplete="off">
@@ -82,7 +82,7 @@
       </div>
 
       <div class="form-group">
-        <label for="state" class="col-sm-2 control-label">State </label>
+        <label for="state" class="col-sm-2 control-label">State* </label>
 
         <div class="col-sm-6">
           <input type="textbox"  ng-model="iuregistration.userProfile.state"  class="form-control" id="state"  autocomplete="off">
@@ -128,7 +128,7 @@
           <input type="textbox"  ng-model="iuregistration.userProfile.cell"  class="form-control" id="cell"  autocomplete="off">
         </div>
         <div class="col-lg-2">
-          Password Requirements:<br>
+
         </div>
       </div>
 
@@ -141,20 +141,19 @@
 
 
         <div class="col-lg-2">
-          8-15 characters in length
+
         </div>
       </div>
 
       <div class="form-group">
-        <label for="requestedUserName" class="col-sm-2 control-label">Requested User Name </label>
+        <label for="requestedUserName" class="col-sm-2 control-label">Requested User Name* </label>
 
         <div class="col-sm-6">
           <input type="textbox"  ng-model="iuregistration.userProfile.requestedUserName"  class="form-control" id="requestedUserName"  autocomplete="off">
         </div>
 
         <div class="col-lg-2">
-          At least 1 upper case letter
-          At least 1 lower case letter
+
 
         </div>
       </div>
@@ -168,8 +167,7 @@
         </div>
 
         <div class="col-lg-2">
-          At least 1 number
-          Special characters allowed
+
         </div>
       </div>
 
@@ -181,10 +179,21 @@
           <input type="password"  ng-model="iuregistration.userProfile.confirmPassword" class="form-control" id="confirmPassword"  autocomplete="off">
         </div>
         <div class="col-lg-2">
-          You can not reuse the last <10> passwords
+          
         </div>
       </div>
 
+      <div class="form-group">
+        <label  class="col-sm-2 control-label"> </label>
+
+        <div class="col-sm-6">
+          Passwords must be between 8-15 characters, have at least one digit ('0'-'9'), and have at least one lowercase ('a'-'z') and one uppercase ('A'-'Z') letter, and one special character.
+          You can not reuse the last <10> passwords
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
