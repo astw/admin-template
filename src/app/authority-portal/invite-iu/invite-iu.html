@@ -88,12 +88,12 @@
         <label for="searForEmail" class="col-lg-3 col-sm-2 control-label"> Enter Email </label>
 
         <div class="col-lg-6 col-sm-10">
-           <input type="email"  class="form-control" id="searForEmail"  ng-model="inviteiu.userEmail" ng-change="inviteiu.searchChanged()">
+           <input type="email"  class="form-control" id="searForEmail"  ng-model="inviteiu.userEmail"   >
         </div>
 
         <div class="col-sm-2">
           <span>
-            <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.inviteUser();'> Search  </button>
+            <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.searchUser();'> Search  </button>
           </span>
         </div>
       </div>
@@ -103,12 +103,12 @@
       <div class="form-group"  ng-if=" step == 2 " >
 
         <div class="col-lg-12 col-sm-offset-2 col-sm-10">
-          <b>The user does not exist. Do you want to create a new user ?</b>  <br/> <br/>
+          <b>The user does not exist. Do you want to invite a new user ?</b>  <br/> <br/>
         </div>
 
         <div class="col-lg-12">
         <div class="col-lg-1 col-sm-offset-2 col-sm-10">
-          <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.createUser();'> Create User </button>
+          <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.createUser();'> Invite User </button>
         </div>
 
 
@@ -131,7 +131,7 @@
 
         <div class="form-group">
 
-          <label for="lastName" class="col-sm-2 control-label"> last Name</label>
+          <label for="lastName" class="col-sm-2 control-label"> Last Name</label>
           <div class="col-lg-6 col-sm-10">
             <input type="textbox" class="form-control" id="lastName" ng-model="inviteiu.userLastName" placeholder="Last Name" autocomplete="off" >
           </div>
@@ -142,12 +142,12 @@
 
           <label for="email" class="col-sm-2 control-label"> Email </label>
           <div class="col-lg-6 col-sm-10">
-            <input type="email" class="form-control" id="email" ng-model="inviteiu.userEmail" placeholder="Enter email" autocomplete="off" >
+            <input type="email" class="form-control" id="email" ng-model="inviteiu.userEmail"   autocomplete="off" >
           </div>
 
           <div class="col-sm-2">
             <span>
-              <button type="submit" class="btn btn-primary" ng-click="inviteiu.doCreateUser();" >Create User</button>
+              <button type="submit" class="btn btn-primary" ng-click="inviteiu.doCreateUser();" >Invite User</button>
             </span>
           </div>
         </div>
