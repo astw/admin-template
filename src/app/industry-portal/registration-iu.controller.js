@@ -13,6 +13,7 @@
 
     vm.nextStep = nextStep;
 
+vm.step = 3;
 
     function nextStep(){
       vm.step = 2;

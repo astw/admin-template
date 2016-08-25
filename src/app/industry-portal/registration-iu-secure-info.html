@@ -1,0 +1,127 @@
+<style>
+  .content-wrapper {
+    height: 1150px !important;
+  }
+
+</style>
+
+<div class="box">
+
+<div class="col-lg-11">
+  <div class="box-header with-border">
+    <div class="">
+      <h3>Select Answers to 5 Knowledge Based Questions</h3>
+      Knowledge Based Question are used along with your password to further prove your identity during report submission.
+      <br/>
+      During report submission you will be required to enter an answer that matches what you enter below.
+    </div>
+
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+
+  <form class="form-horizontal" _lpchecked="1">
+    <div class="box-body">
+
+      <div class="form-group">
+        <label for="question1" class="col-sm-2 control-label">Question 1 </label>
+
+        <div class="col-sm-6">
+          <input type="textbox"  class="form-control" id="question1"  value="{{iuregistration.userProfile.question1}}" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="question2" class="col-sm-2 control-label">Question 2 </label>
+
+        <div class="col-sm-6">
+          <input type="textbox"  class="form-control" id="question2"  value="{{iuregistration.userProfile.question2}}" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="question3" class="col-sm-2 control-label">Question 3 </label>
+        <div class="col-sm-6">
+          <input type="textbox"  class="form-control" id="question3"  value="{{iuregistration.userProfile.question3}}" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="question4" class="col-sm-2 control-label">Question 4 </label>
+        <div class="col-sm-6">
+          <input type="textbox"  class="form-control" id="question4"  value="{{iuregistration.userProfile.question4}}" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="question5" class="col-sm-2 control-label">Question 5 </label>
+        <div class="col-sm-6">
+          <input type="textbox"  class="form-control" id="question5"  value="{{iuregistration.userProfile.question5}}" autocomplete="off">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+  <div class="box col-lg-11">
+    <div class="box-header">
+      <div class="">
+        <h3>Select Answers to 2 Security Questions</h3>
+        Security Question are used to unlock your account if you forget your password password or your account is locked because of suspicious of compromise.
+        <br/>
+        You may be asked the answer to these questions by your authority.
+      </div>
+
+    </div>
+
+    <form class="form-horizontal" _lpchecked="1">
+      <div class="box-body">
+
+        <div class="form-group">
+          <label for="secureQuestion1" class="col-sm-2 control-label">Question 1 </label>
+
+          <div class="col-sm-6">
+            <input type="textbox"  class="form-control" id="secureQuestion1"  value="{{iuregistration.userProfile.secure_question1}}" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="secureQuestionAnswer1" class="col-sm-2 control-label">Answer</label>
+
+          <div class="col-sm-6">
+            <input type="textbox"  class="form-control" id="secureQuestionAnswer1"  value="{{iuregistration.userProfile.secure_question1_answer}}" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="secureQuestion2" class="col-sm-2 control-label">Question 2 </label>
+
+          <div class="col-sm-6">
+            <input type="textbox"  class="form-control" id="secureQuestion2"  value="{{iuregistration.userProfile.secure_question2}}" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="secureQuestionAnswer2" class="col-sm-2 control-label">Answer</label>
+
+          <div class="col-sm-6">
+            <input type="textbox"  class="form-control" id="secureQuestionAnswer2"  value="{{iuregistration.userProfile.secure_question2_answer}}" autocomplete="off">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="prevBtn" class="col-sm-2 control-label">  </label>
+        <div class="col-sm-6">
+          <button  id="prevBtn" class="btn k-primary pull-right" ng-click="iuregistration.nextStep();">Prev</button>
+          <button  id="nextBtn" class="btn k-primary pull-right" ng-click="iuregistration.nextStep();">Next</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+</div>
