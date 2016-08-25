@@ -49,6 +49,15 @@
         resolve: { authenticate: authenticate }
       })
 
+
+      .state('industry.portal', {
+        url: '/portal',
+        templateUrl: 'app/industry-portal/industry.portal.html',
+        controller: 'RegistrationrequestsController',
+        controllerAs: 'industryportal'
+      })
+
+
       .state('plain.registration', {
         url:'/industry/registration',
         templateUrl:"app/industry-portal/registration-iu.html",
@@ -125,6 +134,7 @@
         controller: 'RegistrationrequestsController',
         controllerAs: 'authority'
     })
+
     ;
 
        /** @ngInject */

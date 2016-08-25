@@ -49,7 +49,7 @@
             $localStorage["user"] = user;
 
             //todo:got to industry portal
-            $state.go('authority.portal.industries');
+            $state.go('industry.portal');
         }
 
     }

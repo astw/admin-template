@@ -1,0 +1,92 @@
+<!-- Logo -->
+<a href="/base/index" class="logo visible-lg visible-md visible-sm">
+  <!-- mini logo for sidebar mini 50x50 pixels -->
+  <span class="logo-mini"><b>L</b>E</span>
+  <!-- logo for regular state and mobile devices -->
+  <span class="logo-lg"><b>Linko</b>Exchange</span>
+</a>
+
+<!-- Header Navbar -->
+<nav class="navbar navbar-static-top" role="navigation">
+
+  <!-- Sidebar toggle button-->
+  <li class="sidebar-toggle visible-lg visible-md visible-sm"   data-toggle="offcanvas"   role="button">
+    <span class="sr-only-1 program-font"> Industry Portal </span>
+    <span class="sr-only-1 " style="margin-left:10px">--</span>
+    <span class="sr-only-1 program-font" style="margin-left:10px"> Vally City Plating(0040) </span>
+  </li>
+
+  <a href="#" class="sidebar-toggle visible-xs" ng-click="showHideExtraSmallMenu()" role="button">
+    <span class="sr-only-1"> Authority Portal  </span>
+  </a>
+
+  <!-- Navbar Right Menu -->
+  <div class="navbar-custom-menu">
+
+    <ul class="nav navbar-nav">
+      <!--          <li class="visible-lg visible-md"><a href="#"></a></li>-->
+
+      <!--          <li class="visible-lg visible-md" ><a href="/contact/"></a></li>-->
+
+
+      <!-- Messages: style can be found in dropdown.less-->
+
+      <!-- /.messages-menu -->
+
+      <!-- Notifications Menu -->
+
+      <!-- Tasks Menu -->
+
+      <!-- User Account Menu -->
+      <li class="dropdown user user-menu">
+        <!-- Menu Toggle Button -->
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <!-- The user image in the navbar-->
+          <!--              <img src="/templates/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
+          <!-- hidden-xs hides the username on small devices so only the image appears. -->
+          <span class="hidden-xs">{{user.userName}}</span>
+        </a>
+        <ul class="dropdown-menu">
+          <!-- The user image in the menu -->
+          <!--<li class="user-header">-->
+          <!--<img src="/templates/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
+
+          <!--<p> Chris Weinandt-->
+          <!--<small>LinkoExchange Production Manager</small>-->
+          <!--</p>-->
+          <!--</li>-->
+          <!-- Menu Body -->
+          <li class="user-body">
+            <!--
+                            <div class="row">
+                              <div class="col-xs-4 text-center">
+                                <a href="#">Followers</a>
+                              </div>
+                              <div class="col-xs-4 text-center">
+                                <a href="#">Sales</a>
+                              </div>
+                              <div class="col-xs-4 text-center">
+                                <a href="#">Friends</a>
+                              </div>
+                            </div>
+            -->
+            <!-- /.row -->
+          </li>
+          <!-- Menu Footer-->
+          <li class="user-footer">
+             <div class="pull-right">
+              <a href="#" class="btn btn-default btn-flat" ng-click="logout();">Sign out</a>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <!-- Control Sidebar Toggle Button -->
+      <!--
+                <li>
+                  <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                </li>
+      -->
+    </ul>
+  </div>
+
+</nav>
