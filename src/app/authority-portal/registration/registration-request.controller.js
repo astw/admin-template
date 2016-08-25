@@ -6,96 +6,182 @@
     .controller('RegistrationrequestsController', RegistrationrequestsController);
 
   /** @ngInject */
-  function RegistrationrequestsController($timeout, $scope, $state) {
+  function RegistrationrequestsController($timeout,$rootScope, $scope, $state) {
     var vm = this;
-      
-      console.log($rootScope.selectedIndustry);
-      
-    vm.showProfile = false;  
-      
+
+    console.log($rootScope.selectedIndustry);
+
+    vm.showProfile = false;
+
     vm.searchChanged = searchChanged;
     vm.viewProfile = viewProfile;
     vm.registrationPendingApproval = registrationPendingApproval;
-      
-      
+
     vm.selectedOne = false;
-    
-    
-     
+
     activate();
 
-    function activate() { 
+    function activate() {
         console.log('vm.selectedOne=' + vm.selectedOne);
-    } 
-      
-    function changeIndustryStatus(){ 
-        
+    }
+
+    function changeIndustryStatus(){
+
         swal(
-            {   
-                title: "Are you sure?",   
-                text: "You will change the industry status!",   
-                type: "warning",   
-                showCancelButton: true,   
-                confirmButtonColor: "#DD6B55",   
-                confirmButtonText: "Yes, change it!",   
-                cancelButtonText: "No, cancel!",   
-                closeOnConfirm: false,   
-                closeOnCancel: false }, 
+            {
+                title: "Are you sure?",
+                text: "You will change the industry status!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, change it!",
+                cancelButtonText: "No, cancel!",
+                closeOnConfirm: false,
+                closeOnCancel: false },
             function(isConfirm)
-            {   
-                if (isConfirm) {  
-                    // change data 
-                    
+            {
+                if (isConfirm) {
+                    // change data
+
                     vm.selectedRow.enabled = vm.selectedRow.enabled =='Yes' ?  'No' : 'Yes';
                     $scope.$digest();
-                    
-                    swal("Changed!", "Industry status has been changed.", "success");  
+
+                    swal("Changed!", "Industry status has been changed.", "success");
                 } else {
-                    swal("Cancelled", "Industry status is not changed.", "error");   
-                } 
+                    swal("Cancelled", "Industry status is not changed.", "error");
+                }
             }
-        );  
+        );
     }
-      
+
     function viewProfile(){
        vm.showProfile = true;
        vm.currentUser =vm.selectedRow;
     }
-    
+
     function registrationPendingApproval(){
           vm.showProfile = false;
     }
-      
-    function getIndustyUsers(){ 
+
+    function getIndustyUsers(){
         $state.go('users', {permitNo:vm.selectedRow.permitNo});
     }
-      
+
     function searchChanged(){
         console.log('input =' +  vm.searchKey);
-        
-        var data = vm.data;   
-        var filterData = industryFilter(data, vm.searchKey);  
-        
-        vm.grid.setDataSource(new kendo.data.DataSource({ data:filterData })); 
+
+        var data = vm.data;
+        var filterData = industryFilter(data, vm.searchKey);
+
+        vm.grid.setDataSource(new kendo.data.DataSource({ data:filterData }));
         vm.grid.refresh();
     }
-      
+
     function industryFilter(dataSet, inputKey){
-        
+
         var output=[];
-        
+
         console.log('===== dataset ');
         console.log(dataSet);
-        
+
         angular.forEach(dataSet,function(item){
-            if( item.firstName.toLowerCase().indexOf(inputKey.toLowerCase()) > -1 
-               ||  item.lastName.toLowerCase().indexOf(inputKey.toLowerCase()) > -1 
-               ||  item.phone.toLowerCase().indexOf(inputKey.toLowerCase()) > -1 
-               || item.industry.toLowerCase().indexOf(inputKey.toLowerCase()) > -1) 
-                output.push(item); 
+            if( item.firstName.toLowerCase().indexOf(inputKey.toLowerCase()) > -1
+               ||  item.lastName.toLowerCase().indexOf(inputKey.toLowerCase()) > -1
+               ||  item.phone.toLowerCase().indexOf(inputKey.toLowerCase()) > -1
+               || item.industry.toLowerCase().indexOf(inputKey.toLowerCase()) > -1)
+                output.push(item);
         })
-        
-        return output; 
+
+        return output;
     }
+
+
+    var data =  [
+                            {
+                             userId:3,
+                             firstName: "Eric",
+                             lastName: "Snell",
+                             industry: "Vally City Plating(0040)",
+                             phone:"(772)-496-4160",
+                             email:"eric@linkoweb.com",
+                             registeredDate:"8/1/2016/ 13:50 AM",
+                             status:"InActive",
+                             locked:"No",
+                             isRegisterted:"No"
+                           },
+                           {   userId:4,
+                             firstName: "Chris",
+                             lastName: "Weinandt",
+                             industry: "Vally City Plating(0040)",
+                             phone:"(770)-496-4160",
+                             email:"Weinandt@linkcotechnology.com",
+                             registeredDate:"8/1/2016/ 13:50 AM",
+                             status:"Active",
+                             locked:"No",
+                             isRegisterted:"Yes"
+                           }
+          ]
+
+        vm.data = data;
+
+
+
+        $scope.mainGridOptions_2 = {
+                dataSource :{
+                    data:data
+                },
+                filterable:true,
+                selectable: "row",
+
+                sortable: true,
+
+                columns: [
+
+                  {
+                    width:'10%',
+                    field: "firstName",
+                    title: "First Name",
+                    minScreenWidth: 960,
+                  },
+
+ {
+                    width:'10%',
+                    field: "lastName",
+                    title: "Last Name",
+                    minScreenWidth: 960,
+                  },
+                   {
+                                         width:'20%',
+                                         field: "email",
+                                         title: "Email",
+                                         minScreenWidth: 960,
+                                     },
+
+
+
+                  {
+                      width:'20%',
+                      field: "industry",
+                      title: "Industry",
+                      minScreenWidth: 960,
+                  },
+
+                      {
+                                        width:'20%',
+                                        field: "registeredDate",
+                                        title: "Date Registered",
+                                        minScreenWidth: 960,
+                                    },
+
+          {
+                                        width:'20%',
+                                        field: "isRegisterted",
+                                        title: "Is Re-Registered",
+                                        minScreenWidth: 960,
+                                    },
+
+                ]
+            }
+
   }
 })();
