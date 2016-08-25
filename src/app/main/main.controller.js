@@ -233,7 +233,7 @@
                           "class" : "visible-lg visible-sm visible-md"
                         },
                         width:"15%",
-                        field: "invitedDate",
+                        field: "dateInvited",
                         title: "Data Invited",
                         minScreenWidth: 1200,
                     },
@@ -264,7 +264,7 @@
                                               "<dt>Email </dt>" +
                                               "<dd>#:email #</dd>" +
                                               "<dt>Date Invited:</dt>" +
-                                              "<dd>#:invitedDate #</dd>" +
+                                              "<dd>#:dateInvited #</dd>" +
                                               "<dt>Invite Expires </dt>"  +
                                               "<dd>#:inviteExpires# </dd>" +
                                  "</div>"

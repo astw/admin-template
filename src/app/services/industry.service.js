@@ -18,12 +18,17 @@
     var service = {
       getIndustryUsers: getIndustryUsers,
       createIndustryUsers: createIndustryUsers,
-      getInvitedUserList:getInvitedUserList
+      getInvitedUserList:getInvitedUserList,
+      addInvitedUser:addInvitedUser
     };
 
     return service;
 
     ////////////////
+
+    function addInvitedUser(user){
+      invitedUserList.push(user);
+    }
 
     function getInvitedUserList(){
        return invitedUserList;
@@ -95,7 +100,7 @@
         firstName: "Chris",
         lastName: "Weinandt",
         email:"Weinandt@linkcotechnology.com",
-        invitedDate:"8/1/2016/ 13:50 AM",
+        dateInvited:"8/1/2016/ 13:50 AM",
         inviteExpires:"Yes"
        }
       ];
