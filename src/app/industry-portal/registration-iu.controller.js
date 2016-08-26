@@ -19,8 +19,8 @@
 
 
         function saveRegistrationInfo() {
-            $state.go("plain.login");
-
+            //$state.go("plain.login");
+            vm.step =4 ;
         }
 
         function toBasic() {
