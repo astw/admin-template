@@ -8,7 +8,6 @@
     /** @ngInject */
     function IndustriesController($timeout, $rootScope, $scope, $state) {
         var vm = this;
-
         vm.searchButtonText = "Simple Search";
         vm.enabledButtonText = 'Disable';
         vm.simpleSearch = true;
@@ -286,7 +285,7 @@
                     "class": "visible-md visible-lg col-md-1"
                 },
                 template:
-                    "<div class='fa fa--right fa-2x pull-right text-info'>" + "</div>",
+                    "<div class='fa fa-chevron-circle-right fa-lg pull-right'>" + "</div>",
                 filterable: false
 
             },

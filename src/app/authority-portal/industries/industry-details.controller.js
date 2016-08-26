@@ -15,7 +15,6 @@
             vm.enabledButtonText = 'Enabled';
         }
 
-
         vm.industryUsers = getIndustyUsers;
         vm.changeIndustryStatus = changeIndustryStatus;
 
@@ -24,9 +23,9 @@
                 {
                     title: "Are you sure?",
                     text: "You will change the industry status!",
-                    type: "warning",
+                    //type: "warning",
                     showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
+                    confirmButtonColor: "#428bca",
                     confirmButtonText: "Yes, change it!",
                     cancelButtonText: "No, cancel!",
                     closeOnConfirm: false,
@@ -44,7 +43,13 @@
                         }
                         $scope.$digest();
 
-                        swal("Changed!", "Industry status has been changed.", "success");
+                        swal(
+                        {
+                         title:"Changed!",
+                         text:"Industry status has been changed.",
+                         type:"success"
+                        });
+
                     } else {
                         swal("Canceled", "Industry status is not changed.", "error");
                     }

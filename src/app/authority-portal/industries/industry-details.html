@@ -48,12 +48,33 @@
                                 <input type="text" rows="2" class="form-control" id="industry" readonly value={{selectedIndustry.industry}} />
                             </div>
 
-                            <label for="address" class="col-md-2 control-label">Address </label>
-                            <div class="col-md-4">
-                                <textarea rows="1" class="form-control text-justify" id="address" readonly>{{selectedIndustry.address}}</textarea>
-                            </div>
+                          <label for="hasSignatory" class="col-md-2 control-label">Has Signatory</label>
+                          <div class="col-md-4">
+                            <input type="text" readonly class="form-control" id="hasSignatory" value={{selectedIndustry.hasSignatory}} />
+                          </div>
+
+                            <!--<label for="address" class="col-md-2 control-label">Address </label>-->
+                            <!--<div class="col-md-4">-->
+                                <!--<textarea rows="1" class="form-control text-justify" id="address" readonly>{{selectedIndustry.address}}</textarea>-->
+                            <!--</div>-->
                         </div>
                     </div>
+
+
+                  <div class="form-horizontal row">
+                    <div class="form-group">
+                      <label for="address" class="col-md-2 control-label">Address</label>
+
+                      <div class="col-md-4">
+                        <input type="text" readonly class="form-control" id="address" value={{selectedIndustry.address}} />
+                      </div>
+
+                      <label for="enabled" class="col-md-2 control-label">Enabled ?</label>
+                      <div class="col-md-4">
+                        <input type="text" readonly class="form-control" id="enabled" value={{selectedIndustry.enabled}} />
+                      </div>
+                    </div>
+                  </div>
 
 
                     <div class="form-horizontal row">
@@ -64,10 +85,7 @@
                                 <input type="text" readonly class="form-control" id="lastsubmission" value={{selectedIndustry.lastsubmission}} />
                             </div>
 
-                            <label for="hasSignatory" class="col-md-2 control-label">Has Signatory</label>
-                            <div class="col-md-4">
-                                <input type="text" readonly class="form-control" id="hasSignatory" value={{selectedIndustry.hasSignatory}} />
-                            </div>
+
                         </div>
                     </div>
 

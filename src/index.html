@@ -1,14 +1,18 @@
 <!doctype html>
 <html ng-app="testProject">
   <head>
-    <base href="/">      
+    <base href="/">
     <meta charset="utf-8">
     <title>testProject</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width"> 
-    
+    <meta name="viewport" content="width=device-width">
+
      <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-      
+
+    <script src="bower_components/es6-promise/promise.min.js"></script> <!-- for IE support -->
+
+    <script src="bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bower_components/sweetalert2/dist/sweetalert2.min.css">
 
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/templates/bootstrap/css/bootstrap.min.css">
@@ -24,18 +28,18 @@
   -->
 <!--   <link rel="stylesheet" href="/templates/dist/css/skins/skin-blue.min.css">-->
    <link rel="stylesheet" href="/templates/dist/css/skins/_all-skins.min.css">
-       
-     
-      <!--- kendo ui  --> 
-    
+
+
+      <!--- kendo ui  -->
+
     <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.2.714/styles/kendo.common-material.min.css" />
 <!--    <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.2.714/styles/kendo.material.min.css" />-->
     <!-- <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.2.714/styles/kendo.metro.min.css" /> -->
 <!--    <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.2.714/styles/kendo.metro.min.css" />-->
-    <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.2.714/styles/kendo.bootstrap.min.css" /> 
+    <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.2.714/styles/kendo.bootstrap.min.css" />
     <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.2.714/styles/kendo.default.mobile.min.css" />
-    
-      
+
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -48,20 +52,20 @@
     <!-- inject:css -->
     <!-- css files will be automatically insert here -->
     <!-- endinject -->
-    <!-- endbuild --> 
-    
+    <!-- endbuild -->
+
       <link rel="stylesheet" href="customerize_top_bar.css" />
   </head>
-  <body class="hold-transition skin-blue-light sidebar-mini">   
-      
+  <body class="hold-transition skin-blue-light sidebar-mini">
+
 <!--
-  <ul class="center-nav  visible-lg visible-md"> 
+  <ul class="center-nav  visible-lg visible-md">
       <li><a href="/contact/">Grand Rapids Environmental Services Department</a></li>
-   </ul> 
+   </ul>
 -->
-            
+
   <div class="wrapper">
-    <div ui-view></div> 
+    <div ui-view></div>
 
 
   <!-- /.content-wrapper -->
@@ -87,9 +91,9 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="/templates/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
-<script src="/templates/dist/js/app.min.js"></script> 
-      
-      
+<script src="/templates/dist/js/app.min.js"></script>
+
+
 <!--
     <link href="../content/shared/styles/examples-offline.css" rel="stylesheet">
     <link href="/kendo/styles/kendo.common.min.css" rel="stylesheet">
@@ -98,11 +102,11 @@
     <link href="/kendo/styles/kendo.dataviz.min.css" rel="stylesheet">
     <link href="/kendo/styles/kendo.dataviz.default.min.css" rel="stylesheet">
 -->
-      
+
 <!--    <script src="/kendo/js/jquery.min.js"></script>-->
     <script src="/kendo/js/jszip.min.js"></script>
     <script src="/kendo/js/angular.min.js"></script>
-    <script src="/kendo/js/kendo.all.min.js"></script> 
-      
+    <script src="/kendo/js/kendo.all.min.js"></script>
+
   </body>
 </html>

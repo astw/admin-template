@@ -56,9 +56,10 @@
           lastName: "Snell",
           phone:"(772)-496-4160",
           email:"eric@linkoweb.com",
-          registeredDate:"8/1/2016/ 13:50 AM",
+          registeredDate:"06-01-2016",
           status:"InActive",
-          locked:"Locked"
+          locked:"Locked",
+          role:'Administrator'
         },
         {
           userId:2,
@@ -66,27 +67,30 @@
           lastName: "Weinandt",
           phone:"(770)-496-4160",
           email:"Weinandt@linkcotechnology.com",
-          registeredDate:"8/1/2016/ 13:50 AM",
+          registeredDate:"06-01-2016",
           status:"Active",
-          locked:"Locked"
+          locked:"Locked",
+          role:'Administrator'
         },
         {   userId:3,
           firstName: "Eric",
           lastName: "Snell",
           phone:"(772)-496-4160",
           email:"eric@linkoweb.com",
-          registeredDate:"8/1/2016/ 13:50 AM",
+          registeredDate:"06-01-2016",
           status:"InActive",
-          locked:"No"
+          locked:"No",
+          role:'Administrator'
         },
         {   userId:4,
           firstName: "Chris",
           lastName: "Weinandt",
           phone:"(770)-496-4160",
           email:"Weinandt@linkcotechnology.com",
-          registeredDate:"8/1/2016/ 13:50 AM",
+          registeredDate:"06-01-2016",
           status:"Active",
-          locked:"No"
+          locked:"No",
+          role:'Administrator'
         }
       ];
 

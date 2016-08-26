@@ -25,7 +25,7 @@
 
     function login(){
 
-        if(vm.userEmail == 'aa@linkoweb.com'  && vm.userPassword == "aa1234"){
+        if(vm.userEmail == 'aa'  && vm.userPassword == "aa1234"){
 
             var user = {
                 userName : "Chris Weinandt",
@@ -38,7 +38,7 @@
             $state.go('authority.portal.industries');
         }
 
-        else if(vm.userEmail == 'bb@linkoweb.com'  && vm.userPassword == "bb1234"){
+        else if(vm.userEmail == 'bb'  && vm.userPassword == "bb1234"){
 
             var user = {
                 userName : "Shuhao Wang",

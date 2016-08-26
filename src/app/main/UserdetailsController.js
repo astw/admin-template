@@ -22,18 +22,21 @@
     // vm.removeUser = removeUser;
 
 
-    $rootScope.selectedUser = {
-      userId:1,
-      firstName: "Eric",
-      lastName: "Snell",
-      phone:"(772)-496-4160",
-      email:"eric@linkoweb.com",
-      registeredDate:"8/1/2016/ 13:50 AM",
-      status:"InActive",
-      locked:"Locked"
-    };
+    // $rootScope.selectedUser = {
+    //   userId:1,
+    //   firstName: "Eric",
+    //   lastName: "Snell",
+    //   phone:"(772)-496-4160",
+    //   email:"eric@linkoweb.com",
+    //   registeredDate:"06-01-2016",
+    //   status:"Active",
+    //   locked:"UnLocked"
+    // };
 
     vm.selectedUser =    $rootScope.selectedUser;
+
+    console.log('------------------');
+    console.log(vm.selectedUser);
 
     if(vm.selectedUser.status == 'InActive'){
       vm.enabledButtonText = 'Enable';
