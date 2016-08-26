@@ -99,25 +99,28 @@
         }
 
 
-        var data = [{
-            userId: 3,
-            firstName: "Eric",
-            lastName: "Snell",
-            industry: "Vally City Plating(0040)",
-            phone: "(772)-496-4160",
-            email: "eric@linkoweb.com",
-            registeredDate: "8/1/2016/ 13:50 AM",
-            status: "InActive",
-            locked: "No",
-            isRegisterted: "No"
-        }, {
+        var data = [
+        // {
+        //     userId: 3,
+        //     firstName: "Eric",
+        //     lastName: "Snell",
+        //     industry: "Vally City Plating(0040)",
+        //     phone: "(772)-496-4160",
+        //     email: "eric@linkoweb.com",
+        //     registeredDate: "06-01-2016",
+        //     status: "InActive",
+        //     locked: "No",
+        //     isRegisterted: "No"
+        // },
+
+        {
             userId: 4,
             firstName: "Chris",
             lastName: "Weinandt",
-            industry: "Vally City Plating(0040)",
+            industry: "Kerry Sweet Ingredients",
             phone: "(770)-496-4160",
-            email: "Weinandt@linkcotechnology.com",
-            registeredDate: "8/1/2016/ 13:50 AM",
+            email: "chris@linkcoweb.com",
+            registeredDate: "08-30-2016 8:15 AM",
             status: "Active",
             locked: "No",
             isRegisterted: "Yes"
