@@ -158,7 +158,7 @@
 
         var user = {};
         user.firstName = vm.userFirstName;
-        user.lastName = vm.userFirstName;
+        user.lastName = vm.userLastName;
         user.email = vm.userEmail;
 
         var now = new Date();
