@@ -46,7 +46,7 @@
 
     }
 
-    function onInvitedUserListGridChange(arg){ 
+    function onInvitedUserListGridChange(arg){
         var selected = $.map(this.select(), function(item) {
              return $(item).text();
          });
@@ -59,7 +59,7 @@
         console.log('in user grid');
         vm.grid = arg.sender;
 
-        var selected = $.map(this.select(), function(item) { 
+        var selected = $.map(this.select(), function(item) {
             return $(item).text();
 
         });
@@ -215,7 +215,6 @@
              data:invitedUsers
          },
 
-         change: onInvitedUserChange,
          selectable: "row",
          sortable: true,
          height:200,
