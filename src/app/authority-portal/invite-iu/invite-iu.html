@@ -1,13 +1,13 @@
 
 <section class="content-header">
       <h1>
-        Invite User to City of Grand Rapids Authority
+        Invite User to  {{selectedIndustry.industry}}
         <small></small>
       </h1>
       <ol class="breadcrumb-left visible-lg visible-md">
         <li><a href="#"><i class="fa "></i> Home </a></li>
         <li class="active"> <a href="/authority/industries"> Industries </a>  </li>
-        <li class="active"> <a href="/authority/industries/{{selectedIndustry.permitNo}}/users"> Industry Details </a>  </li>
+        <li class="active"> <a href="/authority/industries/{{selectedIndustry.permitNo}}/users"> Details </a>  </li>
         <li > Invite User </li>
         </ol>
 
@@ -77,7 +77,7 @@
 <!--</div>-->
 
 
-<div class="col-lg-6">
+<div class="col-lg-8">
 
   <!-- /.box-header -->
   <!-- form start -->
@@ -103,12 +103,12 @@
       <div class="form-group"  ng-if=" step == 2 " >
 
         <div class="col-lg-12 col-sm-offset-2 col-sm-10">
-          <b>The user does not exist. Do you want to invite a new user ?</b>  <br/> <br/>
+          <b>The user does not exist. Do you want to invite this new user ?</b>  <br/> <br/>
         </div>
 
         <div class="col-lg-12">
         <div class="col-lg-1 col-sm-offset-2 col-sm-10">
-          <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.createUser();'> Invite User </button>
+          <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.createUser();'> Yes </button>
         </div>
 
 
@@ -123,7 +123,7 @@
       <div  ng-if="step==3" >
         <div class="form-group">
 
-          <label for="fistName" class="col-sm-2 control-label"> First Name</label>
+          <label for="fistName" class="col-lg-3 col-md-3 col-sm-3 control-label"> First Name</label>
           <div class="col-lg-6 col-sm-10">
             <input type="textbox" class="form-control" id="fistName" ng-model="inviteiu.userFirstName" placeholder="First Name" autocomplete="off" >
           </div>
@@ -131,7 +131,7 @@
 
         <div class="form-group">
 
-          <label for="lastName" class="col-sm-2 control-label"> Last Name</label>
+          <label for="lastName" class="col-lg-3 col-md-3  control-label"> Last Name</label>
           <div class="col-lg-6 col-sm-10">
             <input type="textbox" class="form-control" id="lastName" ng-model="inviteiu.userLastName" placeholder="Last Name" autocomplete="off" >
           </div>
@@ -140,7 +140,7 @@
 
         <div class="form-group">
 
-          <label for="email" class="col-sm-2 control-label"> Email </label>
+          <label for="email" class="col-lg-3 col-md-3  control-label"> Email </label>
           <div class="col-lg-6 col-sm-10">
             <input type="email" class="form-control" id="email" ng-model="inviteiu.userEmail"   autocomplete="off" >
           </div>
@@ -187,7 +187,7 @@
         <div class="form-group">
 
           <div class="col-lg-12 col-sm-offset-2 col-sm-10">
-            <b> An invitation Email has been sent out ! </b>  <br/> <br/>
+            <b> An invitation Email has been sent. </b>  <br/> <br/>
           </div>
         </div>
       </div>
