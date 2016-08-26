@@ -19,7 +19,7 @@
 
 
     function saveRegistrationInfo(){
-
+        $state.go("plain.login");
 
     }
     function toBasic(){

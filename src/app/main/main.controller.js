@@ -126,7 +126,7 @@
               },
               width:"15%",
               field: "registeredDate",
-              title: "Data Registered",
+              title: "Date Registered",
               minScreenWidth: 1200,
           },
           {
@@ -144,15 +144,15 @@
               },
               width:"10%",
               field: "locked",
-              title: "AccountLocked?",
+              title: "Account Locked?",
                minScreenWidth: 1200
           },
-          {
-              width:'5%',
-              template:
-                    "<div class='fa fa-edit fa-lg'>" +  "</div>"
+            {
+                         template: "<div class='fa fa-chevron-circle-right fa-lg pull-right'>" + "</div>",
+                         width: 60,
+                         filterable: false
 
-          },
+         },
           {
 
             headerAttributes : {
@@ -234,8 +234,9 @@
                         },
                         width:"15%",
                         field: "dateInvited",
-                        title: "Data Invited",
+                        title: "Date Invited",
                         minScreenWidth: 1200,
+                         format: "{0:MM-dd-yyyy}"
                     },
 
                     {
@@ -244,8 +245,8 @@
                         },
                         width:"10%",
                         field: "inviteExpires",
-                        title: "Invite Expires?",
-                         minScreenWidth: 1200
+                        title: "Invitation Expires Date",
+                        format: "{0:MM-dd-yyyy}"
                     },
                     {
 
@@ -265,7 +266,7 @@
                                               "<dd>#:email #</dd>" +
                                               "<dt>Date Invited:</dt>" +
                                               "<dd>#:dateInvited #</dd>" +
-                                              "<dt>Invite Expires </dt>"  +
+                                              "<dt>Invitation Expires </dt>"  +
                                               "<dd>#:inviteExpires# </dd>" +
                                  "</div>"
 

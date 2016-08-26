@@ -159,19 +159,19 @@
         var user = {};
         user.firstName = vm.userFirstName;
         user.lastName = vm.userFirstName;
-        user.email = vm.email;
+        user.email = vm.userEmail;
 
         var now = new Date();
-        var date1 = now.toISOString().slice(0,10).replace(/-/g,"-");
+        var date1 = now.toISOString().slice(0,10).replace(/-/g,"/");
 
-        var t = date1.split('-');
+        var t = date1.split('/');
         t[1] = parseInt(t[1]) +1;
         t[1] = '0' + t[1];
 
-        var date2 = t.join('-');
+        var date2 = t.join('/');
 
-        user.dateInvited = date1;
-        user.inviteExpires = date2;
+        user.dateInvited = kendo.parseDate(date1);
+        user.inviteExpires = kendo.parseDate(date2);
         user.industry = $rootScope.selectedIndustry.industry;
 
         console.log($scope.selectedIndustry);

@@ -167,14 +167,26 @@
             <input type="textbox"  class="form-control" id="secureQuestionAnswer2"  ng-model="iuregistration.userProfile.secureQuestion2Answer" autocomplete="off">
           </div>
         </div>
+
+
+        <div class="form-group">
+          <label for="agreeTerms" class="col-sm-2 control-label"> </label>
+
+          <div class="col-sm-6">
+            <input type="checkbox"  id="agreeTerms"
+                   ng-model="iuregistration.userProfile.agreeTermsConditions" autocomplete="off">
+               I agree to the LinkoExchange Terms and Conditions
+          </div>
+
+        </div>
       </div>
 
 
       <div class="form-group">
         <label for="prevBtn" class="col-sm-2 control-label">  </label>
         <div class="col-sm-6">
-          <button  id="prevBtn" class="btn k-primary" ng-click="iuregistration.toBasic();">Previous</button>
-          <button  id="nextBtn" class="btn k-primary pull-right" ng-click="iuregistration.toProfileOverView();">Next</button>
+          <button  id="prevBtn" class="k-primary" ng-click="iuregistration.toBasic();">Previous</button>
+          <button  id="nextBtn" class="k-primary pull-right" ng-click="iuregistration.toProfileOverView();">Next</button>
         </div>
       </div>
     </form>

@@ -171,10 +171,10 @@
                     field: "registeredDate",
                     title: "Date Registered",
                     minScreenWidth: 960,
-                }, 
+                },
                 {
                     width: '5%',
-                    template: "<div class='fa  fa-chevron-circle-right fa-2x'>" + "</div>"
+                    template: "<div class='fa  fa-chevron-circle-right fa-lg'>" + "</div>"
                 },
 
 

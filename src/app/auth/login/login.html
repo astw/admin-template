@@ -3,33 +3,33 @@
 <div class="col-lg-4 col-md-4 col-sm-2 "></div>
 <div class="col-lg-4  col-md-4 col-sm-8 ">
             <div class="box-header with-border">
-              <h2 class="box-title">Linko Exchange Login</h2>
+              <h5 class="box-title"><b>LinkoExchange<b></b> Login</h5>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
 
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label for="login.userEmail">Email address</label>
                   <input type="email" class="form-control" id="login.userEmail" ng-model="login.userEmail" placeholder="Enter email" autocomplete="off" >
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
+                  <label for="login.userPassword">Password</label>
                   <input type="password" class="form-control" id="login.userPassword" ng-model="login.userPassword"  placeholder="Password" autocomplete="off" >
                 </div>
 
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox"> remember me!
+                    <input type="checkbox"> remember me
                   </label>
                 </div>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary" ng-click="login.login();" >Submit</button>
+                <button type="submit" class="btn btn-primary" ng-click="login.login();" >Login</button>
 
-                <a  class="pull-right" ui-sref="plain.forget-password">Forget password</a>
+                <a  class="pull-right" ui-sref="plain.forget-password">Forgot password</a>
 
               </div>
 

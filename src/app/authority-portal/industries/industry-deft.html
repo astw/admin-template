@@ -1,0 +1,246 @@
+<script>
+  $("#effectiveDate").kendoDatePicker({
+    animation: false
+  });
+</script>
+
+<section class="content-header">
+    <h1>
+        Industry Details
+    </h1>
+    <ol class="breadcrumb-left">
+        <li><a href="/authority/index"><i class=""></i> Home </a></li>
+        <li class=""><a href="/authority/industries"> Industries </a></li>
+        <li class="active"> <a href="authority/industries/{{selectedIndustry.permitNo}}/details"> Industry Details </a>  </li>
+        <li class="active">Data Entry Form Template</li>
+    </ol>
+</section>
+
+<br /><br />
+
+<div class="seperator"> </div>
+
+<form>
+    <div class="panel-heading">
+        <h4>{{selectedIndustry.industry}}</h4>
+    </div>
+    <div class="panel">
+        <div class="panel-body panel-collapse collapse in">
+            <div class="panel-group">
+                <!--                    step1                       -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading" data-toggle="collapse" data-target="#step1">
+                        <strong>Define Template Details</strong>
+                    </div>
+                    <div class="panel-body panel-collapse collapse in" ng-show="step > 0" id="step1">
+                        <div class="form-group" ng-show="step > 1">
+                            <div class="row">
+                                <label class="col-md-2 text-right">* Template Name</label>
+                                <span class="col-md-10">{{templateName}}</span>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-2 text-right">Comment</label>
+                                <span class="col-md-10">{{comment}}</span>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-2 text-right">* Effective Date</label>
+                                <span class="col-md-4">{{effectiveDate}}</span>
+                                <label class="col-md-2 text-right">Retire Date</label>
+                                <span class="col-md-4">{{retireDate}}</span>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-2 text-right">CTS Event Type</label>
+                                <span class="col-md-4">{{ctsEventType}}</span>
+                                <label class="col-md-2 text-right">CTS Sample Name</label>
+                                <span class="col-md-4">{{ctsSampleName}}</span>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-2 text-right">Template is</label>
+                                <span class="col-md-4">Inactive</span>
+                                <label class="col-md-2 text-right">Current Drafts</label>
+                                <span class="col-md-4">0</span>
+                            </div>
+                        </div>
+                        <div class="form-group pull-right" ng-show="step > 1">
+                            <button id="btnEdit" class="k-primary" ng-click="step = 1;">Edit</button>
+                        </div>
+                        <div class="form-horizontal">
+                           <div id="templateNameLabel" class="col-md-11 col-sm-offset-1  col-md-push-1" ng-show="step == 1">
+                                What template name will the industry see when they go to enter results into the templates?
+                           </div>
+                            <div class="form-group" ng-show="step == 1">
+                                <label for="templateName" class="col-md-2 control-label">* Template Name</label>
+
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="templateName" ng-model="templateName" />
+                                </div>
+                              <label for="templateNameLabel" class="col-md-2 control-label"></label>
+
+                            </div>
+
+                            <div class="form-group" ng-show="step == 1">
+                                <label for="comment" class="col-md-2 control-label">Comment</label>
+                                <div class="col-md-10">
+                                    <textarea class="form-control" id="comment" ng-model="comment" />
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-show="step == 1">
+                              <div class="col-md-11 col-md-push-1 col-sm-offset-1" ng-show="step == 1">When can the facility start using this template?</div>
+                                <label for="effectiveDate" class="col-md-2 control-label">* Effective Date</label>
+                                <div class="col-md-4">
+                                    <input class="form-control" id="effectiveDate" ng-model="effectiveDate" />
+
+                                </div>
+
+
+                                <label for="retireDate" class="col-md-2 control-label">Retire Date</label>
+                                <div class="col-md-4">
+                                    <input class="form-control" id="retireDate" ng-model="retireDate" />
+                                    <script>
+                                        $("#retireDate").kendoDatePicker({
+                                            animation: false
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-show="step == 1">
+                              <div class="col-md-11 col-md-push-1  col-sm-offset-1  " ng-show="step == 1">When the analytical data shows up in LinkoCTS, what Sample Event Type and Sample Name should be used?</div>
+
+                              <label for="ctsEventType" class="col-md-2 control-label">CTS Event Type</label>
+                                <div class="col-md-4">
+                                    <input class="form-control" id="ctsEventType" ng-model="ctsEventType" />
+                                    <script>
+                                        $("#ctsEventType").kendoDropDownList({
+                                            dataSource: {
+                                                data: ["Daily Sample(Sample)", "Weekly Sample(Sample)", "Monthly Sample(Sample)"]
+                                            },
+                                            optionLabel: "Select a CTS Event Type",
+                                            animation: false
+                                        });
+                                    </script>
+                                </div>
+                               <br/><br/>
+
+
+                              <label for="ctsSampleName" class="col-md-2 control-label">CTS Sample Name</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" id="ctsSampleName" ng-model="ctsSampleName" />
+                                </div>
+                            </div>
+
+
+                            <div class="form-group" ng-show="step == 1">
+                                <label for="isActive" class="col-md-2 control-label">Template is</label>
+                                <div class="col-md-4">
+                                    <input class="form-control" id="isActive" ng-model="isActive" />
+                                    <script>
+                                        $("#isActive").kendoDropDownList({
+                                            dataSource: {
+                                                data: ["Inactive", "Active"]
+                                            },
+                                            animation: false
+                                        });
+                                    </script>
+                                </div>
+                                <label for="currentDrafts" class="col-md-2 control-label">Current Drafts</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" readonly id="currentDrafts" value="0" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group pull-right" ng-show="step == 1">
+                            <button id="btnNext" class="k-primary" ng-click="step = step + 1;">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--                    step2                       -->
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading" data-toggle="collapse" data-target="#step2">
+                        <strong>Define Required Fields</strong>
+                    </div>
+                    <div class="panel-body panel-collapse collapse in" ng-show="step > 1" id="step2">
+                        <label for="requiredFieldsSetting" class="col-md-2 control-label">Required Fields Setting</label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="requiredFieldsSetting" ng-model="requiredFieldsSetting" />
+                            <script>
+                                $("#requiredFieldsSetting").kendoDropDownList({
+                                    dataSource: {
+                                        data: ["Lab Analysis Data Entry", "Field and Flow Data Entry"]
+                                    },
+                                    optionLabel: "Select a Required Fields Setting",
+                                    animation: false
+                                });
+                            </script>
+                        </div>
+                        <div class="form-group pull-right" ng-show="step == 2">
+                            <button id="btnNext" class="k-primary" ng-click="step = step + 1;">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--                    step3                       -->
+
+                <div class="panel panel-primary" ng-show="step < 4">
+                    <div class="panel-heading" data-toggle="collapse" data-target="#step3">
+                        <strong>Select Sampling Points</strong>
+                    </div>
+                    <div class="panel-body panel-collapse collapse in" ng-show="step > 2" id="step3">
+                        <div class="form-group">
+                            <div kendo-grid='gridSP' k-options="mainGridOptions_sp">
+                            </div>
+                        </div>
+                        <div class="form-group pull-right" ng-show="step == 3">
+                            <button id="btnNext" class="k-primary" ng-click="step = step + 1;">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--                    step4                       -->
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading" data-toggle="collapse" data-target="#step4">
+                        <strong>Select Sampling Point Details</strong>
+                    </div>
+                    <div class="panel-body panel-collapse collapse in" ng-show="step > 3" id="step4">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div kendo-grid='gridSelectedSP' k-options="mainGridOptions_sp2">
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <h5>&nbsp;&nbsp;&nbsp;What parameters should show up in the template for selected Sampling Point?</h5>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <strong>Available Parameters</strong>
+                                <div kendo-grid='gridAvailableParam' k-options="mainGridOptions_ap">
+                                </div>
+                            </div>
+                            <div class="col-md-8 pull-right">
+                                <strong>Selected Parameters</strong>
+                                <div kendo-grid='gridSelectedParam' k-options="mainGridOptions_selectedParam">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="form-group pull-right">
+                <button id="indusryUser" class="k-primary" ng-click="">Cancel</button>
+                <button id="indusryUser" class="k-primary" ng-click="saveDeft()">Save</button>
+            </div>
+        </div>
+    </div>
+</form>
+

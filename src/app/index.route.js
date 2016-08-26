@@ -15,7 +15,7 @@
        })
 
       .state("plain.index", {
-          url:"/index",
+          url:"/",
           templateUrl :"app/layout/plain-index.html" ,
 //          controller:"LoginController",
 //          controllerAs:"login"
@@ -49,15 +49,12 @@
         resolve: { authenticate: authenticate }
       })
 
-
       .state('industry.portal', {
         url: '/portal',
         templateUrl: 'app/industry-portal/industry.portal.html',
         controller: 'RegistrationrequestsController',
         controllerAs: 'industryportal'
       })
-
-
       .state('plain.registration', {
         url:'/industry/registration',
         templateUrl:"app/industry-portal/registration-iu.html",
@@ -110,7 +107,14 @@
         controller: 'IndustrydetailsController',
         controllerAs: 'industrydetails'
       })
-    .state('authority.portal.industryUsers', {
+      .state('authority.portal.industry-DEFT', {
+        url: '/industries/:permitNo/DataEntryFormTemplate',
+        templateUrl: 'app/authority-portal/industries/industry-deft.html',
+        controller: 'IndustryDEFTController',
+        controllerAs: 'industryDEFT'
+      })
+
+      .state('authority.portal.industryUsers', {
         url: '/industries/:permitNo/users',
         templateUrl: 'app/main/main.html',
         controller: 'IndustryusersController',
@@ -134,7 +138,6 @@
         controller: 'RegistrationrequestsController',
         controllerAs: 'authority'
     })
-
     ;
 
        /** @ngInject */
@@ -149,14 +152,14 @@
 
         $timeout(function() {
           $state.go('plain.login')
-        })
+        });
 
         return $q.reject()
       }
     }
 
 
-    $urlRouterProvider.otherwise('/base/index');
+    $urlRouterProvider.otherwise('/base/login');
 
     $locationProvider.html5Mode(true);
   }

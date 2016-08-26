@@ -102,7 +102,7 @@
         email:"Weinandt@linkcotechnology.com",
 
         dateInvited:"8/1/2016/ 13:50 AM",
-        inviteExpires:"Yes"
+        inviteExpires:"8/8/2016"
        }
       ];
 
