@@ -125,8 +125,6 @@
 
         vm.data = data;
 
-
-
         $scope.mainGridOptions_2 = {
             dataSource: {
                 data: data
@@ -157,8 +155,6 @@
                     minScreenWidth: 960,
                 },
 
-
-
                 {
                     width: '20%',
                     field: "industry",
@@ -171,8 +167,7 @@
                     field: "registeredDate",
                     title: "Date Registered",
                     minScreenWidth: 960,
-                },
-                {
+                }, {
                     width: '5%',
                     template: "<div class='fa  fa-chevron-circle-right fa-lg'>" + "</div>"
                 },
