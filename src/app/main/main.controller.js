@@ -16,10 +16,26 @@
     vm.changeUserLockStatus =  changeUserLockStatus;
     vm.removeUser = removeUser;
     vm.inviteUser = inviteUser;
+    vm.deleteInvitedUser = deleteInvitedUser;
 
     vm.onchange = onchange;
 
     var permitNo = $stateParams.permitNo;
+
+
+    function deleteInvitedUser(){
+      console.log(vm.selectedInvitedUser);
+      var users = industryService.getIndustryUsers(permitNo);
+
+      $scope.invitedUserGrid.dataSource.remove(vm.selectedInvitedUser);
+
+      // vm.invitedUserGrid.setDataSource(new kendo.data.DataSource({
+      //           data: filterData
+      //       }));
+
+      // vm.invitedUserGrid.refresh();
+      //$scope.invitedUserGrid.refresh();
+    }
 
     function inviteUser(){
        $state.go("authority.portal.inviteiu");
@@ -30,12 +46,20 @@
 
     }
 
+    function onInvitedUserListGridChange(arg){ 
+        var selected = $.map(this.select(), function(item) {
+             return $(item).text();
+         });
+
+        vm.selectedInvitedUser = this.dataItem(this.select());
+    }
+
     function onChange(arg)
     {
+        console.log('in user grid');
         vm.grid = arg.sender;
 
-        var selected = $.map(this.select(), function(item) {
-
+        var selected = $.map(this.select(), function(item) { 
             return $(item).text();
 
         });
@@ -195,6 +219,7 @@
          selectable: "row",
          sortable: true,
          height:200,
+         change:onInvitedUserListGridChange,
          noRecords: true,
          messages: {
              noRecords: "There is no data on current page"
