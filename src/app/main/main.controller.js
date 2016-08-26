@@ -270,7 +270,7 @@
                         },
                         width:"10%",
                         field: "inviteExpires",
-                        title: "Invitation Expires Date",
+                        title: "Invit Expires Date",
                         format: "{0:MM-dd-yyyy}"
                     },
                     {
@@ -291,7 +291,7 @@
                                               "<dd>#:email #</dd>" +
                                               "<dt>Date Invited:</dt>" +
                                               "<dd>#:dateInvited #</dd>" +
-                                              "<dt>Invitation Expires </dt>"  +
+                                              "<dt>Invite Expires </dt>"  +
                                               "<dd>#:inviteExpires# </dd>" +
                                  "</div>"
 
