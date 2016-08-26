@@ -1,0 +1,54 @@
+<section class="content-header">
+  <h1>
+    Industry Account
+  </h1>
+  <ol class="breadcrumb-left">
+    <li><a href="#"><i class="fa "></i> Home </a></li>
+    <li class=""><a href="#"> Industries </a></li>
+    <li class="active">Details</li>
+  </ol>
+</section>
+
+<br /><br />
+
+<div class="seperator"> </div>
+<div class="col-lg-10">
+<form>
+  <div class="panel-group">
+    <div class="panel panel-default">
+
+    <div class="panel panel-default">
+      <div class="panel-heading" data-target="#dataEntryFormTemplate">
+        <!--data-toggle="collapse"-->
+        <strong>Data Entry Form</strong>
+        <div class="form-group pull-right">
+          <button id="indusryUser" class="k-primary" ng-click="industrydetails.newDEFT();">Edit Draft</button>
+          <button id="indusryUser" class="k-primary" ng-click="industrydetails.newDEFT();">Delete</button>
+        </div>
+      </div>
+      <div class="panel-body panel-collapse collapse in" id="dataEntryFormTemplate">
+        <div kendo-grid='industries.deft_list' k-options="mainGridOptions_deft_list">
+        </div>
+      </div>
+    </div>
+  </div>
+
+<br/>
+
+  <div class="panel panel-default">
+      <div class="panel-heading" data-target="#dataEntryFormTemplate">
+        <!--data-toggle="collapse"-->
+        <strong>Data Entry Form</strong>
+        <div class="form-group pull-right">
+          <button id="indusryUser" class="k-primary" ng-click="industrydetails.newDEFT();">New Draft</button> 
+        </div>
+      </div>
+      <div class="panel-body panel-collapse collapse in" id="dataEntryFormTemplate">
+        <div kendo-grid='industries.deft' k-options="mainGridOptions_deft">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+</div>

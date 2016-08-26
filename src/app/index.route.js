@@ -52,7 +52,7 @@
       .state('industry.portal', {
         url: '/portal',
         templateUrl: 'app/industry-portal/industry.portal.html',
-        controller: 'RegistrationrequestsController',
+        controller: 'IndustryAccountController',
         controllerAs: 'industryportal'
       })
       .state('plain.registration', {
