@@ -48,7 +48,7 @@
                                 <span class="col-md-10">{{templateName}}</span>
                             </div>
                             <div class="row">
-                                <label class="col-md-2 text-right">Comment</label>
+                                <label class="col-md-2 text-right">Description</label>
                                 <span class="col-md-10">{{comment}}</span>
                             </div>
                             <div class="row">
@@ -64,7 +64,7 @@
                                 <span class="col-md-4">{{ctsSampleName}}</span>
                             </div>
                             <div class="row">
-                                <label class="col-md-2 text-right">Template is</label>
+                                <label class="col-md-2 text-right">Status</label>
                                 <span class="col-md-4">Inactive</span>
                                 <label class="col-md-2 text-right">Current Drafts</label>
                                 <span class="col-md-4">0</span>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="form-horizontal">
                            <div id="templateNameLabel" class="col-md-11 col-sm-offset-1  col-md-push-1" ng-show="step == 1">
-                                What template name will the industry see when they go to enter results into the templates?
+                             Calculate Loading?
                            </div>
                             <div class="form-group" ng-show="step == 1">
                                 <label for="templateName" class="col-md-2 control-label">* Template Name</label>
@@ -88,7 +88,7 @@
                             </div>
 
                             <div class="form-group" ng-show="step == 1">
-                                <label for="comment" class="col-md-2 control-label">Comment</label>
+                                <label for="comment" class="col-md-2 control-label">Description</label>
                                 <div class="col-md-10">
                                     <textarea class="form-control" id="comment" ng-model="comment" />
                                 </div>
@@ -130,7 +130,7 @@
                                         });
                                     </script>
                                 </div>
-                               <br/><br/>
+                               <br/>
 
 
                               <label for="ctsSampleName" class="col-md-2 control-label">CTS Sample Name</label>
@@ -141,7 +141,7 @@
 
 
                             <div class="form-group" ng-show="step == 1">
-                                <label for="isActive" class="col-md-2 control-label">Template is</label>
+                                <label for="isActive" class="col-md-2 control-label">Status</label>
                                 <div class="col-md-4">
                                     <input class="form-control" id="isActive" ng-model="isActive" />
                                     <script>
@@ -213,7 +213,7 @@
 
                 <div class="panel panel-primary">
                     <div class="panel-heading" data-toggle="collapse" data-target="#step4">
-                        <strong>Select Sampling Point Details</strong>
+                        <strong>Select Sampling Point Parameters</strong>
                     </div>
                     <div class="panel-body panel-collapse collapse in" ng-show="step > 3" id="step4">
                         <div class="form-group">
@@ -235,7 +235,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8 pull-right">
-                                <strong>Selected Parameters</strong>
+                                <strong>Parameters in Template</strong>
                                 <div kendo-grid='gridSelectedParam' k-options="mainGridOptions_selectedParam">
                                 </div>
                             </div>

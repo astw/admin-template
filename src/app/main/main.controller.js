@@ -29,6 +29,12 @@
 
       $scope.invitedUserGrid.dataSource.remove(vm.selectedInvitedUser);
 
+console.log('to delete user');
+console.log(vm.selectedInvitedUser);
+
+      industryService.deleteInvitedUser(vm.selectedInvitedUser.email);
+
+
       // vm.invitedUserGrid.setDataSource(new kendo.data.DataSource({
       //           data: filterData
       //       }));
@@ -260,7 +266,7 @@
                         field: "dateInvited",
                         title: "Date Invited",
                         minScreenWidth: 1200,
-                         format: "{0:MM-dd-yyyy}"
+                         format: "{0:MM-dd-yyyy h:mm tt}"
                     },
 
                     {
@@ -269,7 +275,7 @@
                         },
                         width:"10%",
                         field: "inviteExpires",
-                        title: "Invit Expires Date",
+                        title: "Invite Expires",
                         format: "{0:MM-dd-yyyy}"
                     },
                     {

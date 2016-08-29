@@ -19,12 +19,21 @@
       getIndustryUsers: getIndustryUsers,
       createIndustryUsers: createIndustryUsers,
       getInvitedUserList:getInvitedUserList,
-      addInvitedUser:addInvitedUser
+      addInvitedUser:addInvitedUser,
+      deleteInvitedUser:deleteInvitedUser
     };
 
     return service;
 
     ////////////////
+
+    function deleteInvitedUser(email){
+       var newInvitedUsers = invitedUserList.filter(function(user){
+            return user.email != email;
+       });
+
+      invitedUserList = newInvitedUsers;
+    }
 
     function addInvitedUser(user){
       invitedUserList.push(user);
@@ -57,7 +66,7 @@
           phone:"(772)-496-4160",
           email:"eric@linkoweb.com",
           registeredDate:"06-01-2016",
-          status:"InActive",
+          status:"Inactive",
           locked:"Locked",
           role:'Administrator'
         },
@@ -66,7 +75,7 @@
           firstName: "Chris",
           lastName: "Weinandt",
           phone:"(770)-496-4160",
-          email:"Weinandt@linkcotechnology.com",
+          email:"Weinandt@linkotechnology.com",
           registeredDate:"06-01-2016",
           status:"Active",
           locked:"Locked",
@@ -78,7 +87,7 @@
           phone:"(772)-496-4160",
           email:"eric@linkoweb.com",
           registeredDate:"06-01-2016",
-          status:"InActive",
+          status:"Inactive",
           locked:"No",
           role:'Administrator'
         },
@@ -86,7 +95,7 @@
           firstName: "Chris",
           lastName: "Weinandt",
           phone:"(770)-496-4160",
-          email:"Weinandt@linkcotechnology.com",
+          email:"Weinandt@linkotechnology.com",
           registeredDate:"06-01-2016",
           status:"Active",
           locked:"No",
@@ -103,10 +112,10 @@
        {
         firstName: "Chris",
         lastName: "Weinandt",
-        email:"Weinandt@linkcotechnology.com",
+        email:"Weinandt@linkotechnology.com",
 
-        dateInvited:"8/1/2016/ 13:50 AM",
-        inviteExpires:"8/8/2016"
+        dateInvited:"08-1-2016 13:50 AM",
+        inviteExpires:"07-08-2016"
        }
       ];
 

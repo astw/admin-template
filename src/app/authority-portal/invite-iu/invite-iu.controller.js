@@ -21,6 +21,7 @@
       var userList = userService.getUserList();
       console.log(userList);
 
+
       vm.userToInvite = null;
       $scope.userOptions = {
                                    dataSource :{
@@ -161,7 +162,16 @@
         user.lastName = vm.userLastName;
         user.email = vm.userEmail;
 
-        var now = new Date();
+        var nowTemp = new Date();
+        var now =  new Date();
+        var nowPlus7Days = nowTemp.setDate(nowTemp.getDate()+7);
+        var nowPlus7Days = new Date(nowPlus7Days);
+
+        var date1 = now.toISOString().slice(0,10).replace(/-/g,"/");
+        var date2 = nowPlus7Days.toISOString().slice(0,10).replace(/-/g,"/");
+
+
+        /*
         var date1 = now.toISOString().slice(0,10).replace(/-/g,"/");
 
         var t = date1.split('/');
@@ -169,6 +179,7 @@
         t[1] = '0' + t[1];
 
         var date2 = t.join('/');
+       */
 
         user.dateInvited = kendo.parseDate(date1);
         user.inviteExpires = kendo.parseDate(date2);

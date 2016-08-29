@@ -63,6 +63,10 @@
                 numeric: false,
                 input: true
             },
+                       dataBound: function() {
+                                            this.expandRow(this.tbody.find("tr.k-master-row").first());
+                                            $scope.gridSP.select("tr:eq(1)");
+                         },
             sortable: true,
             columns: [
               {
@@ -128,6 +132,11 @@
             height: 350,
             sortable: true,
             toolbar: ["create"],
+
+           dataBound: function() {
+                                this.expandRow(this.tbody.find("tr.k-master-row").first());
+                                $scope.gridSelectedSP.select("tr:eq(1)");
+             },
             messages: {
                 commands: {
                     create: "Add Sampling Point"
@@ -161,6 +170,7 @@
               }
             ]
         }
+         //$scope.gridSP.select("tr:eq(1)");
 
         //var gridSelectedSP = $("#gridSelectedSP").data("kendoGrid"),
         //                    rowSP = gridSelectedSP.tbody.find(">tr:not(.k-grouping-row)").eq(1);
@@ -192,6 +202,10 @@
             },
             resizable: true,
             height: 350,
+                       dataBound: function() {
+                                            this.expandRow(this.tbody.find("tr.k-master-row").first());
+                                            $scope.gridSP.select("tr:eq(1)");
+                         },
             sortable: true,
             /*filterable: {
                 mode: "row",
@@ -274,6 +288,10 @@
             resizable: true,
             height: 350,
             sortable: true,
+            dataBound: function() {
+                                            this.expandRow(this.tbody.find("tr.k-master-row").first());
+                                            $scope.gridSP.select("tr:eq(1)");
+                         },
             columns: [
               {
                   field: "parameter",
