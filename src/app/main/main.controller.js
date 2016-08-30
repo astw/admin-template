@@ -273,10 +273,10 @@ console.log(vm.selectedInvitedUser);
                         headerAttributes : {
                           "class" : "visible-lg visible-sm visible-md"
                         },
-                        width:"10%",
+                        width:"20%",
                         field: "inviteExpires",
                         title: "Invite Expires",
-                        format: "{0:MM-dd-yyyy}"
+                        format: "{0:MM-dd-yyyy h:mm tt}"
                     },
                     {
 

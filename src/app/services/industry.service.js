@@ -114,8 +114,8 @@
         lastName: "Weinandt",
         email:"Weinandt@linkotechnology.com",
 
-        dateInvited:"08-1-2016 13:50 AM",
-        inviteExpires:"07-08-2016"
+        dateInvited:"08-1-2016 1:50 AM",
+        inviteExpires:"08-08-2016 1:50 AM"
        }
       ];
 

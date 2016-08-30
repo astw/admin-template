@@ -65,7 +65,7 @@
             },
                        dataBound: function() {
                                             this.expandRow(this.tbody.find("tr.k-master-row").first());
-                                            $scope.gridSP.select("tr:eq(1)");
+                                           // $scope.gridSP.select("tr:eq(1)");
                          },
             sortable: true,
             columns: [
@@ -134,8 +134,9 @@
             toolbar: ["create"],
 
            dataBound: function() {
-                                this.expandRow(this.tbody.find("tr.k-master-row").first());
-                                $scope.gridSelectedSP.select("tr:eq(1)");
+                            //    this.expandRow(this.tbody.find("tr.k-master-row").first());
+                            //    $scope.gridSelectedSP.select("tr:eq(0)");
+                            this.select("tr:eq(1)");
              },
             messages: {
                 commands: {
@@ -204,7 +205,7 @@
             height: 350,
                        dataBound: function() {
                                             this.expandRow(this.tbody.find("tr.k-master-row").first());
-                                            $scope.gridSP.select("tr:eq(1)");
+                                           // $scope.gridSP.select("tr:eq(1)");
                          },
             sortable: true,
             /*filterable: {
@@ -290,7 +291,7 @@
             sortable: true,
             dataBound: function() {
                                             this.expandRow(this.tbody.find("tr.k-master-row").first());
-                                            $scope.gridSP.select("tr:eq(1)");
+                                            //$scope.gridSP.select("tr:eq(1)");
                          },
             columns: [
               {
@@ -324,7 +325,7 @@
                   }
               },
               {
-                  title: "Calculate Loading",
+                  title: "Calculate Loading?",
                   template: '<input type="checkbox" #= selected ? \'checked="checked"\' : "" # class="chkbx" />',
                   width: 140
               },

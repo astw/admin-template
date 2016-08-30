@@ -74,10 +74,10 @@
                             <button id="btnEdit" class="k-primary" ng-click="step = 1;">Edit</button>
                         </div>
                         <div class="form-horizontal">
-                           <div id="templateNameLabel" class="col-md-11 col-sm-offset-1  col-md-push-1" ng-show="step == 1">
-                             Calculate Loading?
-                           </div>
                             <div class="form-group" ng-show="step == 1">
+                              <div id="templateNameLabel" class="col-md-10 col-md-offset-2 " ng-show="step == 1">
+                                What Template Name will the industry see when they go to enter results into the template?
+                              </div>
                                 <label for="templateName" class="col-md-2 control-label">* Template Name</label>
 
                                 <div class="col-md-10">
@@ -95,7 +95,7 @@
                             </div>
 
                             <div class="form-group" ng-show="step == 1">
-                              <div class="col-md-11 col-md-push-1 col-sm-offset-1" ng-show="step == 1">When can the facility start using this template?</div>
+                              <div class="col-md-10 col-md-offset-2" ng-show="step == 1">When can the facility start using this template?</div>
                                 <label for="effectiveDate" class="col-md-2 control-label">* Effective Date</label>
                                 <div class="col-md-4">
                                     <input class="form-control" id="effectiveDate" ng-model="effectiveDate" />
@@ -115,7 +115,7 @@
                             </div>
 
                             <div class="form-group" ng-show="step == 1">
-                              <div class="col-md-11 col-md-push-1  col-sm-offset-1  " ng-show="step == 1">When the analytical data shows up in LinkoCTS, what Sample Event Type and Sample Name should be used?</div>
+                              <div class="col-md-10 col-md-offset-2" ng-show="step == 1">When the analytical data shows up in LinkoCTS, what Sample Event Type and Sample Name should be used?</div>
 
                               <label for="ctsEventType" class="col-md-2 control-label">CTS Event Type</label>
                                 <div class="col-md-4">
