@@ -46,8 +46,6 @@
       // from confirm button
 
       console.log(vm.userEmailToReset);
-      $scope.editPopup.close();
-
 
       swal({
         title: 'Reset User',
@@ -79,64 +77,16 @@
             );
           }
         })
- 
+
     }
 
     function cancelReset(){
-      $scope.editPopup.close();
+
     }
 
     function resetUser() {
       console.log('inside resetUser function');
-
-
-        $scope.editPopup.center();
-        $scope.editPopup.open();
-
-
-
-
-
-      // var modalInstance = $uibModal.open({
-      //   animation: true,
-      //   ariaLabelledBy: 'modal-title',
-      //   ariaDescribedBy: 'modal-body',
-      //   templateUrl: 'app/main/reset-user-modal.html',
-      //   //controller: 'ModalInstanceCtrl',
-      //   //controllerAs: '$ctrl',
-      //   size: 'lg',
-      //   resolve: {
-      //     items: function () {
-      //       return ['itme', 'itme2'];
-      //     }
-      //   }
-      // });
-      //
-      // modalInstance.result.then(function (selectedItem) {
-      //   $ctrl.selected = selectedItem;
-      // }, function () {
-      //   $log.info('Modal dismissed at: ' + new Date());
-      // });
-      //
-
-
-      // swal({
-      //   title: "Reset User",
-      //   text: "If " + vm.selectedUser.email + ' is the email address you want to reset ?',
-      //   type: "input",
-      //   showCancelButton: true,
-      //   closeOnConfirm: false,
-      //   animation: "slide-from-top",
-      //   inputPlaceholder: "Write something"
-      // }, function (inputValue) {
-      //   if (inputValue === false) return false;
-      //   if (inputValue === "") {
-      //     swal.showInputError("You need to write something!");
-      //     return false
-      //   }
-      //   swal("Nice!", "You wrote: " + inputValue, "success");
-      // });
-
+      goResetUser();
     }
 
     if(vm.selectedUser.status == 'InActive'){

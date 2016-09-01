@@ -21,44 +21,6 @@
 <br/><br/>
 <div class="seperator"></div>
 
-<div kendo-window="editPopup" k-modal="true" k-title="'User Reset'"
-     k-resizable="true"
-     k-height="250" k-visible="false">
-  <div >
-
-    <h4>You are going to reset user with email address
-      <br/>
-      <b>{{userdetails.selectedUser.email}}</b>
-    </h4>
-
-    <h4>
-    If the email is not correct, please type the correct email <br> address in below textBox,
-    </h4>
-    <div class="col-sm-11">
-      <div class="form-horizontal ">
-
-           <div class="form-group">
-            <div class="col-lg-8">
-            <input type="email" class="form-control" id="resetEmail"  ng-model="userdetails.userEmailToReset" />
-            </div>
-           </div>
-
-        <div >
-          <div class="col-lg-2"></div>
-          <div class="col-lg-4 form-group" >
-            <button id="resetUserBtn" ng-click="userdetails.goResetUser();" class="k-primary">Reset</button>
-            <button id="cancel" ng-click="userdetails.cancelReset();" class="k-primary">Cancel</button>
-          </div>
-          <div class="col-lg-6"></div>
-        </div>
-
-      </div>
-
-
-    </div>
-  </div>
-
-</div>
 
 <div class="panel panel-default">
   <div class="panel-heading" data-target="#information">
