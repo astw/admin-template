@@ -34,8 +34,10 @@
           return user.email == email;
        });
 
-      user.securityQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1).value;
-      user.securityQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2).value;
+      if(user) {
+        user.securityQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1Id).value;
+        user.securityQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2Id).value;
+      }
     }
 
     function deleteInvitedUser(email){
@@ -65,8 +67,8 @@
       }
 
       var users = userList.map(function(user){
-        user.securityQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1).value;
-        user.securityQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2).value;
+        user.securityQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1Id).value;
+        user.securityQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2Id).value;
         return user;
       });
 
@@ -88,14 +90,14 @@
           role:'Administrator',
           requestedUserName:'Vickitt Lau',
 
-          securityQuestion1:7,
+          securityQuestion1Id:7,
           securityQuestion1Answer:'noodle',
-          securityQuestion2:9,
+          securityQuestion2Id:9,
           securityQuestion2Answer:'blue',
 
-          kbqQuestion1:2,
+          kbqQuestion1id:2,
           kbqQuestion1Answer:"whilster",
-          kbqQuestion2:2,
+          kbqQuestion2id:2,
           kbqQuestion2Answer:'harry potter'
         },
         {   userId:3,
@@ -109,14 +111,14 @@
           role:'Administrator',
           requestedUserName:'Vickitt Lau',
 
-          securityQuestion1:7,
+          securityQuestion1Id:7,
           securityQuestion1Answer:'noodle',
-          securityQuestion2:9,
+          securityQuestion2Id:9,
           securityQuestion2Answer:'blue',
 
-          kbqQuestion1:2,
+          kbqQuestion1id:2,
           kbqQuestion1Answer:"whilster",
-          kbqQuestion2:2,
+          kbqQuestion2id:2,
           kbqQuestion2Answer:'harry potter'
         },
         {
@@ -140,14 +142,14 @@
           fax:'770-495-4160',
           requestedUserName:'Vickitt Lau',
 
-          securityQuestion1:7,
+          securityQuestion1Id:7,
           securityQuestion1Answer:'noodle',
-          securityQuestion2:9,
+          securityQuestion2Id:9,
           securityQuestion2Answer:'blue',
 
-          kbqQuestion1:2,
+          kbqQuestion1id:2,
           kbqQuestion1Answer:"whilster",
-          kbqQuestion2:2,
+          kbqQuestion2id:2,
           kbqQuestion2Answer:'harry potter'
 
         },
@@ -172,14 +174,14 @@
           fax:'770-495-4160',
           requestedUserName:'Vickitt Lau',
 
-          securityQuestion1:7,
+          securityQuestion1Id:7,
           securityQuestion1Answer:'noodle',
-          securityQuestion2:9,
+          securityQuestion2Id:9,
           securityQuestion2Answer:'blue',
 
-          kbqQuestion1:2,
+          kbqQuestion1id:2,
           kbqQuestion1Answer:"whilster",
-          kbqQuestion2:2,
+          kbqQuestion2id:2,
           kbqQuestion2Answer:'harry potter'
         }
       ];
