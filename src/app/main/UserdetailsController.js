@@ -37,10 +37,40 @@
     vm.selectedUser =    $rootScope.selectedUser;
     vm.cancelReset = cancelReset;
     vm.goResetUser = goResetUser;
+    vm.toggleLockedStatus = toggleLockedStatus;
+
 
     console.log('------------------');
     console.log(vm.selectedUser);
 
+
+    function toggleLockedStatus() {
+      // lock / unlock button
+      swal({
+        title: vm.lockButtonText + ' User',
+        text:'You can going to ' + vm.lockButtonText.toLowerCase()  +   ' user <b>' + vm.selectedUser.email +  '</b>.',
+        showCloseButton: true,
+        showCancelButton: true,
+        confirmButtonText:
+          '<i class="fa"></i>' + vm.lockButtonText + ' User',
+        cancelButtonText:
+          '<i class="fa "></i> Cancel'
+      })
+        .then(function() {
+          swal(
+            vm.lockButtonText ,'User has been ' + vm.lockButtonText.toLowerCase() +'ed!','success'
+          );
+        }, function(dismiss) {
+          // dismiss can be 'cancel', 'overlay', 'close', 'timer'
+          if (dismiss === 'cancel') {
+            swal(
+              'Cancelled',
+              'User is not been changed!',
+              'error'
+            );
+          }
+        })
+    }
 
     function goResetUser(){
       // from confirm button
