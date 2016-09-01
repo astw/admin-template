@@ -8,10 +8,10 @@
     .module('testProject')
     .factory('industryService', industryService);
 
-  industryService.$inject = [];
+  industryService.$inject = ['questionService'];
 
   /* @ngInject */
-  function industryService() {
+  function industryService(questionService) {
     var userList =  getUserList();
     var invitedUserList = getInitalInvitedUserList();
 
@@ -30,9 +30,12 @@
     ////////////////
 
     function getUserByEmail(email) {
-       return userList.find(function(user){
+       var user = userList.find(function(user){
           return user.email == email;
-       })
+       });
+
+      user.securityQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1).value;
+      user.securityQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2).value;
     }
 
     function deleteInvitedUser(email){
@@ -61,7 +64,13 @@
         return [];
       }
 
-      return userList;
+      var users = userList.map(function(user){
+        user.securityQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1).value;
+        user.securityQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2).value;
+        return user;
+      });
+
+      return users;
     }
 
 
@@ -76,7 +85,18 @@
           registeredDate:"06-01-2016",
           status:"Inactive",
           locked:"Locked",
-          role:'Administrator'
+          role:'Administrator',
+          requestedUserName:'Vickitt Lau',
+
+          securityQuestion1:7,
+          securityQuestion1Answer:'noodle',
+          securityQuestion2:9,
+          securityQuestion2Answer:'blue',
+
+          kbqQuestion1:2,
+          kbqQuestion1Answer:"whilster",
+          kbqQuestion2:2,
+          kbqQuestion2Answer:'harry potter'
         },
         {   userId:3,
           firstName: "Eric",
@@ -86,7 +106,18 @@
           registeredDate:"06-01-2016",
           status:"Inactive",
           locked:"No",
-          role:'Administrator'
+          role:'Administrator',
+          requestedUserName:'Vickitt Lau',
+
+          securityQuestion1:7,
+          securityQuestion1Answer:'noodle',
+          securityQuestion2:9,
+          securityQuestion2Answer:'blue',
+
+          kbqQuestion1:2,
+          kbqQuestion1Answer:"whilster",
+          kbqQuestion2:2,
+          kbqQuestion2Answer:'harry potter'
         },
         {
           userId:4,
@@ -107,7 +138,17 @@
           state:'B.C',
           zipCode:'v3x 6h1',
           fax:'770-495-4160',
-          requestedUserName:'Vickitt Lau'
+          requestedUserName:'Vickitt Lau',
+
+          securityQuestion1:7,
+          securityQuestion1Answer:'noodle',
+          securityQuestion2:9,
+          securityQuestion2Answer:'blue',
+
+          kbqQuestion1:2,
+          kbqQuestion1Answer:"whilster",
+          kbqQuestion2:2,
+          kbqQuestion2Answer:'harry potter'
 
         },
         {
@@ -129,7 +170,17 @@
           state:'B.C',
           zipCode:'v3x 6h1',
           fax:'770-495-4160',
-          requestedUserName:'Vickitt Lau'
+          requestedUserName:'Vickitt Lau',
+
+          securityQuestion1:7,
+          securityQuestion1Answer:'noodle',
+          securityQuestion2:9,
+          securityQuestion2Answer:'blue',
+
+          kbqQuestion1:2,
+          kbqQuestion1Answer:"whilster",
+          kbqQuestion2:2,
+          kbqQuestion2Answer:'harry potter'
         }
       ];
 

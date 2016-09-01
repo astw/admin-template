@@ -112,4 +112,66 @@
   </div>
 </div>
 
-</div> 
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading" data-target="#information">
+    <strong>User Security Questions</strong>
+    <div class="form-group pull-right">
+
+    </div>
+  </div>
+  <div class="panel-body panel-collapse collapse in" id="securityQuestion">
+    <div class="col-sm-11">
+
+      <div class="form-horizontal row">
+        <div class="form-group">
+          <label for="securityQuestion1" class="col-md-2 control-label">Security Question 1</label>
+
+          <div class="col-md-4">
+            <label class="form-control" id="securityQuestion1" > {{userdetails.selectedUser.securityQuestion1}} </label>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="form-horizontal row">
+        <div class="form-group">
+          <label for="answer1" class="col-md-2 control-label">Answer </label>
+
+          <div class="col-md-4">
+            <label rows="2" class="form-control" id="answer1" > {{ userdetails.selectedUser.securityQuestion1Answer  }}</label>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-horizontal row">
+        <div class="form-group">
+          <label for="securityQuestion2" class="col-md-2 control-label">Security Question 2</label>
+
+          <div class="col-md-4">
+            <label  class="form-control" id="securityQuestion2" > {{userdetails.selectedUser.securityQuestion1}} </label>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="form-horizontal row">
+        <div class="form-group">
+          <label for="answer2" class="col-md-2 control-label">Phone</label>
+
+          <div class="col-md-4">
+            <label  class="form-control" id="answer2" > {{userdetails.selectedUser.securityQuestion2Answer}}  </label>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
