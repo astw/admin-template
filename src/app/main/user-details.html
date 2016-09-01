@@ -135,11 +135,11 @@
 
         <div class="form-horizontal row">
           <div class="form-group">
-            <label for="securityQuestion1" class="col-md-2 control-label">Security Question 1</label>
+            <label class="col-md-2 control-label">Security Question 1</label>
 
             <div class="col-md-4">
-              <label class="form-control" id="securityQuestion1">
-                {{userdetails.selectedUser.securityQuestion1}} </label>
+              <input type="text" readonly class="form-control" id="securityQuestion1" value="{{userdetails.selectedUser.securityQuestion1}} " />
+
             </div>
 
 
@@ -151,8 +151,7 @@
             <label for="answer1" class="col-md-2 control-label">Answer </label>
 
             <div class="col-md-4">
-              <label rows="2" class="form-control" id="answer1"> {{ userdetails.selectedUser.securityQuestion1Answer
-                }}</label>
+              <input type="text" readonly class="form-control" id="answer1" value="{{userdetails.selectedUser.securityQuestion1Answer}} " />
             </div>
 
           </div>
@@ -163,8 +162,7 @@
             <label for="securityQuestion2" class="col-md-2 control-label">Security Question 2</label>
 
             <div class="col-md-4">
-              <label class="form-control" id="securityQuestion2">
-                {{userdetails.selectedUser.securityQuestion1}} </label>
+              <input type="text" readonly class="form-control" id="securityQuestion2" value="{{userdetails.selectedUser.securityQuestion1}} " />
             </div>
 
 
@@ -175,8 +173,8 @@
           <div class="form-group">
             <label for="answer2" class="col-md-2 control-label">Answer</label>
 
-            <div class="col-md-4">
-              <label class="form-control" id="answer2"> {{userdetails.selectedUser.securityQuestion2Answer}} </label>
+            <div class="col-md-4"> 
+              <input type="text" readonly class="form-control" id="answer2" value="{{userdetails.selectedUser.securityQuestion2Answer}} " />
             </div>
 
           </div>
