@@ -50,7 +50,7 @@
       })
 
       .state('industry.portal', {
-        url: '/portal',
+        url: '/',
         templateUrl: 'app/industry-portal/industry.portal.html',
         controller: 'IndustryAccountController',
         controllerAs: 'industryportal'
@@ -145,7 +145,13 @@
         controller: 'AuthorityuserprofileController',
         controllerAs: 'authorityUserProfile'
       })
-
+    //------------------  this is for profile in industry portal
+      .state('industry.profile', {
+        url: '/account/profile',
+        templateUrl: 'app/profile/my-profile.html',
+        controller: 'AuthorityuserprofileController',
+        controllerAs: 'authorityUserProfile'
+      })
     ;
 
        /** @ngInject */
