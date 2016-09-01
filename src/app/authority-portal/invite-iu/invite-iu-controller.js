@@ -112,16 +112,41 @@
 
       function searchUser(){
 
-
                 var findUser = userList.find(function(item){
                     return vm.userEmail == item.email;
                 });
 
 
                 if(findUser == null){
-                    $scope.noSuchUser = true;
-                    $scope.step = 2 ;
-                    return;
+                 //   $scope.noSuchUser = true;
+                 //   $scope.step = 1 ;
+
+                  swal({
+                    title: 'Search User',
+                    text:'The user with email address <b>' + vm.userEmail + '</b> does not exist, would like to create one a user?',
+                    showCloseButton: true,
+                    showCancelButton: true,
+                    confirmButtonText:
+                    '<i class="fa"></i>Create User',
+                    cancelButtonText:
+                      '<i class="fa "></i> Cancel'
+                  })
+                    .then(function() {
+                      swal(
+                          'Create new user', 'Will go to create a new user page','success'
+                      ).then(function(){
+                        $scope.step = 5;
+                        $scope.$apply();
+                      });
+                    }, function(dismiss) {
+                      // dismiss can be 'cancel', 'overlay', 'close', 'timer'
+                      if (dismiss === 'cancel') {
+                        $scope.step = 1 ;
+                        return;
+                      }
+                    });
+
+                  return;
                 }
 
                   vm.userLastName = findUser.lastName;
