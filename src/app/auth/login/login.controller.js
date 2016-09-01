@@ -22,12 +22,12 @@
     }
 
 
-
     function login(){
 
         if(vm.userEmail == 'aa'  && vm.userPassword == "aa1234"){
 
             var user = {
+                email:'Weinandt@linkotechnology.com',
                 userName : "Chris Weinandt",
                 userType : "AuthorityUser",
                 userPermission : ""
@@ -41,6 +41,7 @@
         else if(vm.userEmail == 'bb'  && vm.userPassword == "bb1234"){
 
             var user = {
+                email:'swang@linkotechnology.com',
                 userName : "Shuhao Wang",
                 userType : "IndustryUser",
                 userPermission : ""

@@ -16,7 +16,7 @@
 
       .state("plain.index", {
           url:"/",
-          templateUrl :"app/layout/plain-index.html" ,
+          templateUrl :"app/layout/plain-index.html"
 //          controller:"LoginController",
 //          controllerAs:"login"
        })
@@ -138,6 +138,14 @@
         controller: 'RegistrationrequestsController',
         controllerAs: 'authority'
     })
+      //------------------  this is for profile in authority portal
+    .state('authority.portal.profile', {
+        url: '/account/profile',
+        templateUrl: 'app/profile/my-profile.html',
+        controller: 'AuthorityuserprofileController',
+        controllerAs: 'authorityUserProfile'
+      })
+
     ;
 
        /** @ngInject */

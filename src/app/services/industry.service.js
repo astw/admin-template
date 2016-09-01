@@ -16,16 +16,24 @@
     var invitedUserList = getInitalInvitedUserList();
 
     var service = {
+      getUserByEmail:getUserByEmail,
       getIndustryUsers: getIndustryUsers,
       createIndustryUsers: createIndustryUsers,
       getInvitedUserList:getInvitedUserList,
       addInvitedUser:addInvitedUser,
       deleteInvitedUser:deleteInvitedUser
+
     };
 
     return service;
 
     ////////////////
+
+    function getUserByEmail(email) {
+       return userList.find(function(user){
+          return user.email == email;
+       })
+    }
 
     function deleteInvitedUser(email){
        var newInvitedUsers = invitedUserList.filter(function(user){
@@ -70,17 +78,6 @@
           locked:"Locked",
           role:'Administrator'
         },
-        {
-          userId:2,
-          firstName: "Chris",
-          lastName: "Weinandt",
-          phone:"(770)-496-4160",
-          email:"Weinandt@linkotechnology.com",
-          registeredDate:"06-01-2016",
-          status:"Active",
-          locked:"Locked",
-          role:'Administrator'
-        },
         {   userId:3,
           firstName: "Eric",
           lastName: "Snell",
@@ -91,7 +88,9 @@
           locked:"No",
           role:'Administrator'
         },
-        {   userId:4,
+        {
+          userId:4,
+          salutation:"Mr",
           firstName: "Chris",
           lastName: "Weinandt",
           phone:"(770)-496-4160",
@@ -99,7 +98,38 @@
           registeredDate:"06-01-2016",
           status:"Active",
           locked:"No",
-          role:'Administrator'
+          role:'Administrator',
+          userType:'AuthorityUser',
+          organization:'Grand Rapid Authority',
+          mailAddress:'Suite 710 West Pender, Vancouver, BC',
+          suite:'710',
+          city:'Vancouver',
+          state:'B.C',
+          zipCode:'v3x 6h1',
+          fax:'770-495-4160',
+          requestedUserName:'Vickitt Lau'
+
+        },
+        {
+          userId:4,
+          salutation:"Mr",
+          firstName: "Shuhao",
+          lastName: "Wang",
+          phone:"778-958-2169",
+          email:"swang@linkotechnology.com",
+          registeredDate:"06-01-2015",
+          status:"Active",
+          locked:"No",
+          role:'Standard',
+          userType:'IndustryUser',
+          organization:'Grand Rapid Authority',
+          mailAddress:'Suite 710 West Pender, Vancouver, BC',
+          suite:'710',
+          city:'Vancouver',
+          state:'B.C',
+          zipCode:'v3x 6h1',
+          fax:'770-495-4160',
+          requestedUserName:'Vickitt Lau'
         }
       ];
 
