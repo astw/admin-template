@@ -3,10 +3,10 @@
 
   angular
     .module('testProject')
-    .controller('AuthorityController', AuthorityController);
+    .controller('AuthoritysettingController', AuthoritysettingController);
 
   /** @ngInject */
-  function AuthorityController($timeout, $scope, $state) {
+  function AuthoritysettingController($timeout, $scope, $state) {
     var vm = this;
 
 

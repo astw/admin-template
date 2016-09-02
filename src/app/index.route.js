@@ -138,6 +138,13 @@
         controller: 'RegistrationrequestsController',
         controllerAs: 'authority'
     })
+
+    .state('authority.portal.authority-setting', {
+        url: '/account/setting',
+        templateUrl: 'app/authority-portal/authorities/authority-settings.html',
+        controller: 'AuthoritysettingController',
+        controllerAs: 'authoritySetting'
+    })
       //------------------  this is for profile in authority portal
     .state('authority.portal.profile', {
         url: '/account/profile',
