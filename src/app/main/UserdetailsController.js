@@ -16,22 +16,7 @@
 
     vm.lockButtonText = 'Unlock';
     vm.enabledButtonText = 'Disable';
-
-    // vm.changeUserActiveStatus = changeUserActiveStatus;
-    // vm.changeUserLockStatus = changeUserLockStatus;
-    // vm.removeUser = removeUser;
-
-
-    // $rootScope.selectedUser = {
-    //   userId:1,
-    //   firstName: "Eric",
-    //   lastName: "Snell",
-    //   phone:"(772)-496-4160",
-    //   email:"eric@linkoweb.com",
-    //   registeredDate:"06-01-2016",
-    //   status:"Active",
-    //   locked:"UnLocked"
-    // };
+    $scope.showSecurityQuestions = false ;
 
     vm.resetUser = resetUser;
     vm.selectedUser =    $rootScope.selectedUser;
@@ -39,16 +24,30 @@
     vm.goResetUser = goResetUser;
     vm.toggleLockedStatus = toggleLockedStatus;
 
+    vm.toggleUserSecurityPanel = toggleUserSecurityPanel;
 
     console.log('------------------');
     console.log(vm.selectedUser);
 
 
+    function toggleUserSecurityPanel() {
+
+      $log.info("in toggleUserSecurityPanel ");
+
+      if($scope.showSecurityQuestions == true){
+        $scope.showSecurityQuestions = false;
+      } else {
+        $scope.showSecurityQuestions = true;
+      }
+
+      $log.info($scope.showSecurityQuestions);
+    }
+
     function toggleLockedStatus() {
       // lock / unlock button
       swal({
         title: vm.lockButtonText + ' User',
-        text:'You can going to ' + vm.lockButtonText.toLowerCase()  +   ' user <b>' + vm.selectedUser.email +  '</b>.',
+        text:'You are going to ' + vm.lockButtonText.toLowerCase()  +   ' user <b>' + vm.selectedUser.email +  '</b>.',
         showCloseButton: true,
         showCancelButton: true,
         confirmButtonText:
@@ -78,13 +77,13 @@
       console.log(vm.userEmailToReset);
 
       swal({
-        title: 'Reset User',
+        title: 'Reset Regist',
         //type: 'info',
         // html:
         // 'You can going to reset use with email address <b> ' + vm.selectedUser.email +  '</b>, ' +
         // 'or you can specify a different email address below. ' +
         // '<input type="email">',
-        text:'You can going to reset use with email address <b> ' + vm.selectedUser.email +  '</b>, ' +' <br/> or you can specify a different email address below. ',
+        text:'You are going to reset user with email address <b> ' + vm.selectedUser.email +  '</b>, ' +' <br/> or you can specify a different email address below. ',
         input:"text",
         showCloseButton: true,
         showCancelButton: true,

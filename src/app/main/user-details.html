@@ -1,8 +1,7 @@
 <style>
-  right-label {
-    display: inline-block;
-    width: 140px;
-    text-align: right;
+   .center-icon {
+    vertical-align:middle;
+    margin-top: 3px;
   }
 </style>
 <section class="content-header">
@@ -110,39 +109,34 @@
             <input type="text" readonly class="form-control" id="registrationDate"
                    value={{userdetails.selectedUser.registeredDate}} >
           </div>
-
         </div>
-
       </div>
     </div>
   </div>
 
 </div>
 
-<!--  collapse User security questions by default -->
-
+<!--- to make it clickable ----->
 
 <div class="panel panel-default">
-  <div class="panel-heading" data-toggle="collapse" data-target="#securityQuestionPanel">
+  <div class="panel-heading " >
     <strong>User Security Questions</strong>
+    <span class=' center-icon  center-icon  fa fa-plus-square pull-right' ng-click = "userdetails.toggleUserSecurityPanel()"  ng-class="showSecurityQuestions == false ? 'fa-plus-square ' : 'fa-minus-square' "    > </span>
   </div>
 
+  <div class="panel-body panel-collapse collapse" id="securityQuestionPane2" ng-class="showSecurityQuestions == false ? 'collapse' : 'in' "  >
 
-  <div class="panel-body panel-collapse collapse" id="securityQuestionPanel">
-
-    <div class="panel-body panel-collapse in collapse" id="securityQuestion">
+    <div class="panel-body panel-collapse in collapse" id="securityQuestionContentPanel" ng-class="showSecurityQuestions == false ? 'in collapse' : 'panel-body' " >
       <div class="col-sm-11">
 
         <div class="form-horizontal row">
           <div class="form-group">
-            <label class="col-md-2 control-label">Security Question 1</label>
+            <label for="securityQuestion1" class="col-md-2 control-label">Security Question 1</label>
 
             <div class="col-md-4">
               <input type="text" readonly class="form-control" id="securityQuestion1" value="{{userdetails.selectedUser.securityQuestion1}} " />
 
             </div>
-
-
           </div>
         </div>
 
@@ -185,6 +179,3 @@
 
   </div>
 </div>
-
-
-
