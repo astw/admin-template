@@ -29,6 +29,7 @@
     console.log('------------------');
     console.log(vm.selectedUser);
 
+    RefreshButtonText();
 
     function toggleUserSecurityPanel() {
 
@@ -56,9 +57,15 @@
           '<i class="fa "></i> Cancel'
       })
         .then(function() {
+
           swal(
             vm.lockButtonText ,'User has been ' + vm.lockButtonText.toLowerCase() +'ed!','success'
           );
+
+          vm.selectedUser.locked =   vm.selectedUser.locked == "Locked"? "No" : "Locked";
+          RefreshButtonText();
+          $scope.$apply();
+
         }, function(dismiss) {
           // dismiss can be 'cancel', 'overlay', 'close', 'timer'
           if (dismiss === 'cancel') {
@@ -77,20 +84,21 @@
       console.log(vm.userEmailToReset);
 
       swal({
-        title: 'Reset Regist',
+        title: 'Reset Registration',
         //type: 'info',
         // html:
         // 'You can going to reset use with email address <b> ' + vm.selectedUser.email +  '</b>, ' +
         // 'or you can specify a different email address below. ' +
         // '<input type="email">',
-        text:'You are going to reset user with email address <b> ' + vm.selectedUser.email +  '</b>, ' +' <br/> or you can specify a different email address below. ',
+        text:'What email should be used in the Registration Profile?',
         input:"text",
+        inputValue : vm.selectedUser.email,
         showCloseButton: true,
         showCancelButton: true,
         confirmButtonText:
-          '<i class="fa"></i> Reset User',
+          '<i class="fa"></i> Reset',
         cancelButtonText:
-          '<i class="fa "></i> Cancel'
+          '<i class="fa "></i>Cancel'
       })
         .then(function() {
           swal(
@@ -99,11 +107,11 @@
         }, function(dismiss) {
           // dismiss can be 'cancel', 'overlay', 'close', 'timer'
           if (dismiss === 'cancel') {
-            swal(
-              'Cancelled',
-              'User is not reset!',
-              'error'
-            );
+            // swal(
+            //   'Cancelled',
+            //   'User is not reset!',
+            //   'error'
+            // );
           }
         })
 
@@ -118,16 +126,18 @@
       goResetUser();
     }
 
-    if(vm.selectedUser.status == 'InActive'){
-      vm.enabledButtonText = 'Enable';
-    } else  {
-      vm.enabledButtonText = 'Disable';
-    }
+    function RefreshButtonText() {
+      if (vm.selectedUser.status == 'InActive') {
+        vm.enabledButtonText = 'Enable';
+      } else {
+        vm.enabledButtonText = 'Disable';
+      }
 
-    if(vm.selectedUser.locked == 'Locked'){
-      vm.lockButtonText = 'Unlock';
-    } else  {
-      vm.lockButtonText = 'Lock';
+      if (vm.selectedUser.locked == 'Locked') {
+        vm.lockButtonText = 'Unlock';
+      } else {
+        vm.lockButtonText = 'Lock';
+      }
     }
 
   }
