@@ -20,7 +20,15 @@
 
 <section class="content-header">
   <h1>
-    <div ng-if="iuregistration.step ===1 || iuregistration.step ===2" > Complete Registration Profile</div>
+    <div ng-if="iuregistration.step ===1 || iuregistration.step ===2" >
+      Complete Registration Profile
+      <br/><br/>
+      <div class="seperator"></div>
+      <h3>Hello Chris</h3>
+      <h4>You've been invited to be a user of LinkoExchange.
+        Please complete your registration profile.
+      </h4>
+    </div>
     <div ng-if="iuregistration.step ===3" > Review Your Registration Profile</div>
     <div ng-if="iuregistration.step ===4" > Registration Complete!</div>
   </h1>
@@ -28,9 +36,80 @@
 
 <br/>
 
-<div ng-if="iuregistration.step ===1" registration-i-u-basic></div>
 
-<div ng-if="iuregistration.step ===2" registration-i-u-secure></div>
+<div class="panel">
+
+  <div class="pane-group">
+    <div class="panel-body panel-collapse collapse in">
+
+
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-target="#authoritySettingPanel">
+          <strong>Profile Details</strong>
+        </div>
+
+        <!--ng-class="editProfileDetails == false ? 'expand': 'collapse'"-->
+        <div class="panel-body panel-collapse collapse  in" id="authoritySettingPanel" ng-class="editProfileDetails == false ? 'expand': 'in collapse'" >
+          <div class="panel-collapse in collapse" id="authoritySettingContent"   >
+
+            <div profile-details user-profile= "userProfile" editmode= editProfileDetails />
+
+            <div class="form-group pull-right" >
+              <button id="detailEditBtn" ng-if="editProfileDetails == false"  class="k-primary" ng-click="detailEditBtnClicked();">Edit</button>
+              <button id="detailNextBtn" ng-if="editProfileDetails == true"  class="k-primary" ng-click="detailNextBtnClicked();">Next</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-target="#kbqQuestionsPanel">
+          <strong>Knowledge Based Questions</strong>
+        </div>
+
+        <div class="panel-body panel-collapse collapse" id="kbqQuestionsPanel"   ng-class="editProfileDetails == true? 'collapse': ' expand'">
+
+          <div class="panel-collapse in collapse" id="kbqQuestionsContent">
+              <div kbq-info title1= "title1" user-profile= "userProfile" editmode= editProfileKBQ  />
+
+              <div class="form-group pull-right" >
+                <button id="kbqEditBtn" class="k-primary" ng-click="kbqEditBtnClicked();">Edit</button>
+                <button id="kbqNextBtn" class="k-primary" ng-click="kbqNextBtnClicked();">Next</button>
+              </div>
+
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-target="#securityQuestionsPanel">
+          <strong>Security Questions</strong>
+        </div>
+
+        <div class="panel-body panel-collapse collapse" id="securityQuestionsPanel">
+
+          <div class="panel-collapse in collapse" id="securityQuestionsContent">
+            <security-questions title1= "title1" user-profile= "userProfile" />
+
+            <div class="form-group pull-right" >
+              <button id="saveSecurityQuestionSaveEditBtn" class="k-primary" ng-click="saveSecurityQuestionSaveEditBtnClicked();"> Save </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!--<div ng-if="iuregistration.step ===1" registration-i-u-basic></div>-->
+
+<!--<div ng-if="iuregistration.step ===2" registration-i-u-secure></div>-->
 
 
 <div ng-if="iuregistration.step ===3">

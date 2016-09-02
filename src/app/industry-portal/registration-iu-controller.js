@@ -6,10 +6,84 @@
     .controller('RegistrationiuController', RegistrationiuController);
 
   /** @ngInject */
-  function RegistrationiuController($timeout, $scope, $state, userService) {
+  function RegistrationiuController($timeout, $scope, $state, userService, industryService, $localStorage) {
     var vm = this;
     vm.userProfile = {};
     vm.step = 1;
+
+    var user = $localStorage["user"];
+    var email = user.email;
+
+    var fullUser = industryService.getUserByEmail(email);
+    console.log(fullUser);
+    $scope.userProfile = fullUser;
+
+    $scope.title1= "My Profile";
+
+    $scope.profileDetailsNextEditBtnText = 'Next';
+    $scope.industryProgramEditSaveBtnText = 'Next';
+
+    $scope.editProfileDetails = true;
+    $scope.editProfileKBQ = false;
+    $scope.editProfileSQ = false;
+
+    $scope.currentStep = 1;
+
+    $scope.profileDetailsNextEditBtn = profileDetailsNextEditBtn;
+    $scope.kbqNextEditBtnClicked = kbqNextEditBtnClicked;
+
+    $scope.kbqEditBtnClicked = kbqEditBtnClicked;
+    $scope.kbqNextBtnClicked = kbqNextBtnClicked;
+
+    $scope.detailEditBtnClicked = detailEditBtnClicked;
+    $scope.detailNextBtnClicked = detailNextBtnClicked;
+
+
+    function detailNextBtnClicked() {
+      $scope.editProfileDetails = false;
+      $scope.currentStep = 2;
+    }
+
+    function detailEditBtnClicked() {
+      $scope.editProfileDetails = true;
+    }
+
+    function kbqEditBtnClicked() {
+      $scope.editProfileKBQ = true;
+    }
+
+    function kbqNextBtnClicked() {
+      $scope.editProfileKBQ = false;
+      $scope.currentStep = 3;
+    }
+
+
+    function kbqNextEditBtnClicked() {
+      $scope.editProfileKBQ = !  $scope.editProfileKBQ;
+
+      if($scope.editProfileKBQ){
+
+        $scope.industryProgramEditSaveBtnText = 'Next';
+        $scope.editProfileSQ = true;
+
+      } else {
+        $scope.industryProgramEditSaveBtnText = 'Edit';
+      }
+    }
+
+    function profileDetailsNextEditBtn() {
+
+      $scope.editProfileDetails = !  $scope.editProfileDetails;
+      if($scope.editProfileDetails){
+         $scope.profileDetailsNextEditBtnText = 'Next';
+         $scope.editProfileKBQ = true;
+      } else {
+        $scope.profileDetailsNextEditBtnText = 'Edit';
+      }
+
+      console.log("toggle profile detail edit/next button");
+      console.log($scope.editProfileDetails);
+    }
 
     vm.toProfileOverView = toProfileOverView;
     vm.goToSecurity = goToSecurity;
