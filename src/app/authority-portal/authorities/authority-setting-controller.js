@@ -10,15 +10,46 @@
     var vm = this;
 
 
+    $scope.step = 2 ;
+
     vm.showProfile = false;
 
     vm.searchChanged = searchChanged;
     vm.viewProfile = viewProfile;
     vm.registrationPendingApproval = registrationPendingApproval;
 
+    $scope.authoritySettingsEditMode = true;
+    $scope.authoritySettingsBtnText = "Save";
+
+
+    $scope.industryProgramEditMode = true;
+    $scope.industryProgramEditSaveBtnText = "Save";
+
+    $scope.authoritySettingSaveEditBtnClicked = authoritySettingSaveEditBtnClicked;
+    $scope.industryProgramSaveEditBtnClicked  = industryProgramSaveEditBtnClicked;
 
     vm.selectedOne = false;
 
+    function industryProgramSaveEditBtnClicked() {
+      $scope.industryProgramEditMode  = ! $scope.industryProgramEditMode;
+
+      if($scope.industryProgramEditMode == true){
+        $scope.industryProgramEditSaveBtnText = "Save";
+      } else {
+        $scope.industryProgramEditSaveBtnText = "Edit";
+      }
+    }
+
+    function authoritySettingSaveEditBtnClicked() {
+      $scope.authoritySettingsEditMode = ! $scope.authoritySettingsEditMode;
+
+      if($scope.authoritySettingsEditMode == true){
+        $scope.authoritySettingsBtnText = "Save";
+      } else {
+        $scope.authoritySettingsBtnText = "Edit";
+      }
+
+    }
     function onChange(arg)
     {
         var selected = $.map(this.select(), function(item) {
