@@ -176,56 +176,52 @@
               <br/>
               <div class="form-horizontal row">
                 <div class="form-group">
-                  <label for="numberOfFailedKBQ" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 control-label"># Of Allowed
-                    Failed KBQ Answer Templates</label>
+                  <label for="numberFailedPasswordAttempts" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 control-label"># Of Allowed
+                    Failed Password Attempts:</label>
                   <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
-                    <input type="text" class="form-control" id="numberOfFailedKBQ" placeholder="Chris" autocomplete="off"
+                    <input type="text" class="form-control" id="numberFailedPasswordAttempts" placeholder="Chris" autocomplete="off"
                            value="3">
                   </div>
 
-                  <label for="industryLicenseNumber" class="col-lg-2 col-md-5 col-xs-12 col-sm-12 control-label">Industry Licenses #</label>
-                  <div class="col-sm-3">
-                    <input readonly class="form-control" id="industryLicenseNumber" placeholder="Chris" autocomplete="off"
-                           value="100 Available/ 86 in Use">
-                  </div>
+                  <label for="industryLicenseNumber" class="col-lg-3 col-md-5 col-xs-12 col-sm-12 control-label"># Of Authority User Licenses:</label>
+                  <!--<div class="col-sm-3">-->
+                    <!--<input readonly class="form-control" id="industryLicenseNumber" placeholder="Chris" autocomplete="off"-->
+                           <!--value="100 Available/ 86 in Use">-->
+                  <!--</div>-->
                 </div>
               </div>
 
               <div class="form-horizontal row">
                 <div class="form-group">
 
-                  <label for="numberOfFailedSQAnswerTemplates" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 control-label">#
-                    Of Allowed Failed SQ Answer Templates</label>
+                  <label for="numberfFailedKBQAttempts" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 control-label">#
+                    Of Allowed Failed KBQ Answer Attempts:</label>
 
                    <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
-                    <input type="text" class="form-control" id="numberOfFailedSQAnswerTemplates" placeholder="Chris"
-                           autocomplete="off" value="3">
+                    <input type="text" class="form-control" id="numberfFailedKBQAttempts" placeholder="Chris"
+                           autocomplete="off" value="5">
                   </div>
 
-                  <label for="nameOnEmails" class="col-lg-2 col-md-2  col-sm-12 col-xs-12 control-label">Name on
-                    Emails </label>
+                  <label for="availableAuthorityUsers" class="col-lg-2 col-md-2  col-sm-12 col-xs-12 control-label">Available: </label>
                   <div class="col-lg-3 col-md-3  col-sm-12 col-xs-12">
-                    <input class="form-control" id="nameOnEmails"  autocomplete="off"
-                           value="City of Grand Rapids">
+                    <input class="form-control" id="availableAuthorityUsers"  autocomplete="off"
+                           value="30">
                   </div>
                 </div>
               </div>
 
              <div class="form-horizontal row ">
                 <div class="form-group">
-                  <label for="maxDaysToRepudidate" class="col-lg-4 col-md-12  col-sm-12 col-xs-12 control-label">Max days after report period end date to repudiate:</label>
+                  <label for="invitationExpiresHours" class="col-lg-4 col-md-12  col-sm-12 col-xs-12 control-label">Invitation Expires this Many Hours after Sending:</label>
 
                   <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
-                    <input type="text" class="form-control" id="maxDaysToRepudidate" placeholder="Chris" autocomplete="off"
-                           value="30">
+                    <input type="text" class="form-control" id="invitationExpiresHours"  autocomplete="off" value="72">
                   </div>
 
 
-                  <label for="phoneOnEmails" class="col-lg-2 col-md-2 col-sm-12 col-xs-12  control-label">Phone # on
-                    Emails </label>
+                  <label for="authorityUsersInUse" class="col-lg-2 col-md-2 col-sm-12 col-xs-12  control-label">In Use: </label>
                   <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <input class="form-control" id="phoneOnEmails" placeholder="Chris" autocomplete="off"
-                           value="616-456-3260">
+                    <input class="form-control" id="authorityUsersInUse" placeholder="Chris" autocomplete="off" value="5">
                   </div>
 
                 </div>
@@ -238,12 +234,6 @@
                   <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
                     <input type="text" class="form-control" id="daysBeforeChangePassword" placeholder="Chris"
                            autocomplete="off" value="180">
-                  </div>
-
-                  <label for="emailOnEmails" class="col-lg-2 col-md-2 col-sm-12 control-label">Email on Emails </label>
-                  <div class="col-lg-3 col-md-3 col-sm-12">
-                    <input class="form-control" id="emailOnEmails" placeholder="Chris" autocomplete="off"
-                           value="linkoexchange@grand-rapid.mi.us">
                   </div>
 
                 </div>
@@ -277,6 +267,123 @@
 
                 </div>
               </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+       <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-target="#industryPretreatmentSettingPanel">
+          <strong>Industry Pretreatment Program Settings</strong>
+        </div>
+
+        <div class="panel-body panel-collapse collapse" id="industryPretreatmentSettingPanel">
+
+          <div class="panel-collapse in collapse" id="industryPretreatmentSettingContent">
+            <div class="col-sm-11">
+              <br/>
+
+              <div class="form-horizontal row ">
+                <div class="form-group">
+                  <label for="maxDaysToRepudidate" class="col-lg-4 col-md-12  col-sm-12 col-xs-12 control-label">Max days after report period end date to repudiate:</label>
+
+                  <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+                    <input type="text" class="form-control" id="maxDaysToRepudidate" placeholder="Chris" autocomplete="off"
+                           value="30">
+                  </div>
+
+
+                  <label for="nameOnEmails" class="col-lg-2 col-md-2 col-sm-12 col-xs-12  control-label">Names # on Emails: </label>
+                  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <input class="form-control" id="nameOnEmails" placeholder="Chris" autocomplete="off"  value="City of Grand Rapids">
+                  </div>
+
+                </div>
+              </div>
+
+
+              <div class="form-horizontal row ">
+                <div class="form-group">
+                  <label for="decimalDefinition" class="col-lg-4 col-md-12  col-sm-12 col-xs-12 control-label">Using These Decimal Places for Loading Calculations:</label>
+
+                  <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+                    <input type="text" class="form-control" id="decimalDefinition" placeholder="Chris" autocomplete="off"
+                           value=".0">
+                  </div>
+
+
+                  <label for="phoneOnEmails" class="col-lg-2 col-md-2 col-sm-12 col-xs-12  control-label">Phone # on
+                    Emails: </label>
+                  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <input class="form-control" id="phoneOnEmails" placeholder="Chris" autocomplete="off"
+                           value="616-456-3260">
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="form-horizontal row ">
+                <div class="form-group">
+                  <label for="decimalDefinition" class="col-lg-4 col-md-12  col-sm-12 col-xs-12 control-label">Mass Loading Pounds Conversion factor:</label>
+
+                  <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+                    <input type="text" class="form-control" id="decimalDefinition" placeholder="Chris" autocomplete="off"
+                           value="8.343">
+                  </div>
+
+
+                  <label for="emailOnEmails" class="col-lg-2 col-md-2 col-sm-12 control-label">Email on Emails: </label>
+                  <div class="col-lg-3 col-md-3 col-sm-12">
+                    <input class="form-control" id="emailOnEmails" placeholder="Chris" autocomplete="off"
+                           value="linkoexchange@grand-rapid.mi.us">
+                  </div>
+
+                </div>
+              </div>
+
+
+              <div class="form-horizontal row ">
+                <div class="form-group">
+                  <label for="maxNumberUsers" class="col-lg-4 col-md-12  col-sm-12 col-xs-12 control-label">Max # of Users Per Industry:</label>
+
+                  <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+                    <input type="text" class="form-control" id="maxNumberUsers" autocomplete="off"  value="5">
+                  </div>
+
+
+                </div>
+              </div>
+
+              <div class="form-horizontal row ">
+                <div class="form-group">
+                  <label for="maxNumberUsers" class="col-lg-4 col-md-12  col-sm-12 col-xs-12 control-label"># of Industry Licenses:</label>
+                </div>
+              </div>
+
+              <div class="form-horizontal row ">
+                <div class="form-group">
+                  <label for="availableLicense" class="col-lg-4 col-md-12  col-sm-12 col-xs-12 control-label">Available:</label>
+
+                  <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+                    <input type="text" class="form-control" id="availableLicense" placeholder="Chris" autocomplete="off"
+                           value="200">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-horizontal row ">
+                <div class="form-group">
+                  <label for="numberOfLicenseInUse" class="col-lg-4 col-md-12  col-sm-12 col-xs-12 control-label">In Use:</label>
+
+                  <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+                    <input type="text" class="form-control" id="numberOfLicenseInUse" placeholder="Chris" autocomplete="off"
+                           value="86">
+                  </div>
+                </div>
+              </div>
+
 
             </div>
           </div>
