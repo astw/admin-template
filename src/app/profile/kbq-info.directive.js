@@ -19,7 +19,8 @@
         'userProfile':'=',
         'title1':'=',
         'title2':'=',
-        'editmode':'='
+        'editmode':'=',
+        'kbqQuestions':'='
       }
     };
     return directive;

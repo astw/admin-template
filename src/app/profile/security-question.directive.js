@@ -18,7 +18,8 @@
       scope: {
         'userProfile':'=',
         'title1':'=',
-        'title2':'='
+        'title2':'=',
+        'secureQuestions':'='
       }
     };
     return directive;

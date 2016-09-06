@@ -40,7 +40,7 @@
 <div class="panel">
 
   <div class="pane-group">
-    <div class="panel-body panel-collapse collapse in"> 
+    <div class="panel-body panel-collapse collapse in">
 
       <div class="panel panel-default">
         <div class="panel-heading" data-toggle="collapse" data-target="#authoritySettingPanel"  ng-class="currentStep == 1 ? 'collapsed': 'expand' " >
@@ -70,7 +70,7 @@
         <div class="panel-body panel-collapse collapse " id="kbqQuestionsPanel"  ng-class="currentStep != 2 ? 'collapsed': 'expand in' ">
 
           <div class="panel-collapse in collapse" id="kbqQuestionsContent">
-              <div kbq-info title1= "title1" user-profile= "userProfile" editmode= editProfileKBQ  />
+              <div kbq-info title1= "title1"  kbq-questions="kbqQuestions" user-profile= "userProfile" editmode= editProfileKBQ  />
 
               <div class="form-group pull-right" >
                 <button id="kbqPreviousBtn" class="k-primary" ng-click="kbqPreviousBtnClicked();">Previous</button>
@@ -91,7 +91,7 @@
 
           <div class="panel-collapse in collapse" id="securityQuestionsContent">
 
-            <div security-questions title1= "title1" user-profile= "userProfile" editmode= editProfileSQ />
+            <div security-questions title1= "title1"  secure-questions ="secureQuestions" user-profile= "userProfile" editmode= editProfileSQ />
             <br/>
             <div class="form-group  pull-right" >
               <button id="sqPreviousBtn" class="k-primary" ng-click="sqPriviousBtnClicked();"> Previous </button>
