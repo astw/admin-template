@@ -8,6 +8,7 @@
     </div>
 
   </div>
+ </div>
 
   <form class="form-horizontal" _lpchecked="1">
     <div class="box-body">
@@ -16,7 +17,7 @@
         <label for="secureQuestion1" class="col-sm-2 control-label">Question 1 </label>
 
         <div class="col-sm-6">
-          <select  class="form-control" class="col-sm-6" name="question4" id="secureQuestionAnswer1" ng-model="userProfile.secureQuestion1">
+          <select ng-readonly="editmode == false"   class="form-control" class="col-sm-6" name="question4" id="secureQuestionAnswer1" ng-model="userProfile.secureQuestion1">
             <option ng-repeat="option in secureQuestions.availableOptions" value="{{option.value}}">{{option.value}}</option>
           </select>
 
@@ -27,7 +28,7 @@
         <label for="secureQuestionAnswer1" class="col-sm-2 control-label">Answer</label>
 
         <div class="col-sm-6">
-          <input type="textbox"  class="form-control" id="secureQuestion1"  ng-model="userProfile.secureQuestion1Answer" autocomplete="off">
+          <input ng-readonly="editmode == false"  type="textbox"  class="form-control" id="secureQuestion1"  ng-model="userProfile.secureQuestion1Answer" autocomplete="off">
         </div>
       </div>
 
@@ -35,7 +36,7 @@
         <label for="secureQuestion2" class="col-sm-2 control-label">Question 2 </label>
 
         <div class="col-sm-6">
-          <select  class="form-control" class="col-sm-6" name="question4" id="secureQuestion2" ng-model="userProfile.secureQuestion2">
+          <select  ng-readonly="editmode == false"  class="form-control" class="col-sm-6" name="question4" id="secureQuestion2" ng-model="userProfile.secureQuestion2">
             <option ng-repeat="option in secureQuestions.availableOptions" value="{{option.value}}">{{option.value}}</option>
           </select>
         </div>
@@ -45,7 +46,7 @@
         <label for="secureQuestionAnswer2" class="col-sm-2 control-label">Answer</label>
 
         <div class="col-sm-6">
-          <input type="textbox"  class="form-control" id="secureQuestionAnswer2"  ng-model="userProfile.secureQuestion2Answer" autocomplete="off">
+          <input ng-readonly="editmode == false"  type="textbox"  class="form-control" id="secureQuestionAnswer2"  ng-model="userProfile.secureQuestion2Answer" autocomplete="off">
         </div>
       </div>
 
@@ -58,12 +59,6 @@
                  ng-model="userProfile.agreeTermsConditions" autocomplete="off">
           I agree to the LinkoExchange <a href="#">Terms and Conditions</a>
         </div>
-
       </div>
     </div>
-
   </form>
-</div>
-
-
-</div>

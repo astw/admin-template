@@ -24,21 +24,31 @@
     $scope.industryProgramEditSaveBtnText = 'Next';
 
     $scope.editProfileDetails = true;
-    $scope.editProfileKBQ = false;
-    $scope.editProfileSQ = false;
+    $scope.editProfileKBQ = true;
+    $scope.editProfileSQ = true;
 
     $scope.currentStep = 1;
 
     $scope.profileDetailsNextEditBtn = profileDetailsNextEditBtn;
     $scope.kbqNextEditBtnClicked = kbqNextEditBtnClicked;
 
+   //---
+    $scope.kbqPreviousBtnClicked = kbqPreviousBtnClicked;
     $scope.kbqEditBtnClicked = kbqEditBtnClicked;
     $scope.kbqNextBtnClicked = kbqNextBtnClicked;
+   // ---
+    $scope.sqPriviousBtnClicked = sqPriviousBtnClicked;
+    $scope.sqEditBtnClicked = sqEditBtnClicked;
+    $scope.sqSaveBtnClicked = sqSaveBtnClicked;
+
 
     $scope.detailEditBtnClicked = detailEditBtnClicked;
     $scope.detailNextBtnClicked = detailNextBtnClicked;
 
 
+
+
+//-----  details
     function detailNextBtnClicked() {
       $scope.editProfileDetails = false;
       $scope.currentStep = 2;
@@ -46,8 +56,13 @@
 
     function detailEditBtnClicked() {
       $scope.editProfileDetails = true;
+      $scope.currentStep = 1;
     }
-
+//-----  kbq questions
+    function  kbqPreviousBtnClicked() {
+      $scope.currentStep = 1;
+      $scope.editProfileKBQ = false;
+    }
     function kbqEditBtnClicked() {
       $scope.editProfileKBQ = true;
     }
@@ -55,6 +70,22 @@
     function kbqNextBtnClicked() {
       $scope.editProfileKBQ = false;
       $scope.currentStep = 3;
+    }
+//-----
+
+
+// security questions
+    function sqPriviousBtnClicked(){
+      $scope.editProfileSQ = false;
+      $scope.currentStep = 2;
+    }
+
+    function sqEditBtnClicked() {
+      $scope.editProfileSQ = true;
+    }
+
+    function sqSaveBtnClicked() {
+      // save .....
     }
 
 

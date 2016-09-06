@@ -40,19 +40,18 @@
 <div class="panel">
 
   <div class="pane-group">
-    <div class="panel-body panel-collapse collapse in">
-
+    <div class="panel-body panel-collapse collapse in"> 
 
       <div class="panel panel-default">
-        <div class="panel-heading" data-toggle="collapse" data-target="#authoritySettingPanel">
+        <div class="panel-heading" data-toggle="collapse" data-target="#authoritySettingPanel"  ng-class="currentStep == 1 ? 'collapsed': 'expand' " >
           <strong>Profile Details</strong>
         </div>
 
         <!--ng-class="editProfileDetails == false ? 'expand': 'collapse'"-->
-        <div class="panel-body panel-collapse collapse  in" id="authoritySettingPanel" ng-class="editProfileDetails == false ? 'expand': 'in collapse'" >
-          <div class="panel-collapse in collapse" id="authoritySettingContent"   >
+        <div class="panel-body panel-collapse collapse  in" id="authoritySettingPanel" ng-class="currentStep > 1 ? 'collapsed collapse': 'expand in'" >
+          <div class="panel-collapse in collapse in" id="authoritySettingContent"  ng-class="currentStep > 1 ? 'collapsed collapse': 'expand in'" >
 
-            <div profile-details user-profile= "userProfile" editmode= editProfileDetails />
+            <div profile-details user-profile= "userProfile" editmode= editProfileDetails  />
 
             <div class="form-group pull-right" >
               <button id="detailEditBtn" ng-if="editProfileDetails == false"  class="k-primary" ng-click="detailEditBtnClicked();">Edit</button>
@@ -64,39 +63,42 @@
       </div>
 
       <div class="panel panel-default">
-        <div class="panel-heading" data-toggle="collapse" data-target="#kbqQuestionsPanel">
+        <div class="panel-heading" data-toggle="collapse" data-target="#kbqQuestionsPanel" ng-class="currentStep != 2 ? 'collapsed': 'expand' ">
           <strong>Knowledge Based Questions</strong>
         </div>
 
-        <div class="panel-body panel-collapse collapse" id="kbqQuestionsPanel"   ng-class="editProfileDetails == true? 'collapse': ' expand'">
+        <div class="panel-body panel-collapse collapse " id="kbqQuestionsPanel"  ng-class="currentStep != 2 ? 'collapsed': 'expand in' ">
 
           <div class="panel-collapse in collapse" id="kbqQuestionsContent">
               <div kbq-info title1= "title1" user-profile= "userProfile" editmode= editProfileKBQ  />
 
               <div class="form-group pull-right" >
-                <button id="kbqEditBtn" class="k-primary" ng-click="kbqEditBtnClicked();">Edit</button>
-                <button id="kbqNextBtn" class="k-primary" ng-click="kbqNextBtnClicked();">Next</button>
+                <button id="kbqPreviousBtn" class="k-primary" ng-click="kbqPreviousBtnClicked();">Previous</button>
+                <button id="kbqEditBtn" ng-if="editProfileKBQ == false" class="k-primary" ng-click="kbqEditBtnClicked();">Edit</button>
+                <button id="kbqNextBtn"  class="k-primary" ng-click="kbqNextBtnClicked();">Next</button>
               </div>
-
-
           </div>
 
         </div>
       </div>
 
       <div class="panel panel-default">
-        <div class="panel-heading" data-toggle="collapse" data-target="#securityQuestionsPanel">
+        <div class="panel-heading" data-toggle="collapse" data-target="#securityQuestionsPanel" ng-class="currentStep != 3 ? 'collapsed': 'expand' ">
           <strong>Security Questions</strong>
         </div>
 
-        <div class="panel-body panel-collapse collapse" id="securityQuestionsPanel">
+        <div class="panel-body panel-collapse collapse" id="securityQuestionsPanel" ng-class="currentStep != 3 ? 'collapsed': 'expand in' ">
 
           <div class="panel-collapse in collapse" id="securityQuestionsContent">
-            <security-questions title1= "title1" user-profile= "userProfile" />
 
-            <div class="form-group pull-right" >
-              <button id="saveSecurityQuestionSaveEditBtn" class="k-primary" ng-click="saveSecurityQuestionSaveEditBtnClicked();"> Save </button>
+            <div security-questions title1= "title1" user-profile= "userProfile" editmode= editProfileSQ />
+            <br/>
+            <div class="form-group  pull-right" >
+              <button id="sqPreviousBtn" class="k-primary" ng-click="sqPriviousBtnClicked();"> Previous </button>
+              <button id="sqEditBtn" class="k-primary" ng-if="editProfileSQ == false" ng-click="sqEditBtnClicked();"> Edit </button>
+              <button id="sqSaveBtn" class="k-primary" ng-if="editProfileSQ== true" ng-click="sqSaveBtnClicked();"> Save </button>
             </div>
+
           </div>
 
         </div>
