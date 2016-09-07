@@ -32,7 +32,7 @@
                     text: "You will change the industry status!",
                     type: "warning",
                     showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
+                    confirmButtonColor: '#3c8dbc',
                     confirmButtonText: "Yes, change it!",
                     cancelButtonText: "No, cancel!",
                     closeOnConfirm: false,

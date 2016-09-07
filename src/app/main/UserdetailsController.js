@@ -50,6 +50,7 @@
         title: vm.lockButtonText + ' User',
         text:'You are going to ' + vm.lockButtonText.toLowerCase()  +   ' user <b>' + vm.selectedUser.email +  '</b>.',
         showCloseButton: true,
+        confirmButtonColor: '#3c8dbc',
         showCancelButton: true,
         confirmButtonText:
           '<i class="fa"></i>' + vm.lockButtonText + ' User',
@@ -93,6 +94,7 @@
         text:'What email should be used in the Registration Profile?',
         input:"text",
         inputValue : vm.selectedUser.email,
+        confirmButtonColor: '#3c8dbc',
         showCloseButton: true,
         showCancelButton: true,
         confirmButtonText:

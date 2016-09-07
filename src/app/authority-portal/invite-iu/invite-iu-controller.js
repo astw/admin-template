@@ -9,7 +9,7 @@
   function InviteiuController($timeout, $rootScope, $scope, $state, userService,industryService) {
     var vm = this;
 
-      $scope.step =1 ;
+      $scope.step = 1 ;
       vm.inviteUser = inviteUser;
       vm.sendInvitation = sendInvitation;
       vm.createUser = createUser;
@@ -18,9 +18,30 @@
       vm.doCreateUser = doCreateUser;
       vm.searchUser = searchUser;
 
+      vm.goToStep2 = goToStep2;
+
       var userList = userService.getUserList();
       console.log(userList);
 
+      updateHeadText();
+
+     function updateHeadText() {
+
+      vm.step1HeadText = 'Search For User';
+      vm.step2HeadText = 'Create New User?';
+      vm.step3HeadText = "Enter User's Name?";
+      vm.step4HeadText = "Invite Sent";
+
+      if($scope.step == 1){
+        $scope.headerText = vm.step1HeadText;
+      } else if($scope.step == 2){
+        $scope.headerText = vm.step2HeadText;
+      } else if($scope.step == 3 ){
+        $scope.headerText = vm.step3HeadText;
+      } else if($scope.step == 6){
+        $scope.headerText = vm.step4HeadText;
+      }
+    }
 
       vm.userToInvite = null;
       $scope.userOptions = {
@@ -82,12 +103,19 @@
 
 
                                    ]
+      };
+
+
+      function goToStep2() {
+        $scope.step = 2;
+        updateHeadText();
       }
 
       //$scope.step = 4;
 
       function sendInvitation(){
         $scope.step = 6;      // invitation email sent
+        updateHeadText();
 
         //call user service to add invited user
 
@@ -98,16 +126,19 @@
 
           $scope.step = 1 ;
           $scope.noSuchUser = false;
+          updateHeadText();
       }
 
       function createUser(){
         // $state.go("authority.portal.create-iu");
-          $scope.step = 3   // show create user interface
+          $scope.step = 3;   // show create user interface
+          updateHeadText();
       }
 
       function cancel(){
          //$state.go("authority.portal.industryUsers");
          $scope.step = 2
+        updateHeadText();
       }
 
       function searchUser(){
@@ -126,18 +157,29 @@
                     text:'The user with email address <b>' + vm.userEmail + '</b> does not exist, would like to create one a user?',
                     showCloseButton: true,
                     showCancelButton: true,
+                    confirmButtonColor: '#3c8dbc',
+                    animation:false,
                     confirmButtonText:
-                    '<i class="fa"></i>Create User',
+                    '<i class="fa "></i>Create User',
                     cancelButtonText:
                       '<i class="fa "></i> Cancel'
                   })
                     .then(function() {
-                      swal(
-                          'Create new user', 'Will go to create a new user page','success'
-                      ).then(function(){
-                        $scope.step = 5;
-                        $scope.$apply();
-                      });
+                      // create new user
+                      // go to create new user page
+
+                      $scope.step =3;
+                      updateHeadText();
+                      $scope.$apply();
+
+
+                      // swal(
+                      //     'Create new user', 'Will go to create a new user page','success'
+                      // ).then(function(){
+                      //   $scope.step = 5;
+                      //   $scope.$apply();
+                      // });
+
                     }, function(dismiss) {
                       // dismiss can be 'cancel', 'overlay', 'close', 'timer'
                       if (dismiss === 'cancel') {
@@ -155,10 +197,12 @@
                   prePareUserToInvite(findUser);
                   // user found show another interface
                   $scope.step = 4;
+
+                  updateHeadText();
+
       }
 
       function inviteUser(){
-
 
           var findUser = userList.find(function(item){
               return vm.userEmail == item.email;
@@ -167,6 +211,7 @@
           if(findUser == null){
               $scope.noSuchUser = true;
               $scope.step = 2 ;
+              updateHeadText();
               return;
           }
 
@@ -176,6 +221,7 @@
           prePareUserToInvite(findUser);
           // user found show another interface
           $scope.step = 4;
+          updateHeadText();
       }
 
     function doCreateUser(){
@@ -195,17 +241,6 @@
         var date1 = now.toISOString().slice(0,10).replace(/-/g,"/");
         var date2 = nowPlus7Days.toISOString().slice(0,10).replace(/-/g,"/");
 
-
-        /*
-        var date1 = now.toISOString().slice(0,10).replace(/-/g,"/");
-
-        var t = date1.split('/');
-        t[1] = parseInt(t[1]) +1;
-        t[1] = '0' + t[1];
-
-        var date2 = t.join('/');
-       */
-
         user.dateInvited = kendo.parseDate(date1);
         user.inviteExpires = kendo.parseDate(date2);
         user.industry = $rootScope.selectedIndustry.industry;
@@ -215,6 +250,7 @@
         vm.selectedUser = user;
         industryService.addInvitedUser(vm.selectedUser);
         $scope.step = 6;
+        updateHeadText();
     }
 
     function prePareUserToInvite(user){

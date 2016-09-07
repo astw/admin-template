@@ -25,123 +25,252 @@
 
 
 
- <div class="col-lg-12 box watertax-panel">
-   <br/><br/>
-  <!-- /.box-header -->
-  <!-- form start -->
-  <form class="form-horizontal" _lpchecked="1">
-    <div class="box-body">
-
-      <div class="form-group" ng-if="step==1">
-        <label for="searForEmail" class="col-lg-3 col-sm-2 control-label"> Enter Email </label>
-
-        <div class="col-lg-6 col-sm-10">
-           <input type="email"  class="form-control" id="searForEmail"  ng-model="inviteiu.userEmail"   >
-        </div>
-
-        <div class="col-sm-2">
-          <span>
-            <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.searchUser();'> Search  </button>
-          </span>
-        </div>
-      </div>
-
-
-      <!---->
-      <div class="form-group col-lg-8"  ng-if=" step == 2 " >
-
-        <div class="col-lg-12 col-sm-offset-2 col-sm-10">
-          <b>The user does not exist. Do you want to invite this new user ?</b>  <br/> <br/>
-        </div>
-
-        <div class="col-lg-12">
-            <div class="col-lg-4"></div>
-
-            <div class="col-lg-2  col-sm-10">
-              <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.createUser();'> Yes </button>
-            </div>
-
-
-            <div class="col-lg-2 col-sm-10">
-              <button type="button" class="btn btn-flat visible-lg visible-md" ng-click='inviteiu.cancel();'> Cancel  </button>
-            </div>
-
-            <div class="col-lg-4"></div>
-
-          </div>
-      </div>
-
-      <div  ng-if="step==3" >
-        <div class="form-group">
-
-          <label for="fistName" class="col-lg-3 col-md-3 col-sm-3 control-label"> First Name</label>
-          <div class="col-lg-6 col-sm-10">
-            <input type="textbox" class="form-control" id="fistName" ng-model="inviteiu.userFirstName" placeholder="First Name" autocomplete="off" >
-          </div>
-        </div>
+<div class="panel panel-default watertax-panel">
+  <div class="panel-heading" data-target="#information">
+    <strong> {{headerText}}</strong>
+    <!--<div class="form-group pull-right">-->
+      <!--<button id="lockBtn" class="k-primary">-->
+      <!--</button> -->
+    <!--</div>-->
+  </div>
+  <div class="panel-body panel-collapse collapse in" id="information">
+    <div class="col-sm-11">
+      <div class="form-horizontal row">
 
         <div class="form-group">
-
-          <label for="lastName" class="col-lg-3 col-md-3  control-label"> Last Name</label>
-          <div class="col-lg-6 col-sm-10">
-            <input type="textbox" class="form-control" id="lastName" ng-model="inviteiu.userLastName" placeholder="Last Name" autocomplete="off" >
-          </div>
-
+          <br/><br/>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" ng-if="step==1">
+          <label for="email" class="col-md-2 control-label">Enter Email</label>
 
-          <label for="email" class="col-lg-3 col-md-3  control-label"> Email </label>
-          <div class="col-lg-6 col-sm-10">
-            <input type="email" class="form-control" id="email" ng-model="inviteiu.userEmail"   autocomplete="off" >
+          <div class="col-md-4">
+            <input type="text"  class="form-control" id="email"  ng-model="inviteiu.userEmail" >
           </div>
 
           <div class="col-sm-2">
-            <span>
-              <button type="submit" class="btn btn-primary" ng-click="inviteiu.doCreateUser();" >Invite User</button>
-            </span>
+          <span>
+            <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.searchUser();'> Search  </button>
+          </span>
           </div>
         </div>
-      </div>
 
-      <div  ng-show="step==4" ng-hide="step !==4 " >
-        <div class="form-group">
-          <div class="col-lg-8 col-sm-offset-2 col-sm-10">
+        <div class="form-group"  ng-if=" step == 2 " >
+
+          <div class="col-lg-6 col-sm-offset-2 col-sm-10" >
+            <b>The user does not exist. Do you want to invite this new user ?</b>  <br/> <br/>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="col-lg-1 col-lg-offset-5  col-sm-10" >
+              <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.createUser();'> Yes </button>
+            </div>
+
+            <div class="col-lg-1 col-sm-10">
+              <button type="button" class="btn btn-flat visible-lg visible-md" ng-click='inviteiu.cancel();'> Cancel  </button>
+            </div>
+            <div class="col-lg-4" ></div>
+
+          </div>
+        </div>
+
+        <div class="form-group" ng-if="step==3">
+
+          <div class="form-group">
+
+            <label for="fistName" class="col-lg-3 col-md-3 col-sm-3 control-label"> First Name</label>
+            <div class="col-lg-4 col-sm-10">
+              <input type="textbox" class="form-control" id="fistName" ng-model="inviteiu.userFirstName" placeholder="First Name" autocomplete="off" >
+            </div>
+          </div>
+
+          <div class="form-group">
+
+            <label for="lastName" class="col-lg-3 col-md-3  control-label"> Last Name</label>
+            <div class="col-lg-4 col-sm-10">
+              <input type="textbox" class="form-control" id="lastName" ng-model="inviteiu.userLastName" placeholder="Last Name" autocomplete="off" >
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="email" class="col-lg-3 col-md-3  control-label"> Email </label>
+            <div class="col-lg-4 col-sm-10">
+              <input type="email" class="form-control" id="email" ng-model="inviteiu.userEmail"   autocomplete="off" >
+            </div>
+
+            <div class="col-lg-2">
+              <!--<button type="submit" class="btn-primary" ng-click="inviteiu.doCreateUser();" >Invite User</button>-->
+              <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.doCreateUser();'> Invite User  </button>
+            </div>
+          </div>
+
+          <!--<div class="form-group">-->
+            <!--<div class="col-lg-2 col-lg-offset-3">-->
+              <!--&lt;!&ndash;<button type="submit" class="btn-primary" ng-click="inviteiu.goToStep2();" >Last Step</button>&ndash;&gt;-->
+              <!--&lt;!&ndash;<button type="submit" class="btn-primary" ng-click="inviteiu.doCreateUser();" >Invite User</button>&ndash;&gt;-->
+              <!--<button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.doCreateUser();'> Invite User  </button>-->
+            <!--</div>-->
+          <!--</div>-->
+
+        </div>
+
+        <div  ng-show="step==4" ng-hide="step !==4 " >
+          <div class="form-group">
+            <div class="col-lg-8 col-sm-offset-2 col-sm-10">
 
               <div class="row col-lg-12">
                 <div class="col-lg-4" ></div>
                 <div class=" pull-right">
-                  <button type="button" class="btn btn-block btn-primary btn-sm visible-lg visible-md" ng-click='inviteiu.sendInvitation();'>
+                  <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.sendInvitation();'>
                     Invite Administrator
                   </button>
+                  <br/>
                 </div>
               </div>
 
               <div class="col-lg-12">
                 <div  kendo-grid='inviteiu.userGrid'  k-options="userOptions"  ></div>
               </div>
+            </div>
           </div>
         </div>
-      </div>
 
-    <div  ng-if="step==5" >
-      <div class="form-group">
+        <duv class="form-group"  ng-if="step==6"  >
+              <div class="col-lg-12 col-sm-offset-2 col-sm-10">
+                <b> An invitation Email has been sent. </b>  <br/> <br/>
+              </div>
 
-        <div class="col-lg-12 col-sm-offset-2 col-sm-10">
-          <b> User has been created  </b>  <br/> <br/>
-        </div>
-      </div>
-    </div>
+            <div class="col-md-4">
+               <button class="col-lg-offset-9 k-primary">Ok</button>
+            </div>
+        </duv>
 
-      <div  ng-if="step==6" >
-        <div class="form-group">
-
-          <div class="col-lg-12 col-sm-offset-2 col-sm-10">
-            <b> An invitation Email has been sent. </b>  <br/> <br/>
-          </div>
-        </div>
-      </div>
 
     </div>
-  </form>
+  </div>
+
 </div>
+
+
+ <!--<div class="box col-lg-12 box watertax-panel">-->
+   <!--<br/><br/>-->
+  <!--&lt;!&ndash; /.box-header &ndash;&gt;-->
+  <!--&lt;!&ndash; form start &ndash;&gt;-->
+  <!--<form class="form-horizontal" _lpchecked="1">-->
+    <!--<div class="box-body">-->
+
+      <!--<div class="form-group" ng-if="step==1">-->
+        <!--<label for="searForEmail" class="col-lg-3 col-sm-2 control-label"> Enter Email </label>-->
+
+        <!--<div class="col-lg-6 col-sm-10">-->
+           <!--<input type="email"  class="form-control" id="searForEmail"  ng-model="inviteiu.userEmail"   >-->
+        <!--</div>-->
+
+        <!--<div class="col-sm-2">-->
+          <!--<span>-->
+            <!--<button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.searchUser();'> Search  </button>-->
+          <!--</span>-->
+        <!--</div>-->
+      <!--</div>-->
+
+
+      <!--&lt;!&ndash;&ndash;&gt;-->
+      <!--<div class="form-group col-lg-8"  ng-if=" step == 2 " >-->
+
+        <!--<div class="col-lg-12 col-sm-offset-2 col-sm-10">-->
+          <!--<b>The user does not exist. Do you want to invite this new user ?</b>  <br/> <br/>-->
+        <!--</div>-->
+
+        <!--<div class="col-lg-12">-->
+            <!--<div class="col-lg-4"></div>-->
+
+            <!--<div class="col-lg-2  col-sm-10">-->
+              <!--<button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.createUser();'> Yes </button>-->
+            <!--</div>-->
+
+
+            <!--<div class="col-lg-2 col-sm-10">-->
+              <!--<button type="button" class="btn btn-flat visible-lg visible-md" ng-click='inviteiu.cancel();'> Cancel  </button>-->
+            <!--</div>-->
+
+            <!--<div class="col-lg-4"></div>-->
+
+          <!--</div>-->
+      <!--</div>-->
+
+      <!--<div  ng-if="step==3" >-->
+        <!--<div class="form-group">-->
+
+          <!--<label for="fistName" class="col-lg-3 col-md-3 col-sm-3 control-label"> First Name</label>-->
+          <!--<div class="col-lg-6 col-sm-10">-->
+            <!--<input type="textbox" class="form-control" id="fistName" ng-model="inviteiu.userFirstName" placeholder="First Name" autocomplete="off" >-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="form-group">-->
+
+          <!--<label for="lastName" class="col-lg-3 col-md-3  control-label"> Last Name</label>-->
+          <!--<div class="col-lg-6 col-sm-10">-->
+            <!--<input type="textbox" class="form-control" id="lastName" ng-model="inviteiu.userLastName" placeholder="Last Name" autocomplete="off" >-->
+          <!--</div>-->
+
+        <!--</div>-->
+
+        <!--<div class="form-group">-->
+
+          <!--<label for="email" class="col-lg-3 col-md-3  control-label"> Email </label>-->
+          <!--<div class="col-lg-6 col-sm-10">-->
+            <!--<input type="email" class="form-control" id="email" ng-model="inviteiu.userEmail"   autocomplete="off" >-->
+          <!--</div>-->
+
+          <!--<div class="col-sm-2">-->
+            <!--<span>-->
+               <!--<button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.doCreateUser();'> Invite User  </button>-->
+            <!--</span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--&lt;!&ndash;<div  ng-show="step==4" ng-hide="step !==4 " >&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="col-lg-8 col-sm-offset-2 col-sm-10">&ndash;&gt;-->
+
+              <!--&lt;!&ndash;<div class="row col-lg-12">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-lg-4" ></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class=" pull-right">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<button type="button" class="btn btn-block btn-primary btn-sm visible-lg visible-md" ng-click='inviteiu.sendInvitation();'>&ndash;&gt;-->
+                    <!--&lt;!&ndash;Invite Administrator&ndash;&gt;-->
+                  <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+              <!--&lt;!&ndash;<div class="col-lg-12">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div  kendo-grid='inviteiu.userGrid'  k-options="userOptions"  ></div>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--<div  ng-if="step==5" >-->
+      <!--<div class="form-group">-->
+
+        <!--<div class="col-lg-12 col-sm-offset-2 col-sm-10">-->
+          <!--<b> User has been created  </b>  <br/> <br/>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+      <!--<div  ng-if="step==6" >-->
+        <!--<div class="form-group">-->
+
+          <!--<div class="col-lg-12 col-sm-offset-2 col-sm-10">-->
+            <!--<b> An invitation Email has been sent. </b>  <br/> <br/>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+    <!--</div>-->
+  <!--</form>-->
+<!--</div>-->

@@ -25,7 +25,7 @@
                     text: "You will change the industry status!",
                     //type: "warning",
                     showCancelButton: true,
-                    confirmButtonColor: "#428bca",
+                    confirmButtonColor: "#3c8dbc",
                     confirmButtonText: "Yes, change it!",
                     cancelButtonText: "No, cancel!",
                     closeOnConfirm: false,
@@ -45,6 +45,7 @@
 
                         swal(
                         {
+                         'confirmButtonColor': '#3c8dbc',
                          title:"Changed!",
                          text:"Industry status has been changed.",
                          type:"success"
