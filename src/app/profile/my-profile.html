@@ -5,7 +5,7 @@
 
 </style>
 
-<div class="box col-lg-12">
+<div class=" col-lg-12">
   <div class="box-header with-border">
     <div class="">
       <h3>{{title1}} {{}}  </h3>
@@ -16,6 +16,7 @@
       <li><a href="/"><i class=""></i> Home </a></li>
       <li class="active" >My Profile</li>
     </ol>
+
   </div>
   <!-- /.box-header -->
   <!-- form start -->
@@ -27,7 +28,7 @@
     <!--</div>-->
   <!--</form>-->
 
-
+  <div class="seperator" > </div>
   <div class="panel">
 
     <div class="pane-group">
@@ -48,7 +49,7 @@
               <div class="form-group pull-right" >
                 <button id="detailEditBtn" ng-if="editProfileDetails == false"  class="k-primary" ng-click="detailEditBtnClicked();">Edit</button>
                 <!--<button id="detailNextBtn" ng-if="editProfileDetails == true"  class="k-primary" ng-click="detailNextBtnClicked();">Next</button>-->
-                <button id="detailSavetBtn" class="k-primary" ng-click="detailsSaveBtnClicked();"> Save </button>
+                <button id="detailSavetBtn" ng-if="editProfileDetails == true" class="k-primary" ng-click="detailsSaveBtnClicked();"> Save </button>
               </div>
 
             </div>
@@ -69,7 +70,7 @@
                 <!--<button id="kbqPreviousBtn" class="k-primary" ng-click="kbqPreviousBtnClicked();">Previous</button>-->
                 <button id="kbqEditBtn" ng-if="editProfileKBQ == false" class="k-primary" ng-click="kbqEditBtnClicked();">Edit</button>
                 <!--<button id="kbqNextBtn"  class="k-primary" ng-click="kbqNextBtnClicked();">Next</button>-->
-                <button id="kbqSavetBtn" class="k-primary" ng-click="kbqSaveBtnClicked();"> Save </button>
+                <button id="kbqSavetBtn" ng-if="editProfileKBQ == true" class="k-primary" ng-click="kbqSaveBtnClicked();"> Save </button>
               </div>
             </div>
 
@@ -85,12 +86,13 @@
 
             <div class="panel-collapse in collapse" id="securityQuestionsContent">
 
-              <div security-questions title1= "title1"  secure-questions ="secureQuestions" user-profile= "userProfile" editmode= editProfileSQ />
+              <div security-questions title1= "title1"  secure-questions ="secureQuestions" user-profile= "userProfile" editmode= editProfileSQ > </div>
               <br/>
-              <div class="form-group  pull-right" >
+              <div class=" form-group  pull-right" >
                 <!--<button id="sqPreviousBtn" class="k-primary" ng-click="sqPriviousBtnClicked();"> Previous </button>-->
+
+                <button id="sqSaveBtn" class="k-primary" ng-if="editProfileSQ == true" ng-click="sqSaveBtnClicked();"> Save </button>
                 <button id="sqEditBtn" class="k-primary" ng-if="editProfileSQ == false" ng-click="sqEditBtnClicked();"> Edit </button>
-                <button id="sqSaveBtn" class="k-primary" ng-if="editProfileSQ== true" ng-click="sqSaveBtnClicked();"> Save </button>
               </div>
 
             </div>

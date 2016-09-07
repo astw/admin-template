@@ -76,6 +76,7 @@
     }
 
     function detailsSaveBtnClicked() {
+      $scope.editProfileDetails = false;
        // save details
     }
 //-----  kbq questions
@@ -94,6 +95,7 @@
 
     function kbqSaveBtnClicked() {
       //. save kbq
+      $scope.editProfileKBQ = false;
     }
 //-----
 
@@ -110,7 +112,7 @@
 
     function sqSaveBtnClicked() {
       // save security questions;
-
+      $scope.editProfileSQ = false;
       //$state.go("plain.login");
     }
 

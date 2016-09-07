@@ -30,10 +30,10 @@
     Complete Registration Profile
     <small></small>
   </h1>
-  <ol class="breadcrumb-left visible-lg visible-md">
-    <li><a href="/"><i class=""></i> Home </a></li>
-    <li class="active">My Profile </li>
-  </ol>
+  <!--<ol class="breadcrumb-left visible-lg visible-md">-->
+    <!--<li><a href="/"><i class=""></i> Home </a></li>-->
+    <!--<li class="active">My Profile </li>-->
+  <!--</ol>-->
 
 </section>
 
@@ -65,11 +65,11 @@
            <div class="row">
             <div profile-details user-profile= "userProfile" editmode= editProfileDetails   registration = true />
            </div>
-            <div class="form-group pull-right row" >
+            <div class="row col-lg-12">
+            <div class="form-group pull-right" >
               <button id="detailEditBtn" ng-if="editProfileDetails == false"  class="k-primary" ng-click="detailEditBtnClicked();">Edit</button>
               <button id="detailNextBtn" ng-if="editProfileDetails == true"  class="k-primary" ng-click="detailNextBtnClicked();">Next</button>
-            </div>
-
+            </div></div>
           </div>
         </div>
       </div>
@@ -108,12 +108,13 @@
 
             <div security-questions title1= "title1"  secure-questions ="secureQuestions" user-profile= "userProfile" editmode= editProfileSQ />
             <br/>
+            <div class="row col-lg-12">
             <div class="form-group  pull-right" >
               <button id="sqPreviousBtn" class="k-primary" ng-click="sqPriviousBtnClicked();"> Previous </button>
               <button id="sqEditBtn" class="k-primary" ng-if="editProfileSQ == false" ng-click="sqEditBtnClicked();"> Edit </button>
               <button id="sqSaveBtn" class="k-primary" ng-if="editProfileSQ== true" ng-click="sqSaveBtnClicked();"> Save </button>
             </div>
-
+            </div>
           </div>
 
         </div>

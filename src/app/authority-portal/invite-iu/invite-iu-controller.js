@@ -13,7 +13,7 @@
     //   $state.go('authority.portal.industries');
     // }
 
-    $scope.step = 2 ;
+    $scope.step =1 ;
       vm.inviteUser = inviteUser;
       vm.sendInvitation = sendInvitation;
       vm.createUser = createUser;
@@ -32,8 +32,8 @@
      function updateHeadText() {
 
       vm.step1HeadText = 'Search For User';
-      vm.step2HeadText = 'Create New User?';
-      vm.step3HeadText = "Enter User's Name?";
+      vm.step2HeadText = 'Create New User';
+      vm.step3HeadText = "Enter User's Name";
       vm.step4HeadText = "Invite Sent";
 
       if($scope.step == 1){
