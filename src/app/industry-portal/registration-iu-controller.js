@@ -11,6 +11,10 @@
     vm.userProfile = {};
     vm.step = 1;
 
+console.log('----- RegistrationiuController statte')
+    console.log($state);
+
+
     var user = $localStorage["user"];
     var email = user.email;
 
@@ -29,13 +33,24 @@
 
     $scope.currentStep = 1;
 
+
+    if($state.current.name == 'authority.portal.profile'){
+      $scope.editProfileDetails = false;
+      $scope.editProfileKBQ = false;
+      $scope.editProfileSQ = false;
+    } else {
+      $scope.userProfile = null;
+    }
+
     $scope.profileDetailsNextEditBtn = profileDetailsNextEditBtn;
     $scope.kbqNextEditBtnClicked = kbqNextEditBtnClicked;
+    $scope.detailsSaveBtnClicked = detailsSaveBtnClicked;
 
    //---
     $scope.kbqPreviousBtnClicked = kbqPreviousBtnClicked;
     $scope.kbqEditBtnClicked = kbqEditBtnClicked;
     $scope.kbqNextBtnClicked = kbqNextBtnClicked;
+    $scope.kbqSaveBtnClicked = kbqSaveBtnClicked;
    // ---
     $scope.sqPriviousBtnClicked = sqPriviousBtnClicked;
     $scope.sqEditBtnClicked = sqEditBtnClicked;
@@ -45,7 +60,7 @@
     $scope.detailEditBtnClicked = detailEditBtnClicked;
     $scope.detailNextBtnClicked = detailNextBtnClicked;
 
-
+    $scope.requestSignatory = requestSignatory;
 
 
 //-----  details
@@ -57,6 +72,10 @@
     function detailEditBtnClicked() {
       $scope.editProfileDetails = true;
       $scope.currentStep = 1;
+    }
+
+    function detailsSaveBtnClicked() {
+       // save details
     }
 //-----  kbq questions
     function  kbqPreviousBtnClicked() {
@@ -70,6 +89,10 @@
     function kbqNextBtnClicked() {
       $scope.editProfileKBQ = false;
       $scope.currentStep = 3;
+    }
+
+    function kbqSaveBtnClicked() {
+      //. save kbq
     }
 //-----
 
@@ -85,9 +108,17 @@
     }
 
     function sqSaveBtnClicked() {
-      // save .....
+      // save security questions;
+
+      //$state.go("plain.login");
     }
 
+
+    function requestSignatory() {
+      console.log('in side request sinagory ');
+
+
+    }
 
     function kbqNextEditBtnClicked() {
       $scope.editProfileKBQ = !  $scope.editProfileKBQ;
@@ -152,86 +183,11 @@
       availableOptions: questionService.getAllKBQUestions()
     };
 
-    // $scope.kbqQuestions = {
-    //   model: null,
-    //   availableOptions: [{
-    //     id: 1,
-    //     value: "What is the first and middle name of your oldest sibling?",
-    //   }, {
-    //     id: 2,
-    //     value: "What is your favorite vacation destination?"
-    //   }, {
-    //     id: 3,
-    //     value: "What year and model (yyyy-name) was your first car?"
-    //   }, {
-    //     id: 4,
-    //     value: "What is your favorite TV show?"
-    //   }, {
-    //     id: 5,
-    //     value: "Where did you first meet your spouse?"
-    //   }, {
-    //     id: 6,
-    //     value: "What is your favorite book?"
-    //   }, {
-    //     id: 7,
-    //     value: "What was your first pet's name?"
-    //   }, {
-    //     id: 8,
-    //     value: "What is your favorite movie?"
-    //   }, {
-    //     id: 9,
-    //     value: "What street was your high school located on?"
-    //   }, {
-    //     id: 10,
-    //     value: "What is the name of your home town newspaper?"
-    //   }, {
-    //     id: 1,
-    //     value: "What is your favorite hobby?"
-    //   }]
-    // };
 
     $scope.secureQuestions = {
       model: null,
       availableOptions: questionService.getAllSecurityQuestions()
     };
-
-    // $scope.secureQuestions = {
-    //   model: null,
-    //   availableOptions: [{
-    //     id: 1,
-    //     value: "What is the name of your favorite sports team?"
-    //   }, {
-    //     id: 2,
-    //     value: "What street was your childhood home located on?"
-    //   }, {
-    //     id: 3,
-    //     value: "What is the middle name of your oldest child?"
-    //   }, {
-    //     id: 4,
-    //     value: "What town was your wedding held in?"
-    //   }, {
-    //     id: 5,
-    //     value: "What is your grandmother’s maiden name?"
-    //   }, {
-    //     id: 6,
-    //     value: "Where did you attend college?"
-    //   }, {
-    //     id: 7,
-    //     value: "What is your favorite food?"
-    //   },
-    //
-    //     {
-    //       id: 8,
-    //       value: "Who is your favorite comedian?"
-    //     }, {
-    //       id: 9,
-    //       value: "What is your favorite color?"
-    //     }, {
-    //       id: 10,
-    //       value: "What is your spouse's birth date?"
-    //     }
-    //   ]
-    // }
 
   }
 })();

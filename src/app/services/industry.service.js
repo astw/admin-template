@@ -38,6 +38,8 @@
         user.securityQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1Id).value;
         user.securityQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2Id).value;
       }
+
+      return user;
     }
 
     function deleteInvitedUser(email){

@@ -40,7 +40,7 @@
 
 
   /* @ngInject */
-  function profileDetails() {
+  function profileDetails($state) {
     var directive = {
       templateUrl:'app/profile/details-profile.html',
       link: link,
@@ -49,13 +49,17 @@
         'userProfile':'=',
         'title1':'=',
         'title2':'=',
-        'editmode':'='
+        'editmode':'=',
+        'registration':'='
       }
     };
     return directive;
 
     function link(scope, element, attrs) {
-
+         scope.requestSignatory = function(){
+           console.log(" to down load request signatory ");
+           $state.go("authority.portal.downloadsigatory");
+         }
     }
   }
 

@@ -1,112 +1,125 @@
-<form class="form-horizontal" _lpchecked="1">
-  <div class="box-body">
-    <div class="form-group">
-      <label for="salutation" class="col-sm-2 control-label">Salutation </label>
+<style>
+  .left-flow-link a{
+    margin-left: 0px;
 
-      <div class="col-sm-6">
+    text-align: left;
+    vertical-align:bottom;
+    margin-left: -20px;
+    float: left;
+  }
+
+</style>
+
+<form class="form-horizontal" _lpchecked="1">
+  <div class="box-body col-lg-7">
+    <div class="form-group">
+      <label for="salutation" class="col-sm-3 control-label">Salutation </label>
+
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="textbox" ng-readonly="editmode == false"   class="form-control" id="salutation"  ng-model="userProfile.salutation" autocomplete="off">
       </div>
+
     </div>
 
     <div class="form-group">
-      <label for="firstName" class="col-sm-2 control-label">First Name* </label>
+      <label for="firstName" class="col-sm-3 control-label">First Name* </label>
 
-      <div class="col-sm-6">
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="textbox" ng-readonly="editmode == false"  class="form-control" id="firstName"  ng-model="userProfile.firstName" autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="middleName" class="col-sm-2 control-label">Middle Name </label>
-      <div class="col-sm-6">
+      <label for="middleName" class="col-sm-3 control-label">Middle Name </label>
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="textbox" ng-readonly="editmode == false"  class="form-control" id="middleName"  ng-model="userProfile.middleName" autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="lastName" class="col-sm-2 control-label">Last Name* </label>
+      <label for="lastName" class="col-sm-3 control-label">Last Name* </label>
 
-      <div class="col-sm-6">
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="textbox" ng-readonly="editmode == false"  ng-model="userProfile.lastName"  class="form-control" id="lastName"  autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="facilityName" class="col-sm-2 control-label">Facility/Business Name*</label>
+      <label for="facilityName" class="col-sm-3 control-label">Facility/Business Name*</label>
 
-      <div class="col-sm-6">
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="facilityName" ng-readonly="editmode == false"  ng-model="userProfile.facilityName"  class="form-control" id="facilityName"  autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="mailAddress" class="col-sm-2 control-label">Mailing Address*</label>
+      <label for="mailAddress" class="col-sm-3 control-label">Mailing Address*</label>
 
-      <div class="col-sm-6">
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="textbox" ng-readonly="editmode == false"  ng-model="userProfile.mailAddress"  class="form-control" id="mailAddress"  autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="suit" class="col-sm-2 control-label">Suite </label>
+      <label for="suit" class="col-sm-3 control-label">Suite </label>
 
-      <div class="col-sm-6">
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="textbox" ng-readonly="editmode == false"  ng-model="userProfile.suit"  class="form-control" id="suit"  autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="city" class="col-sm-2 control-label">City* </label>
+      <label for="city" class="col-sm-3 control-label">City* </label>
 
-      <div class="col-sm-6">
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="textbox" ng-readonly="editmode == false"  ng-model="userProfile.city"  class="form-control" id="city"  autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="state" class="col-sm-2 control-label">State* </label>
+      <label for="state" class="col-sm-3 control-label">State* </label>
 
-      <div class="col-sm-6">
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="textbox" ng-readonly="editmode == false"  ng-model="userProfile.state"  class="form-control" id="state"  autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="zipCode" class="col-sm-2 control-label">Zip Code* </label>
+      <label for="zipCode" class="col-sm-3 control-label">Zip Code* </label>
 
-      <div class="col-sm-6">
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="textbox" ng-readonly="editmode == false"  ng-model="userProfile.zipCode"  class="form-control" id="zipCode"  autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="phone" class="col-sm-2 control-label">Phone* </label>
+      <label for="phone" class="col-sm-3 control-label">Phone* </label>
 
-      <div class="col-sm-6">
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="textbox" ng-readonly="editmode == false"  ng-model="userProfile.phone"  class="form-control" id="phone"  autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="extension" class="col-sm-2 control-label">Extension </label>
+      <label for="extension" class="col-sm-3 control-label">Extension </label>
 
-      <div class="col-sm-6">
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="textbox" ng-readonly="editmode == false"  ng-model="userProfile.extension"  class="form-control" id="extension"  autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="fax" class="col-sm-2 control-label">Fax </label>
+      <label for="fax" class="col-sm-3 control-label">Fax </label>
 
-      <div class="col-sm-6">
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="textbox" ng-readonly="editmode == false"  ng-model="userProfile.fax"  class="form-control" id="fax"  autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="cell" class="col-sm-2 control-label">Cell </label>
+      <label for="cell" class="col-sm-3 control-label">Cell </label>
 
-      <div class="col-sm-6">
+      <div class="col-lg-8 col-md-8 col-sm-8">
         <input type="textbox" ng-readonly="editmode == false"  ng-model="userProfile.cell"  class="form-control" id="cell"  autocomplete="off">
       </div>
       <div class="col-lg-2">
@@ -114,47 +127,162 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="email" class="col-sm-2 control-label">Email* </label>
+    <div ng-if="registration == true" >
+        <div class="form-group" >
+          <label for="email" class="col-sm-3 control-label">Email* </label>
 
-      <div class="col-sm-6">
-        <input type="email" ng-readonly="editmode == false"  ng-model="userProfile.email" class="form-control" id="email"  autocomplete="off">
+          <div class="col-lg-8 col-md-6 col-sm-6">
+            <input type="email"  ng-readonly="editmode == false"  ng-model="userProfile.email" class="form-control" id="email"  autocomplete="off">
+          </div>
+
+
+          <div class="col-lg-2">
+
+          </div>
+        </div>
+
+        <div class="form-group" >
+          <label for="userName" class="col-sm-3 control-label">User Name* </label>
+
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <input type="text" ng-readonly="editmode == false"  ng-model="userProfile.userName" class="form-control" id="userName"  autocomplete="off">
+          </div>
+
+
+          <div class="col-lg-2">
+
+          </div>
+        </div>
+
+        <div class="form-group" >
+          <label for="requestedUserName" class="col-sm-3 control-label">Requested User Name* </label>
+
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <input type="textbox" ng-readonly="editmode == false"  ng-model="userProfile.requestedUserName"  class="form-control" id="requestedUserName"  autocomplete="off">
+          </div>
+
+          <div class="col-lg-2">
+
+
+          </div>
+        </div>
+
+
+        <div class="form-group" >
+          <label for="password" class="col-sm-3 control-label">Password* </label>
+
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <input type="password" ng-readonly="editmode == false"  ng-model="userProfile.password" class="form-control" id="password"  autocomplete="off">
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="confirmPassword" class="col-sm-3 control-label">Confirm Password* </label>
+
+          <div class="col-sm-8">
+            <input type="password" ng-readonly="editmode == false"  ng-model="userProfile.confirmPassword" class="form-control" id="confirmPassword"  autocomplete="off">
+          </div>
+
+        </div>
+    </div>
+
+    <div ng-if="registration == false"  >
+      <div class="form-group" >
+        <label for="email" class="col-sm-3 control-label">Email* </label>
+
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <input type="email"  readonly  ng-model="userProfile.email" class="form-control" id="email"  autocomplete="off">
+        </div>
+
+
+        <div class="col-lg-1 left-flow-link" >
+          <a href="#">Change</a>
+        </div>
+      </div>
+
+      <div class="form-group" >
+        <label for="userName" class="col-sm-3 control-label">User Name* </label>
+
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <input type="text" readonly   ng-model="userProfile.userName" class="form-control" id="userName"  autocomplete="off">
+        </div>
+
+
+        <div class="col-lg-1 left-flow-link">
+          <a href="#"  >Change</a>
+        </div>
+      </div>
+
+      <div class="form-group" >
+        <label for="requestedUserName" class="col-sm-3 control-label">Requested User Name* </label>
+
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <input type="textbox" readonly   ng-model="userProfile.requestedUserName"  class="form-control" id="requestedUserName"  autocomplete="off">
+        </div>
+
+        <div class="col-lg-1 left-flow-link">
+          <a href="#"  >Change</a>
+        </div>
       </div>
 
 
-      <div class="col-lg-2">
+      <div class="form-group" >
+        <label for="password" class="col-sm-3 control-label">Password* </label>
 
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <input type="password" readonly ng-model="userProfile.password" class="form-control" id="password"  autocomplete="off">
+        </div>
+
+        <div class="col-lg-1 left-flow-link">
+          <a href="#"  >Change</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="box-body col-lg-5" ng-if="registration === false " >
+    <strong>Permissions For:</strong>
+     <br/> <br/>
+    <div class="form-group">
+      <label for="facility" class="col-sm-3 control-label">Facility: </label>
+
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <input type="textbox" readonly  class="form-control" id="facility"  ng-model="userProfile.facility" autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="requestedUserName" class="col-sm-2 control-label">Requested User Name* </label>
+      <label for="Authority" class="col-sm-3 control-label">Authority: </label>
 
-      <div class="col-sm-6">
-        <input type="textbox" ng-readonly="editmode == false"  ng-model="userProfile.requestedUserName"  class="form-control" id="requestedUserName"  autocomplete="off">
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <input type="textbox" readonly   class="form-control" id="Authority"  ng-model="userProfile.authority" autocomplete="off">
       </div>
+    </div>
 
-      <div class="col-lg-2">
+    <div class="form-group">
+      <label for="role" class="col-sm-3 control-label">Role: </label>
 
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <input type="textbox" readonly   class="form-control" id="role"  ng-model="userProfile.role" autocomplete="off">
+      </div>
+    </div>
 
+    <div class="form-group">
+      <label for="signatory" class="col-sm-3 control-label">Signatory ? </label>
+
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <input type="textbox" readonly   class="form-control" id="signatory"  ng-model="userProfile.signatory" autocomplete="off">
       </div>
     </div>
 
 
     <div class="form-group">
-      <label for="password" class="col-sm-2 control-label">Password* </label>
 
-      <div class="col-sm-6">
-        <input type="password" ng-readonly="editmode == false"  ng-model="userProfile.password" class="form-control" id="password"  autocomplete="off">
-      </div>
-    </div>
-
-
-    <div class="form-group">
-      <label for="confirmPassword" class="col-sm-2 control-label">Confirm Password* </label>
-
-      <div class="col-sm-6">
-        <input type="password" ng-readonly="editmode == false"  ng-model="userProfile.confirmPassword" class="form-control" id="confirmPassword"  autocomplete="off">
+      <div class="col-lg-offset-3 col-md-offset-3 col-sm-offset-3  col-lg-6 col-md-6 col-sm-6" style="vertical-align: middle;">
+        <div class="k-primary" style=" padding:  5px 0; text-align: center " ng-click="requestSignatory();"> Request Signatory Rights </div>
       </div>
 
     </div>

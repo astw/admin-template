@@ -15,12 +15,16 @@
 
     activate();
 
+    console.log('in AuthorityuserprofileController');
 
     var user = $localStorage["user"];
     var email = user.email;
+    console.log('user emai=' + email);
 
     var fullUser = industryService.getUserByEmail(email);
-    console.log(fullUser);
+
+    console.log("fullUser=" + fullUser);
+
     $scope.userProfile = fullUser;
 
     $scope.title1= "My Profile";
