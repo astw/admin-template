@@ -11,7 +11,6 @@
     vm.userProfile = {};
     vm.step = 1;
 
-console.log('----- RegistrationiuController statte')
     console.log($state);
 
 
@@ -38,8 +37,10 @@ console.log('----- RegistrationiuController statte')
       $scope.editProfileDetails = false;
       $scope.editProfileKBQ = false;
       $scope.editProfileSQ = false;
+      $scope.registration = false;
     } else {
       $scope.userProfile = null;
+      $scope.registration = true;
     }
 
     $scope.profileDetailsNextEditBtn = profileDetailsNextEditBtn;

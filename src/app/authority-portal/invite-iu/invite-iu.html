@@ -3,6 +3,9 @@
     height: 800px !important;
   }
 
+   .left-offset {
+      margin: 20px;
+   }
 </style>
 
 
@@ -55,23 +58,50 @@
           </div>
         </div>
 
-        <div class="form-group"  ng-if=" step == 2 " >
+        <div class="form-group"  ng-if=" step == 2 " style=" " >
+          <div id="wrapper" style="text-align: center">
 
-          <div class="col-lg-6 col-sm-offset-2 col-sm-10" >
-            <b>The user does not exist. Do you want to invite this new user ?</b>  <br/> <br/>
-          </div>
+            <div class="row">
+              <div class="col-lg-1">
 
-          <div class="col-lg-8">
-            <div class="col-lg-1 col-lg-offset-5  col-sm-10" >
-              <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.createUser();'> Yes </button>
+               </div>
+              <div class="col-lg-6">
+                <div  style="display: inline-block; ">
+                  <b>  The user does not exist. Do you want to invite this new user ?</b>
+                </div>
+                </div>
+              <div class="col-lg-4">  </div>
             </div>
 
-            <div class="col-lg-1 col-sm-10">
-              <button type="button" class="btn btn-flat visible-lg visible-md" ng-click='inviteiu.cancel();'> Cancel  </button>
+            <div class="row">
+              <br/></div>
+              <div class="col-lg-1 text-align: center"></div>
+
+                <div class="col-lg-6  "  style="margin: 0 auto; width: 656px; text-align: center;">
+                  <button type="button" class="btn-primary btn-flat  " ng-click='inviteiu.createUser();'> Yes </button>
+                  <button type="button" class="btn-primary btn-flat " ng-click='inviteiu.cancel();'> Cancel  </button>
+                </div>
+              <div class="col-lg-4"></div>
             </div>
-            <div class="col-lg-4" ></div>
 
           </div>
+          <!--<div class="col-lg-6 col-sm-offset-2 col-sm-10" >-->
+            <!--<b>  The user does not exist. Do you want to invite this new user ?</b>  <br/> <br/><br/>-->
+          <!--</div>-->
+
+
+          <!--<div class="col-lg-8">-->
+            <!--<div class="col-lg-1 col-lg-offset-4  col-sm-10" >-->
+              <!--<button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.createUser();'> Yes </button>-->
+            <!--</div>-->
+
+            <!--<div class="col-lg-1 col-sm-10">-->
+              <!--<button type="button" class="btn btn-flat visible-lg visible-md" ng-click='inviteiu.cancel();'> Cancel  </button>-->
+            <!--</div>-->
+            <!--<div class="col-lg-4" ></div>-->
+
+          <!--</div> -->
+
         </div>
 
         <div class="form-group" ng-if="step==3">
@@ -95,13 +125,12 @@
 
           <div class="form-group">
 
-            <label for="email" class="col-lg-3 col-md-3  control-label"> Email </label>
+            <label for="userEmail" class="col-lg-3 col-md-3  control-label"> Email </label>
             <div class="col-lg-4 col-sm-10">
-              <input type="email" class="form-control" id="email" ng-model="inviteiu.userEmail"   autocomplete="off" >
+              <input type="email" readonly class="form-control" id="userEmail" ng-model="inviteiu.userEmail"   autocomplete="off" >
             </div>
 
             <div class="col-lg-2">
-              <!--<button type="submit" class="btn-primary" ng-click="inviteiu.doCreateUser();" >Invite User</button>-->
               <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.doCreateUser();'> Invite User  </button>
             </div>
           </div>

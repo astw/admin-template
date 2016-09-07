@@ -9,11 +9,11 @@
   function InviteiuController($timeout, $rootScope, $scope, $state, userService,industryService) {
     var vm = this;
 
-    if(!$rootScope.selectedIndustry ){
-      $state.go('authority.portal.industries');
-    }
+    // if(!$rootScope.selectedIndustry ){
+    //   $state.go('authority.portal.industries');
+    // }
 
-    $scope.step = 1 ;
+    $scope.step = 2 ;
       vm.inviteUser = inviteUser;
       vm.sendInvitation = sendInvitation;
       vm.createUser = createUser;
@@ -154,43 +154,43 @@
 
                 if(findUser == null){
                  //   $scope.noSuchUser = true;
-                 //   $scope.step = 1 ;
-
-                  swal({
-                    title: 'Search User',
-                    text:'The user with email address <b>' + vm.userEmail + '</b> does not exist, would like to create one a user?',
-                    showCloseButton: true,
-                    showCancelButton: true,
-                    confirmButtonColor: '#3c8dbc',
-                    animation:false,
-                    confirmButtonText:
-                    '<i class="fa "></i>Create User',
-                    cancelButtonText:
-                      '<i class="fa "></i> Cancel'
-                  })
-                    .then(function() {
-                      // create new user
-                      // go to create new user page
-
-                      $scope.step =3;
-                      updateHeadText();
-                      $scope.$apply();
-
-
-                      // swal(
-                      //     'Create new user', 'Will go to create a new user page','success'
-                      // ).then(function(){
-                      //   $scope.step = 5;
-                      //   $scope.$apply();
-                      // });
-
-                    }, function(dismiss) {
-                      // dismiss can be 'cancel', 'overlay', 'close', 'timer'
-                      if (dismiss === 'cancel') {
-                        $scope.step = 1 ;
-                        return;
-                      }
-                    });
+                  $scope.step = 2 ;
+                  updateHeadText();
+                  // swal({
+                  //   title: 'Search User',
+                  //   text:'The user with email address <b>' + vm.userEmail + '</b> does not exist, would like to create one a user?',
+                  //   showCloseButton: true,
+                  //   showCancelButton: true,
+                  //   confirmButtonColor: '#3c8dbc',
+                  //   animation:false,
+                  //   confirmButtonText:
+                  //   '<i class="fa "></i>Create User',
+                  //   cancelButtonText:
+                  //     '<i class="fa "></i> Cancel'
+                  // })
+                  //   .then(function() {
+                  //     // create new user
+                  //     // go to create new user page
+                  //
+                  //     $scope.step =3;
+                  //     updateHeadText();
+                  //     $scope.$apply();
+                  //
+                  //
+                  //     // swal(
+                  //     //     'Create new user', 'Will go to create a new user page','success'
+                  //     // ).then(function(){
+                  //     //   $scope.step = 5;
+                  //     //   $scope.$apply();
+                  //     // });
+                  //
+                  //   }, function(dismiss) {
+                  //     // dismiss can be 'cancel', 'overlay', 'close', 'timer'
+                  //     if (dismiss === 'cancel') {
+                  //       $scope.step = 1 ;
+                  //       return;
+                  //     }
+                  //   });
 
                   return;
                 }

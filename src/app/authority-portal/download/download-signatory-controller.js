@@ -10,11 +10,18 @@
 
 
   /* @ngInject */
-  function DownloadsignatoryController() {
+  function DownloadsignatoryController($state) {
     var vm = this;
     vm.title = 'Downloadsignatory';
 
     activate();
+
+    if($state.previous.name == 'authority.portal.profile'){
+      $scope.registration = true;
+    } else {
+      $scope.registration = false;
+    }
+
 
     ////////////////
 
