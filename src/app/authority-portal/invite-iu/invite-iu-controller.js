@@ -9,7 +9,11 @@
   function InviteiuController($timeout, $rootScope, $scope, $state, userService,industryService) {
     var vm = this;
 
-      $scope.step = 1 ;
+    if(!$rootScope.selectedIndustry ){
+      $state.go('authority.portal.industries');
+    }
+
+    $scope.step = 1 ;
       vm.inviteUser = inviteUser;
       vm.sendInvitation = sendInvitation;
       vm.createUser = createUser;

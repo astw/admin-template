@@ -9,6 +9,10 @@
   function IndustryusersController($timeout, $rootScope, $state, $scope,$stateParams, industryService) {
     var vm = this;
 
+    if(!$rootScope.selectedIndustry ){
+      $state.go('authority.portal.industries');
+    }
+
     vm.lockButtonText = 'Unlock';
     vm.enabledButtonText = 'Disable';
 

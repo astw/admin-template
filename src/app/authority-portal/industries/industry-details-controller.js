@@ -9,6 +9,10 @@
     function IndustrydetailsController($timeout, $rootScope, $scope, $state) {
         var vm = this;
 
+        if(!$rootScope.selectedIndustry ){
+           $state.go('authority.portal.industries');
+        }
+
         if ($rootScope.selectedIndustry.enabled == "Yes") {
             vm.enabledButtonText = 'Disable';
         } else {
