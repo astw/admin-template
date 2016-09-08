@@ -22,7 +22,7 @@
         activate();
 
         function activate() {
-            console.log('vm.selectedOne=' + vm.selectedOne);
+            console.log('in active vm.selectedOne=' + vm.selectedOne);
         }
 
         function changeIndustryStatus() {
@@ -117,14 +117,14 @@
             userId: 4,
             firstName: "Chris",
             lastName: "Weinandt",
-            industry: "Kerry Sweet Ingredients",
+            industry: "Kerry Sweet Ingredients (0040)",
             phone: "(770)-496-4160",
             email: "chris@linkcoweb.com",
             registeredDate: "08-30-2016 8:15 AM",
             status: "Active",
             locked: "No",
             isRegisterted: "Yes"
-        }]
+        }];
 
         vm.data = data;
 
@@ -134,7 +134,7 @@
             },
             filterable: true,
             selectable: "row",
-
+            change :onChange,
             sortable: true,
 
             columns: [
@@ -143,41 +143,53 @@
                     width: '10%',
                     field: "firstName",
                     title: "First Name",
-                    minScreenWidth: 960,
+                    minScreenWidth: 960
                 },
 
                 {
                     width: '10%',
                     field: "lastName",
                     title: "Last Name",
-                    minScreenWidth: 960,
+                    minScreenWidth: 960
                 }, {
                     width: '20%',
                     field: "email",
                     title: "Email",
-                    minScreenWidth: 960,
+                    minScreenWidth: 960
                 },
 
                 {
                     width: '20%',
                     field: "industry",
-                    title: "Industry",
-                    minScreenWidth: 960,
+                    title: "Industry #",
+                    minScreenWidth: 960
                 },
 
                 {
                     width: '20%',
                     field: "registeredDate",
                     title: "Date Registered",
-                    minScreenWidth: 960,
+                    minScreenWidth: 960
                 }, {
                     width: '5%',
                     template: "<div class='fa  fa-chevron-circle-right fa-lg'>" + "</div>"
-                },
-
-
+                }
             ]
-        }
+        };
+
+      function onChange(arg) {
+        console.log("in on change ");
+        var selected = $.map(this.select(), function (item) {
+          return $(item).text();
+        });
+
+        if (selected == null) return;
+
+        vm.selectedRow = this.dataItem(this.select());
+
+        $rootScope.registrationPendingUser = vm.selectedRow;
+        $state.go('authority.portal.pending-approval-user-details');
+      }
 
     }
 })();

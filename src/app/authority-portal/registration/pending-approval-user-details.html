@@ -1,0 +1,86 @@
+<style>
+  .content-wrapper {
+    height: 1150px !important;
+  }
+
+</style>
+
+<div class=" col-lg-12">
+  <div class="box-header with-border">
+    <div class="">
+      <h3>Profile Details  </h3>
+      <h4>{{title2}}</h4>
+    </div>
+
+    <ol class="breadcrumb-left visible-lg visible-md">
+      <li><a href="/"><i class=""></i> Home </a></li>
+      <li><a href="/authority/registration-requests"><i class=""></i> Pending Registration </a></li>
+      <li class="active" >Profile Details</li>
+    </ol>
+
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+
+
+  <div class="seperator" > </div>
+  <div class="panel">
+
+    <div class="pane-group">
+      <div class="panel-body panel-collapse collapse in">
+
+        <div class="panel panel-default">
+          <div class="panel-heading" data-toggle="collapse" data-target="#authoritySettingPanel"  ng-class="currentStep == 1 ? 'collapsed': 'expand' " >
+            <strong>Profile Details</strong>
+          </div>
+
+          <!--ng-class="editProfileDetails == false ? 'expand': 'collapse'"-->
+          <div class="panel-body panel-collapse collapse  in" id="authoritySettingPanel" ng-class="currentStep > 1 ? 'collapsed collapse': 'expand in'" >
+            <div class="panel-collapse in collapse in" id="authoritySettingContent"  ng-class="currentStep > 1 ? 'collapsed collapse': 'expand in'" >
+
+              <div class="row">
+                <div profile-details user-profile= "registrationPendingUser" editmode= false  registration = true  process ="approval" />
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" data-toggle="collapse" data-target="#kbqQuestionsPanel" ng-class="currentStep != 2 ? 'collapsed': 'expand' ">
+            <strong>Knowledge Based Questions</strong>
+          </div>
+
+          <div class="panel-body panel-collapse collapse " id="kbqQuestionsPanel"  ng-class="currentStep != 2 ? 'collapsed': 'expand in' ">
+
+            <div class="panel-collapse in collapse" id="kbqQuestionsContent">
+              <div kbq-info title1= "title1"  kbq-questions="kbqQuestions" user-profile= "registrationPendingUser" editmode= false  />
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" data-toggle="collapse" data-target="#securityQuestionsPanel" ng-class="currentStep != 3 ? 'collapsed': 'expand' ">
+            <strong>Security Questions</strong>
+          </div>
+
+          <div class="panel-body panel-collapse collapse" id="securityQuestionsPanel" ng-class="currentStep != 3 ? 'collapsed': 'expand in' ">
+
+            <div class="panel-collapse in collapse" id="securityQuestionsContent">
+
+              <div security-questions title1= "title1"  secure-questions ="secureQuestions" user-profile= "registrationPendingUser" editmode= false > </div>
+              <br/>
+              <div class=" form-group  pull-right" >
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>

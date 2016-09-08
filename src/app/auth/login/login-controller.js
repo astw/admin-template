@@ -30,7 +30,9 @@
                 email:'Weinandt@linkotechnology.com',
                 userName : "Chris Weinandt",
                 userType : "AuthorityUser",
-                userPermission : ""
+                userPermission : "",
+                role:"Administrator",
+                signatory :"No"
             };
             $rootScope.user = user;
             $localStorage["user"] = user;
@@ -45,7 +47,9 @@
                 userName : "Shuhao Wang",
                 industryId:"0040",
                 userType : "IndustryUser",
-                userPermission : ""
+                userPermission : "",
+                role:"Administrator",
+                signatory :"Yes"
             };
             $rootScope.user = user;
             $localStorage["user"] = user;

@@ -19,6 +19,7 @@
         'userProfile':'=',
         'title1':'=',
         'title2':'=',
+        'editmode':'=',
         'secureQuestions':'='
       }
     };

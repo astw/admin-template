@@ -132,6 +132,13 @@
         controller: 'RegistrationrequestsController',
         controllerAs: 'authority'
     })
+
+      .state('authority.portal.pending-approval-user-details', {
+        url: '/registration-requests/user-details',
+        templateUrl: 'app/authority-portal/registration/pending-approval-user-details.html',
+        controller: 'RegistrationrequestsController',
+        controllerAs: 'authority'
+      })
     .state('authority.portal.authorityAccount', {
         url: '/accounts',
         templateUrl: 'app/authority-portal/registration/registration-account.html',

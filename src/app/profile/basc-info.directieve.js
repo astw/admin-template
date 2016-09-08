@@ -50,7 +50,8 @@
         'title1':'=',
         'title2':'=',
         'editmode':'=',
-        'registration':'='
+        'registration':'=',
+        'process':'='
       }
     };
     return directive;
