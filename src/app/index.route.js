@@ -161,6 +161,30 @@
         controller:'RegistrationiuController',
         controllerAs: 'authorityUserProfile'
       })
+      .state('industry.details', {
+        url: '/8296/details',
+        templateUrl: 'app/industry-portal/industry-details.html',
+        controller: 'IndustrydetailsController',
+        controllerAs: 'industrydetails'
+      })
+      .state('industry.industryUsers', {
+        url: '/8296/users',
+        templateUrl: 'app/main/industry-users.html',
+        controller: 'IndustryusersController',
+        controllerAs: 'main'
+      })
+      .state('industry.industry-user-details', {
+        url: '/industires/:permitNo/users/:userId',
+        templateUrl: 'app/main/user-details.html',
+        controller: 'UserdetailsController',
+        controllerAs: 'userdetails'
+      })
+      .state('industry.inviteuser', {
+        url: '/invite',
+        templateUrl: 'app/authority-portal/invite-iu/invite-iu.html',
+        controller: 'InviteiuController',
+        controllerAs: 'inviteiu'
+      })
       .state('authority.portal.downloadsigatory', {
         url: '/download/signatory',
         templateUrl: 'app/authority-portal/download/download-signatory.html',
@@ -169,6 +193,7 @@
         controllerAs: 'downloadsignatory'
       })
     ;
+
 
        /** @ngInject */
      function authenticate($q, $rootScope, $state, $timeout,$localStorage) {

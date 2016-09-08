@@ -9,10 +9,11 @@
     User Details
   </h1>
   <ol class="breadcrumb-left visible-lg visible-md">
-    <li><a href="/authority/index"><i class=""></i> Home </a></li>
-    <li class="active"><a href="/authority/industries"> Industries </a></li>
-    <li class="active"><a href="authority/industries/{{selectedIndustry.permitNo}}/details"> Details </a></li>
-    <li class="active"><a href="authority/industries/{{selectedIndustry.permitNo}}/users"> Users </a></li>
+    <li ng-if="user.userType == 'AuthorityUser'"  ><a href="/authority/index"><i class=""></i> Home </a></li>
+    <li ng-if="user.userType == 'IndustryUser'"  ><a href="/industry/"><i class=""></i> Home </a></li>
+    <li class="active" ng-if="user.userType == 'AuthorityUser'" ><a href="/authority/industries"> Industries </a></li>
+    <li class="active" ng-if="user.userType == 'AuthorityUser'"><a href="authority/industries/{{selectedIndustry.permitNo}}/details"> Details </a></li>
+    <li class="active" ng-if="user.userType == 'AuthorityUser'"><a href="authority/industries/{{selectedIndustry.permitNo}}/users"> Users </a></li>
     <li class=""> Details</li>
   </ol>
 </section>
@@ -24,12 +25,20 @@
 <div class="panel panel-default">
   <div class="panel-heading" data-target="#information">
     <strong>User Information</strong>
-    <div class="form-group pull-right">
+    <div class="form-group pull-right" ng-if="user.userType == 'AuthorityUser'">
       <button id="lockBtn" class="k-primary" ng-click="userdetails.toggleLockedStatus();">
         {{userdetails.lockButtonText}}
       </button>
       <button id="inviteUserBtn" ng-click="userdetails.resetUser();" class="k-primary">Reset</button>
     </div>
+
+    <div class="form-group pull-right" ng-if="user.userType == 'IndustryUser'">
+      <button id="enableIndustryUserBtn" class="k-primary" ng-click="userdetails.toggleEnableIUUserStatus();">
+        {{userdetails.enabledButtonText}}
+      </button>
+      <button id="RemoveIndustryUserBtn" ng-click="userdetails.resetUser();" class="k-primary">Remove</button>
+    </div>
+
   </div>
   <div class="panel-body panel-collapse collapse in" id="information">
     <div class="col-sm-11">
@@ -118,7 +127,7 @@
 
 <!--- to make it clickable ----->
 
-<div class="panel panel-default">
+<div class="panel panel-default" ng-if="user.userType == 'AuthorityUser'">
   <div class="panel-heading " >
     <strong>User Security Questions</strong>
     <span class=' center-icon  center-icon  fa fa-plus-square pull-right' ng-click = "userdetails.toggleUserSecurityPanel()"  ng-class="showSecurityQuestions == false ? 'fa-plus-square ' : 'fa-minus-square' "    > </span>

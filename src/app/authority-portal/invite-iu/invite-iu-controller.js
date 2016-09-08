@@ -247,7 +247,9 @@
 
         user.dateInvited = kendo.parseDate(date1);
         user.inviteExpires = kendo.parseDate(date2);
-        user.industry = $rootScope.selectedIndustry.industry;
+        if($rootScope.user.userType == 'AuthorityUser') {
+          user.industry = $rootScope.selectedIndustry.industry;
+        }
 
         console.log($scope.selectedIndustry);
 

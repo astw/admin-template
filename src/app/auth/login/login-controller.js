@@ -43,6 +43,7 @@
             var user = {
                 email:'swang@linkotechnology.com',
                 userName : "Shuhao Wang",
+                industryId:"0040",
                 userType : "IndustryUser",
                 userPermission : ""
             };

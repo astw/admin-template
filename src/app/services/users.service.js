@@ -46,6 +46,7 @@
           lastName:"Wang",
           userName: "Shuhao Wang",
           userType: "IndustryUser",
+          industryId:"0040",
           email: "bb@linkoweb.com",
           userPermission: ""
         },

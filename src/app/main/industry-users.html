@@ -1,0 +1,40 @@
+
+
+<section class="content-header">
+  <h1>  Users </h1>
+  <ol class="breadcrumb-left  visible-lg visible-md">
+    <li><a href="/industry/"><i class="fa "></i> Home </a></li>
+    <li class="">  Users </li>
+  </ol>
+
+</section>
+
+<br/> <br/>
+
+<div class="seperator" > </div>
+
+<div class="pull-right">
+  <!-- <button id="inviteUserBtn" class="k-primary" ng-click="main.inviteUser();" >Invite User</button> -->
+</div>
+
+<br/>
+<br/>
+<div>
+  <kendo-grid options="industryUsers"></kendo-grid>
+</div>
+
+
+<br/>
+<div class="box-header with-border">
+  <h3 class="box-title"><b>Pending Invitations</b></h3>
+  <div class="pull-right">
+    <button id="inviteUserBtn" class="k-primary" ng-click="main.inviteUser();" >Invite</button>
+    <button id="deleteInvite" class="k-primary" ng-click="main.deleteInvitedUser();" >Delete</button>
+  </div>
+
+</div>
+
+
+
+<div kendo-grid="invitedUserGrid" options="industryInvitedUsers" ></div>
+

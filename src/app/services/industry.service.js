@@ -14,6 +14,7 @@
   function industryService(questionService) {
     var userList =  getUserList();
     var invitedUserList = getInitalInvitedUserList();
+    var industryList = new getInitialIndustryList();
 
     var service = {
       getUserByEmail:getUserByEmail,
@@ -21,14 +22,25 @@
       createIndustryUsers: createIndustryUsers,
       getInvitedUserList:getInvitedUserList,
       addInvitedUser:addInvitedUser,
-      deleteInvitedUser:deleteInvitedUser
+      deleteInvitedUser:deleteInvitedUser,
+
+      getIndustryList:getIndustryList,
+      getIndustryById:getIndustryById
 
     };
 
     return service;
 
     ////////////////
+    function getIndustryById(id) {
+      return industryList.find(function (i) {
+        return i.permitNo == id;
+      });
+    }
 
+    function getIndustryList() {
+      return industryList;
+    }
     function getUserByEmail(email) {
        var user = userList.find(function(user){
           return user.email == email;
@@ -205,6 +217,114 @@
       ];
 
       return users;
+    }
+
+    function getInitialIndustryList() {
+      var data = [
+        {
+          permitNo: "0040",
+          industry: "Valley City Plating",
+          address: "100 E. 26th Street Grand Rapids MI 49508",
+          enabled: "Yes",
+          hasSignatory: "No",
+          assignTo: "KA",
+          lastSubmission: "",
+          activeDataEntryForTemplates: 2
+        },
+        {
+          permitNo: "8296",
+          industry: "Kerry Sweet Ingredients",
+          address: "4444 52nd St. SE. Kentwood MI 49512",
+          enabled: "Yes",
+          hasSignatory: "Yes",
+          assignTo: "BF",
+          lastSubmission: "",
+          activeDataEntryForTemplates: 0
+        },
+
+        {
+          permitNo: "0032",
+          industry: "Lacks Enterprises (Plastic Plate)",
+          address: "1648 Monroe Ave. N.W., Grand Rapids, MI 49505",
+          enabled: "Yes",
+          hasSignatory: "No",
+          assignTo: "KA",
+          lastSubmission: "",
+          activeDataEntryForTemplates: 0
+        },
+        {
+          permitNo: "0469",
+          industry: "Lacks Enterprises (Plastic Plate)",
+          address: "4375 52nd St. SE Kentwood, MI 49512",
+          enabled: "Yes",
+          hasSignatory: "No",
+          assignTo: "KA",
+          lastSubmission: "",
+          activeDataEntryForTemplates: 0
+        },
+        {
+          permitNo: "0062",
+          industry: "Access Business Group L.L.C.",
+          address: "7575 Fulton, E. Ada, MI 49355",
+          enabled: "Yes",
+          hasSignatory: "No",
+          assignTo: "BF",
+          lastSubmission: "",
+          activeDataEntryForTemplates: 0
+        },
+        {
+          permitNo: "0711",
+          industry: "Lacks Industries, Inc.  (0711)",
+          address: "4090 Barden S.E. Kentwood, MI 49512",
+          enabled: "Yes",
+          hasSignatory: "No",
+          assignTo: "KA",
+          lastSubmission: "",
+          activeDataEntryForTemplates: 0
+        },
+        {
+          permitNo: "8296",
+          industry: "Kerry Sweet Ingredients",
+          address: "4444 52nd St. SE Kentwood, MI 49512",
+          enabled: "Yes",
+          hasSignatory: "No",
+          assignTo: "BF",
+          lastSubmission: "",
+          activeDataEntryForTemplates: 0
+        },
+        {
+          permitNo: "0718",
+          industry: "Advance Plating and Finishing",
+          address: "840 Cottage Grove St. SE Grand Rapids MI 49507",
+          enabled: "Yes",
+          hasSignatory: "No",
+          assignTo: "KA",
+          lastSubmission: "",
+          activeDataEntryForTemplates: 0
+        },
+        {
+          permitNo: "0762",
+          industry: "Coatings Plus, Inc.",
+          address: "675 Chestnut St. SW Grand Rapids MI 49503",
+          enabled: "Yes",
+          hasSignatory: "Yes",
+          assignTo: "BF",
+          lastSubmission: "",
+          activeDataEntryForTemplates: 0
+        },
+        {
+          permitNo: "0764",
+          industry: "Lacks Enterprises (Paint West)",
+          address: "4245 52nd St. Kentwood, MI 49512",
+          enabled: "Yes",
+          hasSignatory: "Yes",
+          assignTo: "KA",
+          lastSubmission: "",
+          activeDataEntryForTemplates: 0
+        }
+      ];
+
+      return data;
     }
   }
 

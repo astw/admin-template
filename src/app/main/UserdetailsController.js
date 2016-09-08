@@ -20,9 +20,11 @@
 
     vm.resetUser = resetUser;
     vm.selectedUser =    $rootScope.selectedUser;
+
     vm.cancelReset = cancelReset;
     vm.goResetUser = goResetUser;
     vm.toggleLockedStatus = toggleLockedStatus;
+    vm.toggleEnableIUUserStatus = toggleEnableIUUserStatus;
 
     vm.toggleUserSecurityPanel = toggleUserSecurityPanel;
 
@@ -30,6 +32,11 @@
     console.log(vm.selectedUser);
 
     RefreshButtonText();
+
+    function toggleEnableIUUserStatus() {
+
+      RefreshButtonText();
+    }
 
     function toggleUserSecurityPanel() {
 
@@ -129,7 +136,7 @@
     }
 
     function RefreshButtonText() {
-      if (vm.selectedUser.status == 'InActive') {
+      if (vm.selectedUser.status == 'Inactive') {
         vm.enabledButtonText = 'Enable';
       } else {
         vm.enabledButtonText = 'Disable';

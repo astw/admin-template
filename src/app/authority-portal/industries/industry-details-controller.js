@@ -6,18 +6,23 @@
       .controller('IndustrydetailsController', IndustrydetailsController);
 
     /** @ngInject */
-    function IndustrydetailsController($timeout, $rootScope, $scope, $state) {
+    function IndustrydetailsController(industryService, $rootScope, $scope, $state) {
         var vm = this;
 
-        if(!$rootScope.selectedIndustry ){
-           $state.go('authority.portal.industries');
-        }
+      if($rootScope.user.userType == 'AuthorityUser' &&  !$rootScope.selectedIndustry ){
+        $state.go('authority.portal.industries');
+      } else {
+        // for industry user
+        $rootScope.selectedIndustry =  industryService.getIndustryById("8296");
 
-        if ($rootScope.selectedIndustry.enabled == "Yes") {
+      }
+
+
+      if ($rootScope.selectedIndustry.enabled == "Yes") {
             vm.enabledButtonText = 'Disable';
-        } else {
+      } else {
             vm.enabledButtonText = 'Enabled';
-        }
+      }
 
         vm.industryUsers = getIndustyUsers;
         vm.changeIndustryStatus = changeIndustryStatus;

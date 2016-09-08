@@ -9,7 +9,7 @@
   function IndustryusersController($timeout, $rootScope, $state, $scope,$stateParams, industryService) {
     var vm = this;
 
-    if(!$rootScope.selectedIndustry ){
+    if($rootScope.user.userType == 'AuthorityUser' &&  !$rootScope.selectedIndustry ){
       $state.go('authority.portal.industries');
     }
 
@@ -48,7 +48,10 @@
     }
 
     function inviteUser() {
-      $state.go("authority.portal.inviteiu");
+      if($rootScope.user.userType == 'AuthorityUser')
+          $state.go("authority.portal.inviteiu");
+      else
+          $state.go('industry.inviteuser');
     }
 
 
@@ -91,7 +94,11 @@
         vm.lockButtonText = 'Lock'
       }
 
-      $state.go("authority.portal.industry-user-details", {userId: $rootScope.selectedUser.userId});
+      if($rootScope.user.userType == 'AuthorityUser')
+        $state.go("authority.portal.industry-user-details", {userId: $rootScope.selectedUser.userId});
+      else
+        $state.go('industry.industry-user-details');
+
 
       $scope.$digest();
 

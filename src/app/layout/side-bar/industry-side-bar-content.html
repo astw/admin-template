@@ -57,12 +57,36 @@
   <!-------------->
 
         <li class="treeview">
-    		<a href="#">
-            <i class="fa fa-industry"></i> <span> Industry Account </span>
-            <span class="pull-right-container">
-            </span>
-          </a>
+           <a >
+              <i class="fa fa-industry"></i> <span> Industry Account </span>
+              <span class="pull-right-container">
+                    <span class="label bg-primary pull-right">2</span>
+              </span>
+            </a>
+
+          <ul class="treeview-menu">
+            <li><a href="/industry/0040/users">
+              <i class="fa text-green"></i>Users </a>
+            </li>
+            <li>
+                <a ui-sref="industry.details">
+                  <i class="fa text-green"></i>Settings
+                </a>
+            </li>
+            <li>
+              <a ui-sref="authority.portal.authority-setting">
+                <i class="fa text-green"></i>Pending Registrations
+                <span class="pull-right-container">
+                    <span class="label bg-primary pull-right">2</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+
         </li>
 
-      <!-- /.sidebar-menu -->
+
+
+
+  <!-- /.sidebar-menu -->
 </ul>

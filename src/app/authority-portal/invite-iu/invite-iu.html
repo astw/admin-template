@@ -11,13 +11,18 @@
 
 <section class="content-header">
       <h1>
-        Invite User to  {{selectedIndustry.industry}}
+        Invite User  <div ng-if="user.userType== 'AuthorityUser'" > to  {{selectedIndustry.industry}} </div>
         <small></small>
       </h1>
       <ol class="breadcrumb-left visible-lg visible-md">
-        <li><a href="#"><i class="fa "></i> Home </a></li>
-        <li class="active"> <a href="/authority/industries"> Industries </a>  </li>
-        <li class="active"> <a href="/authority/industries/{{selectedIndustry.permitNo}}/users"> Details </a>  </li>
+
+        <li ng-if="user.userType == 'AuthorityUser'"  ><a href="/authority/index"><i class=""></i> Home </a></li>
+        <li ng-if="user.userType == 'IndustryUser'"  ><a href="/industry/"><i class=""></i> Home </a></li>
+
+        <li class="active" ng-if="user.userType== 'AuthorityUser'" > <a href="/authority/industries"> Industries </a>  </li>
+        <li class="active" ng-if="user.userType== 'AuthorityUser'"> <a href="/authority/industries/{{selectedIndustry.permitNo}}/users"> Details </a>  </li>
+        <li class="active" ng-if="user.userType== 'IndustryUser'" > <a href="/industry/0040/users"> Users </a>  </li>
+
         <li > Invite User </li>
         </ol>
 
@@ -159,7 +164,7 @@
                 <div class=" pull-right">
                   <br/>
                   <button type="button" class="btn btn-primary btn-flat visible-lg visible-md" ng-click='inviteiu.sendInvitation();'>
-                    Invite Administrator
+                    Invite  <div ng-if="user.userType == 'AuthorityUser' ">Administrator</div>
                   </button>
 
                 </div>
