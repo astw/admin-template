@@ -139,6 +139,7 @@
         controller: 'RegistrationrequestsController',
         controllerAs: 'authority'
       })
+
     .state('authority.portal.authorityAccount', {
         url: '/accounts',
         templateUrl: 'app/authority-portal/registration/registration-account.html',
@@ -186,6 +187,21 @@
         controller: 'UserdetailsController',
         controllerAs: 'userdetails'
       })
+
+      .state('industry.registration-requests', {
+        url: '/registration-requests',
+        templateUrl: 'app/authority-portal/registration/registration-requests.html',
+        controller: 'RegistrationrequestsController',
+        controllerAs: 'authority'
+      })
+
+      .state('industry.pending-approval-user-details', {
+        url: '/registration-requests/user-details',
+        templateUrl: 'app/authority-portal/registration/pending-approval-user-details.html',
+        controller: 'RegistrationrequestsController',
+        controllerAs: 'authority'
+      })
+
       .state('industry.inviteuser', {
         url: '/invite',
         templateUrl: 'app/authority-portal/invite-iu/invite-iu.html',

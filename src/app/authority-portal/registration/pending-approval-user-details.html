@@ -14,7 +14,8 @@
 
     <ol class="breadcrumb-left visible-lg visible-md">
       <li><a href="/"><i class=""></i> Home </a></li>
-      <li><a href="/authority/registration-requests"><i class=""></i> Pending Registration </a></li>
+      <li  ng-if="user.userType=='AuthorityUser'"><a href="/authority/registration-requests"><i class=""></i> Pending Registration </a></li>
+      <li  ng-if="user.userType=='IndustryUser'"><a href="/industry/registration-requests"><i class=""></i> Pending Registration </a></li>
       <li class="active" >Profile Details</li>
     </ol>
 
@@ -26,8 +27,8 @@
   <div class="seperator" > </div>
 
   <div class="row pull-right visible-lg visible-md"  >
-    <button  id="primaryTextButton" class="k-primary" ng-click="authority.denyRegistration()"  > Deny </button>
-    <button  id="primaryTextButton" class="k-primary" ng-click="authority.approvalRegistration()"  > Approve </button>
+    <button  id="primaryDenyButton" class="k-primary" ng-click="authority.denyRegistration()"  > Deny </button>
+    <button  id="primaryAppButton" class="k-primary" ng-click="authority.approvalRegistration()"  > Approve </button>
   </div>
 
   <br/><br/>

@@ -188,7 +188,10 @@
         vm.selectedRow = this.dataItem(this.select());
 
         $rootScope.registrationPendingUser = vm.selectedRow;
-        $state.go('authority.portal.pending-approval-user-details');
+        if($rootScope.user.userType == 'AuthorityUser')
+          $state.go('authority.portal.pending-approval-user-details');
+        else
+          $state.go('industry.pending-approval-user-details');
       }
 
     }
