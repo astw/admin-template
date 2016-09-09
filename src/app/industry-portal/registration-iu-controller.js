@@ -11,6 +11,8 @@
     vm.userProfile = {};
     vm.step = 1;
 
+    $scope.showRegistrationAccepted = false;
+
     $log.log("RegistrationiuController");
     $log.log($state.current);
 
@@ -112,10 +114,15 @@
       $scope.editProfileSQ = true;
     }
 
+
+
     function sqSaveBtnClicked() {
       // save security questions;
       $scope.editProfileSQ = false;
       //$state.go("plain.login");
+
+      $scope.showRegistrationAccepted  = true;
+
     }
 
 

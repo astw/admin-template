@@ -41,6 +41,7 @@
 <br/><br/>
 <div class="seperator" > </div>
 
+<div ng-if="showRegistrationAccepted == false">
 
 <div class="text-div">
   <h3>Hello Chris</h3>
@@ -112,7 +113,7 @@
             <div class="form-group  pull-right" >
               <button id="sqPreviousBtn" class="k-primary" ng-click="sqPriviousBtnClicked();"> Previous </button>
               <button id="sqEditBtn" class="k-primary" ng-if="editProfileSQ == false" ng-click="sqEditBtnClicked();"> Edit </button>
-              <button id="sqSaveBtn" class="k-primary" ng-if="editProfileSQ== true" ng-click="sqSaveBtnClicked();"> Save </button>
+              <!--<button id="sqSaveBtn" class="k-primary" ng-if="editProfileSQ== true" ng-click="sqSaveBtnClicked();"> Save </button>-->
             </div>
             </div>
           </div>
@@ -121,7 +122,12 @@
       </div>
 
     </div>
+
+    <div class="col-lg-12">
+      <button id="sqSaveBtn" class="k-primary pull-right"  ng-click="sqSaveBtnClicked();"> Submit Registration </button>
+    </div>
   </div>
+
 </div>
 
 
@@ -168,4 +174,14 @@
     <br/>
     </p>
   </div>
+</div>
+
+</div>
+
+<div ng-if="showRegistrationAccepted == true">
+  <div class="text-div">
+    <br/><br/>
+    <h4> Registration Received  </h4>
+  </div>
+
 </div>
