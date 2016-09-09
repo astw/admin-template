@@ -81,11 +81,11 @@
           abstract:true
        })
 
-      .state('authority.portal.inviteiu', {
-        url: '/inviteiu',
+      .state('authority.portal.inviteuser', {
+        url: '/invite/{:action}',
         templateUrl: 'app/authority-portal/invite-iu/invite-iu.html',
-        controller: 'InviteiuController',
-        controllerAs: 'inviteiu'
+        controller: 'InviteController',
+        controllerAs: 'invite'
       })
 
       .state('authority.portal.create-iu', {
@@ -120,6 +120,14 @@
         controller: 'IndustryusersController',
         controllerAs: 'main'
       })
+
+      .state('authority.portal.authority-users', {
+        url: '/users',
+        templateUrl: 'app/main/authority-users.html',
+        controller: 'AuthorityusersController',
+        controllerAs: 'authorityUser'
+      })
+
     .state('authority.portal.industry-user-details', {
         url: '/industires/:permitNo/users/:userId',
         templateUrl: 'app/main/user-details.html',
@@ -205,8 +213,8 @@
       .state('industry.inviteuser', {
         url: '/invite',
         templateUrl: 'app/authority-portal/invite-iu/invite-iu.html',
-        controller: 'InviteiuController',
-        controllerAs: 'inviteiu'
+        controller: 'InviteController',
+        controllerAs: 'invite'
       })
       .state('industry.downloadsigatory', {
         url: '/download/signatory',

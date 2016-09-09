@@ -3,11 +3,14 @@
 
   angular
     .module('testProject')
-    .controller('InviteiuController', InviteiuController);
+    .controller('InviteController', InviteController);
 
   /** @ngInject */
-  function InviteiuController($timeout, $rootScope, $scope, $state, userService,industryService) {
+  function InviteController($timeout, $rootScope, $scope, $state, userService,industryService) {
     var vm = this;
+
+    $scope.action = $state.params.action;
+    console.log("param: action=", $state.params.action);
 
     // if(!$rootScope.selectedIndustry ){
     //   $state.go('authority.portal.industries');
@@ -112,9 +115,12 @@
 
 
       function finishInvite() {
-        if($rootScope.user.userType == 'AuthorityUser'){
+        if($rootScope.user.userType == 'AuthorityUser' && $scope.action == 'invite-iu'){
           $state.go("authority.portal.industryUsers");
-        } else {
+        } else if($scope.action == 'invite-au'){
+          $state.go("authority.portal.authority-users");
+        }
+        else{
           $state.go('industry.industryUsers');
         }
       }
@@ -255,7 +261,7 @@
 
         user.dateInvited = kendo.parseDate(date1);
         user.inviteExpires = kendo.parseDate(date2);
-        if($rootScope.user.userType == 'AuthorityUser') {
+        if($rootScope.user.userType == 'AuthorityUser' && $scope.action == 'invite-iu') {
           user.industry = $rootScope.selectedIndustry.industry;
         }
 

@@ -43,12 +43,8 @@
       });
 
       if(user) {
-        user.securityQuestion1 = questionService.getSecurityQuestionById(user.secureQuestion1Id).value;
-        user.securityQuestion2 = questionService.getSecurityQuestionById(user.secureQuestion2Id).value;
-
-        user.secureQuestion1 = user.securityQuestion1;
-        user.secureQuestion2 = user.securityQuestion2;
-
+        user.secureQuestion1 = questionService.getSecurityQuestionById(user.secureQuestion1Id).value;
+        user.secureQuestion2 = questionService.getSecurityQuestionById(user.secureQuestion2Id).value;
         user.kbqQuestion1 = questionService.getKBQuestionById(user.kbqQuestion1id).value;
         user.kbqQuestion2 = questionService.getKBQuestionById(user.kbqQuestion2id).value;
       }
@@ -58,10 +54,9 @@
 
     function getPendingApprovalUsers(){
        return initialPendingApprovalUserList.map(function(user){
-         user.securityQuestion1 = questionService.getSecurityQuestionById(user.secureQuestion1Id).value;
-         user.securityQuestion2 = questionService.getSecurityQuestionById(user.secureQuestion2Id).value;
-         user.secureQuestion1 = user.securityQuestion1;
-         user.secureQuestion2 = user.securityQuestion2;
+
+         user.secureQuestion1 = questionService.getSecurityQuestionById(user.secureQuestion1Id).value;
+         user.secureQuestion2 =questionService.getSecurityQuestionById(user.secureQuestion2Id).value;
 
 
          user.kbqQuestion1 = questionService.getKBQuestionById(user.kbqQuestion1id).value;
@@ -126,12 +121,8 @@
        });
 
       if(user) {
-        user.securityQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1Id).value;
-        user.securityQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2Id).value;
-        user.secureQuestion1 = user.securityQuestion1;
-        user.secureQuestion2 = user.securityQuestion2;
-        user.secureQuestion1 = user.securityQuestion1;
-        user.secureQuestion2 = user.securityQuestion2;
+        user.secureQuestion1 = questionService.getSecurityQuestionById(user.secureQuestion1Id).value;
+        user.secureQuestion2 = questionService.getSecurityQuestionById(user.secureQuestion2Id).value;
 
         user.kbqQuestion1 = questionService.getKBQuestionById(user.kbqQuestion1id).value;
         user.kbqQuestion2 = questionService.getKBQuestionById(user.kbqQuestion2id).value;
@@ -167,9 +158,8 @@
       }
 
       var users = userList.map(function(user){
-        user.secureQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1Id).value;
-        user.secureQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2Id).value;
-
+        user.secureQuestion1 = questionService.getSecurityQuestionById(user.secureQuestion1Id).value;
+        user.secureQuestion2 = questionService.getSecurityQuestionById(user.secureQuestion2Id).value;
 
         user.kbqQuestion1 = questionService.getKBQuestionById(user.kbqQuestion1id).value;
         user.kbqQuestion2 = questionService.getKBQuestionById(user.kbqQuestion2id).value;
@@ -196,11 +186,6 @@
           role:'Administrator',
           requestedUserName:'Vickitt Lau',
 
-          securityQuestion1Id:7,
-          securityQuestion1Answer:'noodle',
-          securityQuestion2Id:9,
-          securityQuestion2Answer:'blue',
-
           secureQuestion1Id:7,
           secureQuestion1Answer:'noodle',
           secureQuestion2Id:9,
@@ -225,11 +210,6 @@
           locked:"No",
           role:'Administrator',
           requestedUserName:'Vickitt Lau',
-
-          securityQuestion1Id:7,
-          securityQuestion1Answer:'noodle',
-          securityQuestion2Id:9,
-          securityQuestion2Answer:'blue',
 
           secureQuestion1Id:7,
           secureQuestion1Answer:'noodle',
@@ -265,11 +245,6 @@
           fax:'770-495-4160',
           requestedUserName:'Vickitt Lau',
 
-          securityQuestion1Id:7,
-          securityQuestion1Answer:'noodle',
-          securityQuestion2Id:9,
-          securityQuestion2Answer:'blue',
-
           secureQuestion1Id:7,
           secureQuestion1Answer:'noodle',
           secureQuestion2Id:9,
@@ -303,11 +278,6 @@
           zipCode:'v3x 6h1',
           fax:'770-495-4160',
           requestedUserName:'Vickitt Lau',
-
-          securityQuestion1Id:7,
-          securityQuestion1Answer:'noodle',
-          securityQuestion2Id:9,
-          securityQuestion2Answer:'blue',
 
           //-- valid
           secureQuestion1Id:7,
