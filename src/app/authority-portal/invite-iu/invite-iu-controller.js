@@ -13,7 +13,7 @@
     //   $state.go('authority.portal.industries');
     // }
 
-    $scope.step =1 ;
+    $scope.step = 1 ;
       vm.inviteUser = inviteUser;
       vm.sendInvitation = sendInvitation;
       vm.createUser = createUser;
@@ -21,6 +21,7 @@
       vm.backStep = backStep;
       vm.doCreateUser = doCreateUser;
       vm.searchUser = searchUser;
+      vm.finishInvite = finishInvite;
 
       vm.goToStep2 = goToStep2;
 
@@ -110,6 +111,13 @@
       };
 
 
+      function finishInvite() {
+        if($rootScope.user.userType == 'AuthorityUser'){
+          $state.go("authority.portal.industryUsers");
+        } else {
+          $state.go('industry.industryUsers');
+        }
+      }
       function goToStep2() {
         $scope.step = 2;
         updateHeadText();
