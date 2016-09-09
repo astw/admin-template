@@ -11,9 +11,11 @@
   <ol class="breadcrumb-left visible-lg visible-md">
     <li ng-if="user.userType == 'AuthorityUser'"  ><a href="/authority/index"><i class=""></i> Home </a></li>
     <li ng-if="user.userType == 'IndustryUser'"  ><a href="/industry/"><i class=""></i> Home </a></li>
-    <li class="active" ng-if="user.userType == 'AuthorityUser'" ><a href="/authority/industries"> Industries </a></li>
-    <li class="active" ng-if="user.userType == 'AuthorityUser'"><a href="authority/industries/{{selectedIndustry.permitNo}}/details"> Details </a></li>
-    <li class="active" ng-if="user.userType == 'AuthorityUser'"><a href="authority/industries/{{selectedIndustry.permitNo}}/users"> Users </a></li>
+    <li class="active" ng-if="user.userType == 'AuthorityUser' && previousState !== 'authority.portal.authority-users'" ><a href="/authority/industries"> Industries </a></li>
+    <li class="active" ng-if="user.userType == 'AuthorityUser' && previousState !== 'authority.portal.authority-users'"><a href="authority/industries/{{selectedIndustry.permitNo}}/details"> Details </a></li>
+    <li class="active" ng-if="user.userType == 'AuthorityUser' && previousState !== 'authority.portal.authority-users'"><a href="authority/industries/{{selectedIndustry.permitNo}}/users"> Users </a></li>
+    <li class="active" ng-if="user.userType == 'AuthorityUser' && previousState == 'authority.portal.authority-users'"><a href="authority/users"> Users </a></li>
+
     <li class=""> Details</li>
   </ol>
 </section>
