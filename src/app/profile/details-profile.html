@@ -237,10 +237,19 @@
     </div>
   </div>
 
-  <div class="box-body col-lg-5" ng-if="registration === false " >
-    <strong>Permissions For</strong>
-     <br/> <br/>
-    <div class="form-group">
+  <div class="box-body col-lg-5" ng-if="registration === false  " >
+    <!--<strong>My Permissions</strong>-->
+     <!--<br/> <br/>-->
+
+    <div class="form-group" >
+      <label for="myPermission" class="col-sm-3 control-label">My Permissions</label>
+
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <input type="textbox" readonly  class="form-control" id="myPermission"  ng-model="userProfile.role" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="form-group" ng-if="a">
       <label for="facility" class="col-sm-3 control-label">Facility</label>
 
       <div class="col-lg-6 col-md-6 col-sm-6">
@@ -248,7 +257,7 @@
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-if="a">
       <label for="Authority" class="col-sm-3 control-label">Authority </label>
 
       <div class="col-lg-6 col-md-6 col-sm-6">
@@ -256,7 +265,7 @@
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-if="a">
       <label for="role" class="col-sm-3 control-label">Role </label>
 
       <div class="col-lg-6 col-md-6 col-sm-6">
@@ -264,7 +273,7 @@
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-if="user.userType == 'IndustryUser'" >
       <label for="signatory" class="col-sm-3 control-label">Signatory? </label>
 
       <div class="col-lg-6 col-md-6 col-sm-6">

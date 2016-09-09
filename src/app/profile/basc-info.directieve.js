@@ -56,10 +56,12 @@
     };
     return directive;
 
-    function link(scope, element, attrs) {
-         scope.requestSignatory = function(){
+    function link(scope, $rootScope, element, attrs) {
+
+      scope.user = scope.$root.user;
+      scope.requestSignatory = function(){
            console.log(" to down load request signatory ");
-           $state.go("authority.portal.downloadsigatory");
+           $state.go("industry.downloadsigatory");
          }
     }
   }

@@ -6,7 +6,7 @@
     .controller('RegistrationiuController', RegistrationiuController);
 
   /** @ngInject */
-  function RegistrationiuController($log, $scope, $state, userService, industryService, $localStorage,questionService) {
+  function RegistrationiuController($log, $rootScope,$scope, $state, userService, industryService, $localStorage,questionService) {
     var vm = this;
     vm.userProfile = {};
     vm.step = 1;
@@ -17,8 +17,11 @@
     var user = $localStorage["user"];
     var email = user.email;
 
+    // $rootScope.user = user;
+
     var fullUser = industryService.getUserByEmail(email);
     $scope.userProfile = fullUser;
+    $log.log("userProfile=", fullUser);
 
     $scope.title1= "My Profile";
 
@@ -38,7 +41,9 @@
       $scope.editProfileSQ = false;
       $scope.registration = false;
     } else {
-      // $scope.userProfile = null;
+      if($state.current.name == 'plain.registration'){
+        $scope.userProfile = null;
+      }
       $scope.registration = true;
     }
 

@@ -208,7 +208,7 @@
         controller: 'InviteiuController',
         controllerAs: 'inviteiu'
       })
-      .state('authority.portal.downloadsigatory', {
+      .state('industry.downloadsigatory', {
         url: '/download/signatory',
         templateUrl: 'app/authority-portal/download/download-signatory.html',
         //controller: 'AuthorityuserprofileController',

@@ -49,8 +49,8 @@
         user.secureQuestion1 = user.securityQuestion1;
         user.secureQuestion2 = user.securityQuestion2;
 
-        user.kbqQuestion1 = questionService.getSecurityQuestionById(user.kbqQuestion1id).value;
-        user.kbqQuestion2 = questionService.getSecurityQuestionById(user.kbqQuestion2id).value;
+        user.kbqQuestion1 = questionService.getKBQuestionById(user.kbqQuestion1id).value;
+        user.kbqQuestion2 = questionService.getKBQuestionById(user.kbqQuestion2id).value;
       }
 
       return user;
@@ -74,7 +74,7 @@
           salutation:"Mr",
           firstName: "Chris",
           lastName: "Weinandt",
-
+          userName:"aa",
           phone:"(770)-496-4160",
           email:"Weinandt@linkotechnology.com",
           registeredDate:"06-01-2016",
@@ -98,8 +98,9 @@
 
           kbqQuestion1id:2,
           kbqQuestion1Answer:"whilster",
-          kbqQuestion2id:2,
-          kbqQuestion2Answer:'harry potter'
+          kbqQuestion2id:6,
+          kbqQuestion2Answer:'harry potter',
+          signatory:"Yes"
         }];
 
       return data;
@@ -122,6 +123,8 @@
       if(user) {
         user.securityQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1Id).value;
         user.securityQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2Id).value;
+        user.secureQuestion1 = user.securityQuestion1;
+        user.secureQuestion2 = user.securityQuestion2;
         user.secureQuestion1 = user.securityQuestion1;
         user.secureQuestion2 = user.securityQuestion2;
       }
@@ -158,6 +161,7 @@
       var users = userList.map(function(user){
         user.secureQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1Id).value;
         user.secureQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2Id).value;
+
         return user;
       });
 
@@ -171,6 +175,7 @@
           userId:1,
           firstName: "Eric",
           lastName: "Snell",
+
           phone:"(772)-496-4160",
           email:"eric@linkoweb.com",
           registeredDate:"06-01-2016",
@@ -184,14 +189,23 @@
           securityQuestion2Id:9,
           securityQuestion2Answer:'blue',
 
+          secureQuestion1Id:7,
+          secureQuestion1Answer:'noodle',
+          secureQuestion2Id:9,
+          secureQuestion2Answer:'blue',
+
           kbqQuestion1id:2,
           kbqQuestion1Answer:"whilster",
-          kbqQuestion2id:2,
-          kbqQuestion2Answer:'harry potter'
+          kbqQuestion2id:6,
+          kbqQuestion2Answer:'harry potter',
+          signatory:"Yes"
         },
-        {   userId:3,
+        {
+          userId:3,
           firstName: "Eric",
           lastName: "Snell",
+          userName:"aa",
+
           phone:"(772)-496-4160",
           email:"eric@linkoweb.com",
           registeredDate:"06-01-2016",
@@ -205,16 +219,24 @@
           securityQuestion2Id:9,
           securityQuestion2Answer:'blue',
 
+          secureQuestion1Id:7,
+          secureQuestion1Answer:'noodle',
+          secureQuestion2Id:9,
+          secureQuestion2Answer:'blue',
+
           kbqQuestion1id:2,
           kbqQuestion1Answer:"whilster",
-          kbqQuestion2id:2,
-          kbqQuestion2Answer:'harry potter'
+          kbqQuestion2id:6,
+          kbqQuestion2Answer:'harry potter',
+          signatory:"Yes"
         },
         {
           userId:4,
           salutation:"Mr",
           firstName: "Chris",
           lastName: "Weinandt",
+          userName:"aa",
+          password:"aa1234",
           phone:"(770)-496-4160",
           email:"Weinandt@linkotechnology.com",
           registeredDate:"06-01-2016",
@@ -236,17 +258,24 @@
           securityQuestion2Id:9,
           securityQuestion2Answer:'blue',
 
+          secureQuestion1Id:7,
+          secureQuestion1Answer:'noodle',
+          secureQuestion2Id:9,
+          secureQuestion2Answer:'blue',
+
           kbqQuestion1id:2,
           kbqQuestion1Answer:"whilster",
-          kbqQuestion2id:2,
-          kbqQuestion2Answer:'harry potter'
-
+          kbqQuestion2id:6,
+          kbqQuestion2Answer:'harry potter',
+          signatory:"Yes"
         },
         {
           userId:5,
           salutation:"Mr",
           firstName: "Shuhao",
           lastName: "Wang",
+          userName:"bb",
+          password:"bb1234",
           phone:"778-958-2169",
           email:"swang@linkotechnology.com",
           registeredDate:"06-01-2015",
@@ -268,10 +297,17 @@
           securityQuestion2Id:9,
           securityQuestion2Answer:'blue',
 
+          //-- valid
+          secureQuestion1Id:7,
+          secureQuestion1Answer:'noodle',
+          secureQuestion2Id:9,
+          secureQuestion2Answer:'blue',
+
           kbqQuestion1id:2,
           kbqQuestion1Answer:"whilster",
-          kbqQuestion2id:2,
-          kbqQuestion2Answer:'harry potter'
+          kbqQuestion2id:3,
+          kbqQuestion2Answer:'harry potter',
+          signatory:"No"
         }
       ];
 

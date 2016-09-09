@@ -16,11 +16,12 @@
 
     activate();
 
-    if($state.previous.name == 'authority.portal.profile'){
-      $scope.registration = true;
-    } else {
-      $scope.registration = false;
-    }
+    vm.goIndustryUserList = downloadsignatory;
+
+    function downloadsignatory() {
+
+      $state.go("industry.industryUsers");
+    };
 
 
     ////////////////
