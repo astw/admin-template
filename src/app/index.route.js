@@ -165,7 +165,6 @@
     .state('authority.portal.profile', {
         url: '/account/profile',
         templateUrl: 'app/profile/my-profile.html',
-        //controller: 'AuthorityuserprofileController',
         controller:'RegistrationiuController',
         controllerAs: 'authorityUserProfile'
       })
@@ -173,7 +172,6 @@
       .state('industry.profile', {
         url: '/account/profile',
         templateUrl: 'app/profile/my-profile.html',
-        //controller: 'AuthorityuserprofileController',
         controller:'RegistrationiuController',
         controllerAs: 'authorityUserProfile'
       })
@@ -219,7 +217,6 @@
       .state('industry.downloadsigatory', {
         url: '/download/signatory',
         templateUrl: 'app/authority-portal/download/download-signatory.html',
-        //controller: 'AuthorityuserprofileController',
         controller:'DownloadsignatoryController',
         controllerAs: 'downloadsignatory'
       })

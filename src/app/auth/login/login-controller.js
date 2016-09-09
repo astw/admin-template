@@ -74,13 +74,6 @@
 
     function recoverPasswordStep1(){
         console.log("in recoverPasswordStep1  ");
-
-//        if(vm.userEmail !== 'aa@linko.com' &&  vm.userEmail !== 'bb@linko.com') {
-//            $scope.errorMessage = 'Wrong email address';
-//
-//            return;
-//        }
-
         $scope.step = 2;
         $scope.questionText = "What's your pet's name ?"
         $scope.questionAnswer = "Mark"

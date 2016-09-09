@@ -45,10 +45,8 @@
         "templateStatus": "Active",
         "drafts": 0,
         "description": "Monthly Flow Reported SemiAnnually"
-      },
-
-
-    ]
+      }
+    ];
 
     vm.data = data;
 
@@ -81,7 +79,6 @@
           field: "description",
           title: "Description",
           width: "50%"
-
         }
       ]
     }
