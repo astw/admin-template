@@ -11,12 +11,13 @@
   <div class="box-body">
 
 <div class="form-group">
-  <label for="question1" class="col-sm-2 control-label">Question 1 </label>
+  <label for="question1" class="col-sm-2 control-label">Question 1</label>
 
   <div class="col-sm-6">
     <select  ng-disabled="editmode == false"  class="form-control" class="col-sm-6" name="question1"  id="question1" ng-model="userProfile.kbqQuestion1">
-      <option ng-if="editmode == true" ng-repeat="option in kbqQuestions.availableOptions" value="{{userProfile.kbqQuestion1}}">{{userProfile.kbqQuestion1}}</option>
-      <option ng-if="editmode == false" ng-repeat="option in kbqQuestions.availableOptions" value="{{userProfile.kbqQuestion1}}">{{userProfile.kbqQuestion1}}</option>
+      <!--<option ng-if="editmode == true" ng-repeat="option in kbqQuestions.availableOptions" value="{{option.value}}">{{option.value}}</option>-->
+      <!--<option ng-if="editmode == false" ng-repeat="option in kbqQuestions.availableOptions" value="{{userProfile.kbqQuestion1}}">{{ userProfile.kbqQuestion1}}</option>-->
+      <option  ng-repeat="option in kbqQuestions.availableOptions" value="{{option.value}}">{{option.value}}</option>
     </select>
   </div>
 </div>
@@ -91,7 +92,7 @@
   <label for="question5" class="col-sm-2 control-label">Question 5 </label>
   <div class="col-sm-6">
     <select ng-disabled="editmode == false"   class="form-control" class="col-sm-6" name="question4" id="question5" ng-model="userProfile.kbqQuestion5">
-      <option ng-if="editmode == false" ng-repeat="option in kbqQuestions.availableOptions" value="{{option.value}}">{{option.value}}</option>
+      <option ng-if="editmode == true" ng-repeat="option in kbqQuestions.availableOptions" value="{{option.value}}">{{option.value}}</option>
       <option ng-if="editmode == false" ng-repeat="option in kbqQuestions.availableOptions" value="{{userProfile.kbqQuestion5}}">{{userProfile.kbqQuestion5}}</option>
     </select>
   </div>

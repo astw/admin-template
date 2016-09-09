@@ -62,6 +62,11 @@
          user.securityQuestion2 = questionService.getSecurityQuestionById(user.secureQuestion2Id).value;
          user.secureQuestion1 = user.securityQuestion1;
          user.secureQuestion2 = user.securityQuestion2;
+
+
+         user.kbqQuestion1 = questionService.getKBQuestionById(user.kbqQuestion1id).value;
+         user.kbqQuestion2 = questionService.getKBQuestionById(user.kbqQuestion2id).value;
+
          return user;
        });
     }
@@ -127,6 +132,9 @@
         user.secureQuestion2 = user.securityQuestion2;
         user.secureQuestion1 = user.securityQuestion1;
         user.secureQuestion2 = user.securityQuestion2;
+
+        user.kbqQuestion1 = questionService.getKBQuestionById(user.kbqQuestion1id).value;
+        user.kbqQuestion2 = questionService.getKBQuestionById(user.kbqQuestion2id).value;
       }
 
       return user;
@@ -161,6 +169,10 @@
       var users = userList.map(function(user){
         user.secureQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1Id).value;
         user.secureQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2Id).value;
+
+
+        user.kbqQuestion1 = questionService.getKBQuestionById(user.kbqQuestion1id).value;
+        user.kbqQuestion2 = questionService.getKBQuestionById(user.kbqQuestion2id).value;
 
         return user;
       });

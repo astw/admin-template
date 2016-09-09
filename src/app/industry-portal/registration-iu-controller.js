@@ -19,8 +19,6 @@
     var user = $localStorage["user"];
     var email = user.email;
 
-    // $rootScope.user = user;
-
     var fullUser = industryService.getUserByEmail(email);
     $scope.userProfile = fullUser;
     $log.log("userProfile=", fullUser);
@@ -37,6 +35,8 @@
     $scope.currentStep = 1;
 
 
+    $log.info($state.current.name);
+
     if($state.current.name == 'authority.portal.profile'){
       $scope.editProfileDetails = false;
       $scope.editProfileKBQ = false;
@@ -45,6 +45,7 @@
     } else {
       if($state.current.name == 'plain.registration'){
         $scope.userProfile = null;
+        $log.info('-- $scope.userProfile=', $scope.userProfile);
       }
       $scope.registration = true;
     }

@@ -30,12 +30,6 @@
     }
   }
 
-  ControllerName.$inject = ['dependency'];
-
-  /* @ngInject */
-  function ControllerName(dependency) {
-
-  }
 
 })();
 
