@@ -30,6 +30,8 @@
 
     console.log('------------------');
     console.log(vm.selectedUser);
+    console.log('---- previous -- step ');
+    console.log($rootScope.previousState);
 
     RefreshButtonText();
 

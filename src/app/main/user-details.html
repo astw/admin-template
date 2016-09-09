@@ -127,7 +127,7 @@
 
 <!--- to make it clickable ----->
 
-<div class="panel panel-default" ng-if="user.userType == 'AuthorityUser'">
+<div class="panel panel-default" ng-if="user.userType == 'AuthorityUser' && previousState !== 'authority.portal.authority-users' ">
   <div class="panel-heading " >
     <strong>User Security Questions</strong>
     <span class=' center-icon  center-icon  fa fa-plus-square pull-right' ng-click = "userdetails.toggleUserSecurityPanel()"  ng-class="showSecurityQuestions == false ? 'fa-plus-square ' : 'fa-minus-square' "    > </span>

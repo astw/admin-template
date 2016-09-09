@@ -12,33 +12,39 @@
     $rootScope.showMenu = false;
     $rootScope.logout = logout;
     $rootScope.user = $localStorage["user"];
-      
-    function logout(){ 
+
+    $rootScope.previousState;
+    $rootScope.currentState;
+
+    function logout(){
        console.log('in indux.run.js  logout');
        delete $localStorage.user;
-       delete $rootScope.user; 
-       $state.go("plain.login"); 
+       delete $rootScope.user;
+       $state.go("plain.login");
     }
-      
+
     $rootScope.showHideExtraSmallMenu = function(){
-     
+
         if($rootScope.showMenu == false ){
             $rootScope.showMenu = true;
         } else {
             $rootScope.showMenu = false;
         }
-        
-    }
-          
+    };
+
+
     $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
-        $rootScope.showMenu = false; 
-        
+        $rootScope.showMenu = false;
+
 //         if(!$rootScope.user){
 //              $state.go("plain.login");
 //         }
      })
-    
-      
+    $rootScope.$on('$stateChangeSuccess', function(ev, to, toParams, from, fromParams) {
+      $rootScope.previousState = from.name;
+      $rootScope.currentState = to.name;
+    });
+
   }
 
 })();
