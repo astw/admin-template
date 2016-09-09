@@ -21,14 +21,19 @@
 
     var service = {
       getAllKBQUestions: getAllKBQUestions,
-      getAllSecurityQuestions: getAllSecurityQuestions,
+      getKBQuestionById : getKBQuestionById,
 
+      getAllSecurityQuestions: getAllSecurityQuestions,
       getSecurityQuestionById: getSecurityQuestionById
     };
     return service;
 
     ////////////////
-
+    function getKBQuestionById( id) {
+      return kbqQuestions.find(function (question) {
+        return question.id == id;
+      });
+    }
 
     function getSecurityQuestionById(id) {
       return securityQuestions.find(function (question) {

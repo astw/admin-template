@@ -6,14 +6,15 @@
         .controller('RegistrationrequestsController', RegistrationrequestsController);
 
     /** @ngInject */
-    function RegistrationrequestsController($timeout, $rootScope, $scope, $state) {
+    function RegistrationrequestsController($log, industryService, questionService, $rootScope, $scope, $state) {
         var vm = this;
+
+        $log.info("RegistrationrequestsController");
 
         console.log($rootScope.selectedIndustry);
 
         vm.showProfile = false;
 
-        vm.searchChanged = searchChanged;
         vm.viewProfile = viewProfile;
         vm.registrationPendingApproval = registrationPendingApproval;
 
@@ -68,18 +69,6 @@
             });
         }
 
-        function searchChanged() {
-            console.log('input =' + vm.searchKey);
-
-            var data = vm.data;
-            var filterData = industryFilter(data, vm.searchKey);
-
-            vm.grid.setDataSource(new kendo.data.DataSource({
-                data: filterData
-            }));
-            vm.grid.refresh();
-        }
-
         function industryFilter(dataSet, inputKey) {
 
             var output = [];
@@ -98,39 +87,25 @@
             return output;
         }
 
+        vm.data = industryService.getPendingApprovalUsers();
 
-        var data = [
-        // {
-        //     userId: 3,
-        //     firstName: "Eric",
-        //     lastName: "Snell",
-        //     industry: "Vally City Plating(0040)",
-        //     phone: "(772)-496-4160",
-        //     email: "eric@linkoweb.com",
-        //     registeredDate: "06-01-2016",
-        //     status: "InActive",
-        //     locked: "No",
-        //     isRegisterted: "No"
-        // },
+        $log.info(vm.data);
 
-        {
-            userId: 4,
-            firstName: "Chris",
-            lastName: "Weinandt",
-            industry: "Kerry Sweet Ingredients (0040)",
-            phone: "(770)-496-4160",
-            email: "chris@linkcoweb.com",
-            registeredDate: "08-30-2016 8:15 AM",
-            status: "Active",
-            locked: "No",
-            isRegisterted: "Yes"
-        }];
+        $scope.kbqQuestions = {
+          model:vm.data.kbqQuestion1,
+          availableOptions: questionService.getAllKBQUestions()
+        };
 
-        vm.data = data;
 
-        $scope.mainGridOptions_2 = {
+        $scope.secureQuestions = {
+          model: null,
+          availableOptions: questionService.getAllSecurityQuestions()
+        };
+
+
+      $scope.mainGridOptions_2 = {
             dataSource: {
-                data: data
+                data: vm.data
             },
             filterable: true,
             selectable: "row",
@@ -160,7 +135,7 @@
 
                 {
                     width: '20%',
-                    field: "industry",
+                    field: "organization",
                     title: "Industry #",
                     minScreenWidth: 960
                 },
@@ -188,6 +163,11 @@
         vm.selectedRow = this.dataItem(this.select());
 
         $rootScope.registrationPendingUser = vm.selectedRow;
+console.log('==== user email=' + vm.selectedRow.email);
+        $rootScope.registrationPendingUser = industryService.getPendingApprovalUserDetail(vm.selectedRow.email);
+
+
+        $log.info("selected user details:" , $rootScope.registrationPendingUser );
         if($rootScope.user.userType == 'AuthorityUser')
           $state.go('authority.portal.pending-approval-user-details');
         else

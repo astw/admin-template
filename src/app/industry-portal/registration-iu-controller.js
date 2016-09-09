@@ -6,19 +6,18 @@
     .controller('RegistrationiuController', RegistrationiuController);
 
   /** @ngInject */
-  function RegistrationiuController($timeout, $scope, $state, userService, industryService, $localStorage,questionService) {
+  function RegistrationiuController($log, $scope, $state, userService, industryService, $localStorage,questionService) {
     var vm = this;
     vm.userProfile = {};
     vm.step = 1;
 
-    console.log($state);
-
+    $log.log("RegistrationiuController");
+    $log.log($state.current);
 
     var user = $localStorage["user"];
     var email = user.email;
 
     var fullUser = industryService.getUserByEmail(email);
-    console.log(fullUser);
     $scope.userProfile = fullUser;
 
     $scope.title1= "My Profile";
@@ -39,7 +38,7 @@
       $scope.editProfileSQ = false;
       $scope.registration = false;
     } else {
-      $scope.userProfile = null;
+      // $scope.userProfile = null;
       $scope.registration = true;
     }
 
@@ -98,8 +97,6 @@
       $scope.editProfileKBQ = false;
     }
 //-----
-
-
 // security questions
     function sqPriviousBtnClicked(){
       $scope.editProfileSQ = false;
@@ -119,8 +116,6 @@
 
     function requestSignatory() {
       console.log('in side request sinagory ');
-
-
     }
 
     function kbqNextEditBtnClicked() {
@@ -179,7 +174,6 @@
       console.log("next step");
 
     }
-
 
     $scope.kbqQuestions = {
       model:null,

@@ -15,6 +15,7 @@
     var userList =  getUserList();
     var invitedUserList = getInitalInvitedUserList();
     var industryList = new getInitialIndustryList();
+    var initialPendingApprovalUserList = new initialPendingApprovalUserList();
 
     var service = {
       getUserByEmail:getUserByEmail,
@@ -25,13 +26,85 @@
       deleteInvitedUser:deleteInvitedUser,
 
       getIndustryList:getIndustryList,
-      getIndustryById:getIndustryById
+      getIndustryById:getIndustryById,
+
+      getPendingApprovalUsers : getPendingApprovalUsers,
+
+      getPendingApprovalUserDetail : getPendingApprovalUserDetail
 
     };
 
     return service;
 
     ////////////////
+    function getPendingApprovalUserDetail(email) {
+      var user = initialPendingApprovalUserList.find(function(u){
+         return u.email == email;
+      });
+
+      if(user) {
+        user.securityQuestion1 = questionService.getSecurityQuestionById(user.secureQuestion1Id).value;
+        user.securityQuestion2 = questionService.getSecurityQuestionById(user.secureQuestion2Id).value;
+
+        user.secureQuestion1 = user.securityQuestion1;
+        user.secureQuestion2 = user.securityQuestion2;
+
+        user.kbqQuestion1 = questionService.getSecurityQuestionById(user.kbqQuestion1id).value;
+        user.kbqQuestion2 = questionService.getSecurityQuestionById(user.kbqQuestion2id).value;
+      }
+
+      return user;
+    }
+
+    function getPendingApprovalUsers(){
+       return initialPendingApprovalUserList.map(function(user){
+         user.securityQuestion1 = questionService.getSecurityQuestionById(user.secureQuestion1Id).value;
+         user.securityQuestion2 = questionService.getSecurityQuestionById(user.secureQuestion2Id).value;
+         user.secureQuestion1 = user.securityQuestion1;
+         user.secureQuestion2 = user.securityQuestion2;
+         return user;
+       });
+    }
+
+    function initialPendingApprovalUserList() {
+
+      var data = [
+
+        {
+          salutation:"Mr",
+          firstName: "Chris",
+          lastName: "Weinandt",
+
+          phone:"(770)-496-4160",
+          email:"Weinandt@linkotechnology.com",
+          registeredDate:"06-01-2016",
+          status:"Active",
+          locked:"No",
+          role:'Administrator',
+          userType:'AuthorityUser',
+          organization:'Kerry Sweet Ingredients (0040)',
+          mailAddress:'Suite 710 West Pender, Vancouver, BC',
+          suite:'710',
+          city:'Vancouver',
+          state:'B.C',
+          zipCode:'v3x 6h1',
+          fax:'770-495-4160',
+          requestedUserName:'Vickitt Lau',
+
+          secureQuestion1Id:7,
+          secureQuestion1Answer:'noodle',
+          secureQuestion2Id:9,
+          secureQuestion2Answer:'blue',
+
+          kbqQuestion1id:2,
+          kbqQuestion1Answer:"whilster",
+          kbqQuestion2id:2,
+          kbqQuestion2Answer:'harry potter'
+        }];
+
+      return data;
+
+    }
     function getIndustryById(id) {
       return industryList.find(function (i) {
         return i.permitNo == id;
@@ -49,6 +122,8 @@
       if(user) {
         user.securityQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1Id).value;
         user.securityQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2Id).value;
+        user.secureQuestion1 = user.securityQuestion1;
+        user.secureQuestion2 = user.securityQuestion2;
       }
 
       return user;
@@ -81,8 +156,8 @@
       }
 
       var users = userList.map(function(user){
-        user.securityQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1Id).value;
-        user.securityQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2Id).value;
+        user.secureQuestion1 = questionService.getSecurityQuestionById(user.securityQuestion1Id).value;
+        user.secureQuestion2 = questionService.getSecurityQuestionById(user.securityQuestion2Id).value;
         return user;
       });
 
