@@ -11,15 +11,39 @@
     var vm = this;
     activate();
 
-    $scope.selectedAuthority="City of Grand Rapids";
-    $scope.selectedIndustry = 1;
+    $scope.selectedAuthority= "1"
+    $scope.selectedIndustry = "1";
+
+    $scope.goAuthority = function () {
+      $state.go('authority.portal.industries');
+    };
+
+    $scope.goIndustry = function() {
+      //  /industry/
+      if ($scope.selectedIndustry === "1") {
+        $rootScope.industryName = 'Valley City Plating';
+        $rootScope.industryPermitNo = "0040";
+      }
+      else{
+        $rootScope.industryName = "Kerry Sweet Ingredients";
+        $rootScope.industryPermitNo = "8296";
+      }
+
+      $state.go('industry.portal')
+
+    };
 
     vm.login = login;
     //vm.logout = logout;
     $scope.step = 1;
     vm.nextStep = nextStep;
 
+$scope.onClick = function(){
 
+  alert( $scope.selectedIndustry);
+
+
+}
 
     function activate() {
     }

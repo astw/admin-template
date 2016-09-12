@@ -50,12 +50,13 @@
       </tr>
       <tr>
         <td class="col-lg-12 ">
-          <select name="authority"  id="selectAuthority" class="form-control" size="10"   >
-            <option value="1" selected="selected" ng-value="selectedAuthority" >City of Grand Rapids</option>
+          <select name="authority"  id="selectAuthority" class="form-control" size="10"  ng-model="selectedAuthority"  >
+            <option value="1" selected="selected" >City of Grand Rapids</option>
           </select>
         </td>
         <td style="vertical-align: bottom">
-          <div><a href="/authority/industries">Go</a></div>
+          <!--<div><a href="/authority/industries">Go</a></div>-->
+          <div><a href="#" ng-click="goAuthority()">Go</a></div>
         </td>
       </tr>
     </table>
@@ -69,17 +70,17 @@
       </tr>
       <tr>
         <td class="col-lg-12 ">
-          <select name="industry" id="selectIU" class="form-control " size="10" >
-            <option value="1" ng-value="selectedIndustry" >City of Grand Rapids(Valley City Plating)</option>
-            <option value="2" selected ng-value="selectedIndustry" >City of Grand Rapids(Kerry Sweet Ingredients)</option>
+          <select name="industry" id="selectIU" class="form-control " size="10"  ng-model="selectedIndustry">
+            <option value="1" selected>City of Grand Rapids(Valley City Plating)</option>
+            <option value="2" >City of Grand Rapids(Kerry Sweet Ingredients)</option>
           </select>
         </td>
         <td style="vertical-align: bottom">
-          <div><a href="/industry/">Go</a></div>
+          <div><a href="#" ng-click="goIndustry()">Go</a></div>
         </td>
       </tr>
     </table>
-  
+
 </form>
 <div class="col-lg-4 col-md-4 col-sm-2 "></div>
 
