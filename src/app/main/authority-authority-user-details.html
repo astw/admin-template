@@ -1,0 +1,188 @@
+<style>
+   .center-icon {
+    vertical-align:middle;
+    margin-top: 3px;
+  }
+</style>
+<section class="content-header">
+  <h1>
+    User Details
+  </h1>
+  <ol class="breadcrumb-left visible-lg visible-md">
+    <li ng-if="user.userType == 'IndustryUser'"  ><a href="/authority/industries"><i class=""></i> Home </a></li>
+    <li class="active" ><a href="/authority/users"> Users </a></li>
+    <li class=""> Details</li>
+  </ol>
+</section>
+
+<br/><br/>
+<div class="seperator"></div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading" data-target="#information">
+    <strong>User Information</strong>
+
+    <div class="form-group pull-right" >
+
+      <button  ng-if="user.userType='IndustryUser' "  id="enableAuUserBtn" class="k-primary" ng-click="userdetails.toggleEnableIUUserStatus();">
+        {{userdetails.enabledButtonText}}
+      </button>
+
+      <button id="lockBtn" class="k-primary" ng-click="userdetails.toggleLockedStatus();">
+        {{userdetails.lockButtonText}}
+      </button>
+      <button id="inviteAuSaveBtn" ng-click="userdetails.saveUser();" class="k-primary">Remove</button>
+      <button id="inviteUserBtn" ng-click="userdetails.resetUser();" class="k-primary">Reset</button>
+      <button id="inviteAuSaveBtn" ng-click="userdetails.saveUser();" class="k-primary">Save</button>
+
+
+    </div>
+
+
+  </div>
+  <div class="panel-body panel-collapse collapse in" id="information">
+    <div class="col-sm-11">
+      <div class="form-horizontal row">
+        <div class="form-group">
+          <label for="fistName" class="col-md-2 control-label">Fist Name</label>
+
+          <div class="col-md-4">
+            <input type="text" readonly class="form-control" id="fistName"
+                   value={{userdetails.selectedUser.firstName}} >
+          </div>
+
+          <label for="status" class="col-md-2 control-label">Status</label>
+          <div class="col-md-4">
+            <input type="text" readonly class="form-control" id="status" value={{userdetails.selectedUser.status}} >
+          </div>
+        </div>
+      </div>
+
+      <div class="form-horizontal row">
+        <div class="form-group">
+          <label for="lastName" class="col-md-2 control-label">Last Name</label>
+
+          <div class="col-md-4">
+            <input type="text" rows="2" class="form-control" id="lastName" readonly
+                   value={{userdetails.selectedUser.lastName}} >
+          </div>
+
+          <label for="isLocked" class="col-md-2 control-label">Is Locked?</label>
+          <div class="col-md-4">
+            <input type="text" readonly class="form-control" id="isLocked" value={{userdetails.selectedUser.locked}} >
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-horizontal row">
+        <div class="form-group">
+          <label for="email" class="col-md-2 control-label">Email</label>
+
+          <div class="col-md-4">
+            <input type="text" readonly class="form-control" id="email" value={{userdetails.selectedUser.email}} >
+          </div>
+
+          <label for="role" class="col-md-2 control-label">Role</label>
+          <div class="col-md-4">
+            <!--<input type="text" readonly class="form-control" id="role" value={{userdetails.selectedUser.role}} >-->
+            <select class="form-control" id="role" class="col-md-4" ng-modal="userdetails.selectedUser.role" >
+              <option value="Administrator"> Administrator</option>
+              <option value="Standard"> Standard </option>
+            </select>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-horizontal row">
+        <div class="form-group">
+          <label for="phone" class="col-md-2 control-label">Phone</label>
+
+          <div class="col-md-4">
+            <input type="text" readonly class="form-control" id="phone" value={{userdetails.selectedUser.phone}} >
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="form-horizontal row">
+        <div class="form-group">
+          <label for="registrationDate" class="col-md-2 control-label">Registration Date</label>
+
+          <div class="col-md-4">
+            <input type="text" readonly class="form-control" id="registrationDate"
+                   value={{userdetails.selectedUser.registeredDate}} >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!--- to make it clickable ----->
+
+<div class="panel panel-default" ng-if="user.userType == 'AuthorityUser' && previousState !== 'authority.portal.authority-users' ">
+  <div class="panel-heading " >
+    <strong>User Security Questions</strong>
+    <span class=' center-icon  center-icon  fa fa-plus-square pull-right' ng-click = "userdetails.toggleUserSecurityPanel()"  ng-class="showSecurityQuestions == false ? 'fa-plus-square ' : 'fa-minus-square' "    > </span>
+  </div>
+
+  <div class="panel-body panel-collapse collapse" id="securityQuestionPane2" ng-class="showSecurityQuestions == false ? 'collapse' : 'in' "  >
+
+    <div class="panel-body panel-collapse in collapse" id="securityQuestionContentPanel" ng-class="showSecurityQuestions == false ? 'in collapse' : 'panel-body' " >
+      <div class="col-sm-11">
+
+        <div class="form-horizontal row">
+          <div class="form-group">
+            <label for="securityQuestion1" class="col-md-2 control-label">Security Question 1</label>
+
+            <div class="col-md-4">
+              <input type="text" readonly class="form-control" id="securityQuestion1" value="{{userdetails.selectedUser.secureQuestion1}} " />
+
+            </div>
+          </div>
+        </div>
+
+        <div class="form-horizontal row">
+          <div class="form-group">
+            <label for="answer1" class="col-md-2 control-label">Answer </label>
+
+            <div class="col-md-4">
+              <input type="text" readonly class="form-control" id="answer1" value="{{userdetails.selectedUser.secureQuestion1Answer}} " />
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-horizontal row">
+          <div class="form-group">
+            <label for="securityQuestion2" class="col-md-2 control-label">Security Question 2</label>
+
+            <div class="col-md-4">
+              <input type="text" readonly class="form-control" id="securityQuestion2" value="{{userdetails.selectedUser.secureQuestion1}} " />
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="form-horizontal row">
+          <div class="form-group">
+            <label for="answer2" class="col-md-2 control-label">Answer</label>
+
+            <div class="col-md-4">
+              <input type="text" readonly class="form-control" id="answer2" value="{{userdetails.selectedUser.secureQuestion2Answer}} " />
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

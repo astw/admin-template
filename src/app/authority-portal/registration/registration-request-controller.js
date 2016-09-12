@@ -136,7 +136,7 @@
                 {
                     width: '20%',
                     field: "organization",
-                    title: "Industry #",
+                    title: "Industry (#)",
                     minScreenWidth: 960
                 },
 

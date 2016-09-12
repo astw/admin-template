@@ -38,10 +38,10 @@
     }
 
     function inviteUser() {
-      if($rootScope.user.userType == 'AuthorityUser')
-          $state.go("authority.portal.inviteuser", {action:'invite-iu'});
-      else
-          $state.go('industry.inviteuser');
+      // if($rootScope.user.userType == 'AuthorityUser')
+      //     $state.go("authority.portal.inviteuser", {action:'invite-iu'});
+      // else
+      //     $state.go('industry.inviteuser');
     }
 
 
@@ -82,6 +82,12 @@
         vm.lockButtonText = 'Unlock';
       } else {
         vm.lockButtonText = 'Lock'
+      }
+
+      if($rootScope.user.email == 'Weinandt@linkotechnology.com'){
+        $rootScope.user.userType = 'AuthorityUser';
+      } else {
+        $rootScope.user.userType = 'IndustryUser';
       }
 
       if($rootScope.user.userType == 'AuthorityUser')

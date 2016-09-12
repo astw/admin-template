@@ -14,6 +14,12 @@
     console.log('in AuthorityusersController');
     var vm = this;
 
+    if($rootScope.user.email == 'Weinandt@linkotechnology.com'){
+      $rootScope.user.userType = 'AuthorityUser';
+    } else {
+      $rootScope.user.userType = 'IndustryUser';
+    }
+
     vm.lockButtonText = 'Unlock';
     vm.enabledButtonText = 'Disable';
 
@@ -39,10 +45,10 @@
     }
 
     function inviteUser() {
-      if($rootScope.user.userType == 'AuthorityUser')
-        $state.go("authority.portal.inviteuser", {action:'invite-au'});
-      else
-        $state.go('industry.inviteuser');
+    //   if($rootScope.user.userType == 'AuthorityUser')
+    //     $state.go("authority.portal.inviteuser", {action:'invite-au'});
+    //   else
+    //     $state.go('industry.inviteuser');
     }
 
 
@@ -85,8 +91,19 @@
         vm.lockButtonText = 'Lock'
       }
 
-      if($rootScope.user.userType == 'AuthorityUser')
-        $state.go("authority.portal.industry-user-details", {userId: $rootScope.selectedUser.userId});
+      if($rootScope.user.email == 'Weinandt@linkotechnology.com'){
+        $rootScope.user.userType = 'AuthorityUser';
+      } else {
+        $rootScope.user.userType = 'IndustryUser';
+      }
+
+      if($rootScope.user.userType == 'AuthorityUser') {
+        if ($rootScope.currentState == "authority.portal.authority-users") {
+            $state.go("authority.portal.authority-user-details", {userId: $rootScope.selectedUser.userId});
+        } else {
+          $state.go("authority.portal.industry-user-details", {userId: $rootScope.selectedUser.userId});
+        }
+      }
       else
         $state.go('industry.industry-user-details');
 

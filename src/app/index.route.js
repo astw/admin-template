@@ -127,13 +127,20 @@
         controller: 'AuthorityusersController',
         controllerAs: 'authorityUser'
       })
-
-    .state('authority.portal.industry-user-details', {
-        url: '/industires/:permitNo/users/:userId',
-        templateUrl: 'app/main/user-details.html',
+      .state('authority.portal.authority-user-details', {
+        url: '/users/:userId',
+        templateUrl: 'app/main/authority-authority-user-details.html',
         controller: 'UserdetailsController',
         controllerAs: 'userdetails'
       })
+
+      .state('authority.portal.industry-user-details', {
+        url: '/industires/:permitNo/users/:userId',
+        templateUrl: 'app/main/authority-industry-user-details.html',
+        controller: 'UserdetailsController',
+        controllerAs: 'userdetails'
+      })
+
     .state('authority.portal.registration-requests', {
         url: '/registration-requests',
         templateUrl: 'app/authority-portal/registration/registration-requests.html',
@@ -189,7 +196,7 @@
       })
       .state('industry.industry-user-details', {
         url: '/industires/:permitNo/users/:userId',
-        templateUrl: 'app/main/user-details.html',
+        templateUrl: 'app/main/industry-user-details.html',
         controller: 'UserdetailsController',
         controllerAs: 'userdetails'
       })
