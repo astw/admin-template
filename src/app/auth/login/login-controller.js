@@ -38,12 +38,6 @@
     $scope.step = 1;
     vm.nextStep = nextStep;
 
-$scope.onClick = function(){
-
-  alert( $scope.selectedIndustry);
-
-
-}
 
     function activate() {
     }
@@ -64,6 +58,7 @@ $scope.onClick = function(){
             $rootScope.user = user;
             $localStorage["user"] = user;
 
+             $state.go('plain.portal-director');
             //$state.go('authority.portal.industries');
         }
 
@@ -83,8 +78,7 @@ $scope.onClick = function(){
 
             //todo:got to industry portal
             //$state.go('industry.portal');
-
-          $state.go('plain.portal-director');
+            $state.go('plain.portal-director');
         }
 
     }
