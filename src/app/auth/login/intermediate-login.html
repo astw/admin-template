@@ -1,0 +1,56 @@
+<style>
+  .forget {
+    margin: 25px;
+  }
+
+  .mytable{
+    border:1px !important;
+    border-color:red;
+  }
+
+  .mydiv {
+    overflow: auto;
+    vertical-align: bottom;
+  }
+
+
+</style>
+<br><br><br><br>
+<div class="col-lg-4 col-md-4 col-sm-2 "></div>
+<div class="col-lg-5  col-md-4 col-sm-8 ">
+            <div class="box-header with-border">
+              <h5 class="box-title">You have rights to multiple locations, pleas select one: </h5>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+<form class="form">
+
+  <div class="box-body">
+    <div class="form-group">
+      <label for="selectAuthority">Select an Authority Portal</label>
+
+      <select name="authority"  id="selectAuthority" class="form-control" size="10"   >
+        <option value="1" selected="selected" ng-value="selectedAuthority" >City of Grand Rapids</option>
+      </select>
+      <div><a href="/authority/industries">Go</a></div>
+
+    </div>
+    <div class="form-group mydiv" >
+      <label for="selectIU">Select an Industry Portal </label>
+      <select name="industry" id="selectIU" class="form-control " data-height="100"  size="15" >
+          <option value="1" ng-value="selectedIndustry" >City of Grand Rapids(Valley City Plating)</option>
+          <option value="2" selected ng-value="selectedIndustry" >City of Grand Rapids(Kerry Sweet Ingredients)</option>
+       </select>
+       <div><a href="/industry/">Go</a></div>
+      <div class="col-sm-10">
+
+      </div>
+
+    </div>
+
+    </div>
+
+</form>
+<div class="col-lg-4 col-md-4 col-sm-2 "></div>
+
+</div>

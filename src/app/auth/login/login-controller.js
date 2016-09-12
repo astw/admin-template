@@ -11,6 +11,9 @@
     var vm = this;
     activate();
 
+    $scope.selectedAuthority="City of Grand Rapids";
+    $scope.selectedIndustry = 1;
+
     vm.login = login;
     //vm.logout = logout;
     $scope.step = 1;
@@ -37,7 +40,7 @@
             $rootScope.user = user;
             $localStorage["user"] = user;
 
-            $state.go('authority.portal.industries');
+            //$state.go('authority.portal.industries');
         }
 
         else if(vm.userEmail == 'bb'  && vm.userPassword == "bb1234"){
@@ -55,7 +58,9 @@
             $localStorage["user"] = user;
 
             //todo:got to industry portal
-            $state.go('industry.portal');
+            //$state.go('industry.portal');
+
+          $state.go('plain.portal-director');
         }
 
     }

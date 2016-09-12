@@ -28,6 +28,13 @@
           controllerAs:"login"
        })
 
+      .state("plain.portal-director", {
+        url:"/portal-director",
+        templateUrl :"app/auth/login/intermediate-login.html" ,
+        controller:"LoginController",
+        controllerAs:"login"
+      })
+
       .state("plain.forget-password", {
           url:"/forget-password",
           templateUrl :"app/auth/forget-password/forget-password.html" ,
