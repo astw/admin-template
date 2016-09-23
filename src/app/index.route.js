@@ -92,7 +92,16 @@
         url: '/invite/{:action}',
         templateUrl: 'app/authority-portal/invite-iu/invite-iu.html',
         controller: 'InviteController',
-        controllerAs: 'invite'
+        controllerAs: 'invite',
+        params :{
+            action:function($stateParams){
+                return $stateParams.action;
+            },
+            
+            newTitle:function($stateParams){
+                return $stateParams.newTitle;
+            }
+        }
       })
 
       .state('authority.portal.create-iu', {
@@ -125,7 +134,7 @@
         url: '/industries/:permitNo/users',
         templateUrl: 'app/main/main.html',
         controller: 'AuthorityusersController',
-        controllerAs: 'main'
+        controllerAs: 'authorityMain'
       })
 
       .state('authority.portal.authority-users', {

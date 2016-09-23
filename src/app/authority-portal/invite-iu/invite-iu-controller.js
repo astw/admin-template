@@ -6,12 +6,16 @@
     .controller('InviteController', InviteController);
 
   /** @ngInject */
-  function InviteController($timeout, $rootScope, $scope, $state, userService,industryService) {
+  function InviteController($timeout, $rootScope, $scope, $state, $stateParams, userService,industryService) {
     var vm = this;
 
     $scope.action = $state.params.action;
+    $scope.newTitle = $state.params.newTitle;  
+    console.info('-------------------------- from InivteController');
+    console.log($scope.newTitle)
     console.log("param: action=", $state.params.action);
-
+      
+    
     // if(!$rootScope.selectedIndustry ){
     //   $state.go('authority.portal.industries');
     // }

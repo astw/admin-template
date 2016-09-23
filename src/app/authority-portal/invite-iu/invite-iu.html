@@ -13,7 +13,8 @@
       <h1>
         Invite User  <span ng-if="user.userType== 'IndustryUser'" > Kerry Sweet Ingredients</span> to
         <span ng-if="action =='invite-iu' "> {{selectedIndustry.industry}} </span>
-        <span ng-if="action =='invite-au' "> Grand Rapid Authority </span>
+        <span ng-if="action =='invite-au' && ! newTitle "> Grand Rapid Authority </span>
+        <span ng-if="action =='invite-au' && newTitle "> {{newTitle}} </span>  
 
         <small></small>
       </h1>

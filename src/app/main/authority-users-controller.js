@@ -44,9 +44,21 @@
 
     }
 
-    function inviteUser() {
+    function inviteUser() { 
+        console.log('----------------------------------------------------')
+        //console.log($rootScope.selectedIndustry.industry);
+        var param = {
+            action:'invite-au'
+        }
+        
+        if($rootScope.previousState == 'authority.portal.industry-details'){  
+            param.action = 'invite-iu';
+            //  if( $rootScope.selectedIndustry)
+            //       param.newTitle = $rootScope.selectedIndustry.industry;
+        } 
+        
     //   if($rootScope.user.userType == 'AuthorityUser')
-         $state.go("authority.portal.inviteuser", {action:'invite-au'});
+         $state.go("authority.portal.inviteuser", param);
     //   else
     //     $state.go('industry.inviteuser');
     }
