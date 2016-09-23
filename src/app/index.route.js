@@ -124,7 +124,7 @@
       .state('authority.portal.industryUsers', {
         url: '/industries/:permitNo/users',
         templateUrl: 'app/main/main.html',
-        controller: 'IndustryusersController',
+        controller: 'AuthorityusersController',
         controllerAs: 'main'
       })
 

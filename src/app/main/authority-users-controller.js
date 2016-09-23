@@ -46,7 +46,7 @@
 
     function inviteUser() {
     //   if($rootScope.user.userType == 'AuthorityUser')
-    //     $state.go("authority.portal.inviteuser", {action:'invite-au'});
+         $state.go("authority.portal.inviteuser", {action:'invite-au'});
     //   else
     //     $state.go('industry.inviteuser');
     }
