@@ -13,10 +13,9 @@
         $state.go('authority.portal.industries');
       } else {
         // for industry user
-        $rootScope.selectedIndustry =  industryService.getIndustryById("8296");
-
+        var industryNo = $state.params.industryNo;
+        $rootScope.selectedIndustry = industryService.getIndustryById(industryNo);
       }
-
 
       if ($rootScope.selectedIndustry.enabled == "Yes") {
             vm.enabledButtonText = 'Disable';
