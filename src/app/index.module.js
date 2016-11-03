@@ -10,7 +10,7 @@
                             'toastr',
                             'oitozero.ngSweetAlert',
                             // '19degrees.ngSweetAlert2',
-                            'kendo.directives'
+                            //'kendo.directives'
                            ]);
 
 })();
