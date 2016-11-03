@@ -9,7 +9,7 @@
     /*ngAnnotation */
     function mainHeader(){
         return {
-            templateUrl :'/app/layout/header/main-header.html'
+            templateUrl :'app/layout/header/main-header.html'
         }
     }
 
@@ -28,7 +28,7 @@
   /*ngAnnotation */
   function industryMainHeader(){
     return {
-      templateUrl :'/app/layout/header/main-header-industry.html'
+      templateUrl :'app/layout/header/main-header-industry.html'
     }
   }
 

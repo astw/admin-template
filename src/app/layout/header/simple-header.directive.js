@@ -12,7 +12,7 @@
   /* @ngInject */
   function simpleHeader(){
     return {
-      templateUrl :'/app/layout/header/simple-header.html'
+      templateUrl :'app/layout/header/simple-header.html'
     }
   }
 
